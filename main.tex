@@ -1,0 +1,64 @@
+\documentclass[12pt,a4paper,oneside]{report}
+
+% Packages
+\input{packages.tex}
+
+
+%Begin Document
+\begin{document}
+
+% Title Page and Abstract
+\input{titlepage.tex}
+
+% Acknowledgements
+\input{acknowledgements.tex}
+\newpage
+
+
+% Table of Contents
+\tableofcontents 
+\cleardoublepage
+
+% List of Figures
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\cleardoublepage
+
+% List of Tables
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\cleardoublepage
+
+% List of Acronyms
+\input{acronyms.tex}
+\cleardoublepage
+
+% List of Symbols
+\input{symbols.tex}
+\cleardoublepage
+
+% Page Numbering and Spacing
+\pagenumbering{arabic} \setcounter{page}{1} 
+\doublespacing 
+
+% Main Chapters
+\input{chapters/introduction}
+\input{chapters/literaturereview}
+% \input{chapters/methodology}
+% \input{chapters/results}
+% \input{chapters/conclusion}
+
+
+% References
+\singlespacing 
+\bibliographystyle{plain} 
+\bibliography{references}{\addcontentsline{toc}{chapter}{References}
+}
+\cleardoublepage
+\doublespacing
+% Appendices
+% \begin{appendices}
+% \input{chapters/AppendixA}
+% \end{appendices}
+
+\end{document}

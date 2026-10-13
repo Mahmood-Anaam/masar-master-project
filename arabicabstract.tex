@@ -1,0 +1,72 @@
+% Arabic abstract (bilingual thesis requirement).
+%
+% This file is a standalone XeLaTeX document. The main thesis document
+% (main.tex) is built with pdflatex + mathptmx (packages.tex) and does not
+% support Arabic script, so this abstract is compiled separately with:
+%
+%     xelatex arabicabstract.tex
+%
+% and the resulting single-page arabicabstract.pdf
+% included in the main document via
+% \includepdf in titlepage.tex.
+%
+% Required packages: fontspec, polyglossia, and the Amiri Arabic font
+% (Ubuntu/Debian: texlive-lang-arabic, fonts-hosny-amiri).
+
+\documentclass[12pt,a4paper,oneside]{report}
+
+\usepackage{geometry}
+\newgeometry{
+    left=2.5cm,
+    right=3.0cm,
+    top=2.0cm,
+    bottom=2.5cm
+}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setdefaultlanguage{arabic}
+\setotherlanguage{english}
+
+\newfontfamily\arabicfont[Script=Arabic]{Amiri}
+\usepackage{setspace}
+\doublespacing
+
+\pagestyle{empty}
+
+\begin{document}
+
+% ============================================================
+% Thesis title
+% ============================================================
+
+\begin{center}
+
+{\Large\bfseries
+العنوان بالعربي
+}\\[0.5cm]
+
+{\large  غرام الشهراني}\\[0.2cm]
+
+{\normalsize
+المشرف: أ.د.
+} \\[0.7cm]
+
+{\large\bfseries الملخص}
+
+
+\end{center}
+
+\vspace{0.1cm}
+
+% ============================================================
+% Arabic Abstract
+% ============================================================
+
+\noindent
+
+ملخص بالعربية لا يتجاوز 700 كلمة  
+
+
+\end{document}

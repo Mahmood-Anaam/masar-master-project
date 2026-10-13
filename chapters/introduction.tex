@@ -1,0 +1,140 @@
+\chapter{Introduction}
+\label{ch:introduction}
+
+Organizations deliver their services through interconnected applications, facilities, personnel, suppliers, and records. A disruption that begins in one of these elements rarely stays there. It can reach every service that relies on the affected element and impair several services at the same time. Continuity teams must then decide, within a short period, which services to restore first, how long each of them can remain unavailable, and which supporting resources have to be recovered before a service can resume. These decisions carry legal, financial, and operational consequences, and they are made under time pressure with incomplete knowledge of the incident.
+
+Business continuity management (BCM) prepares organizations for this situation. Its central analytical activity is business impact analysis (BIA), which examines how the consequences of an interruption grow over time and uses that examination to establish recovery requirements such as the maximum tolerable period of disruption (MTPD) and the recovery time objective (RTO). The requirements are set before any incident occurs, yet they govern the decisions taken during one. The quality of an incident-time decision therefore depends on how the requirements were derived, and on whether the reasoning behind them can be reproduced, examined, and defended.
+
+This project examines that dependence and proposes a response to it. It introduces Masar, a rule-based methodology and decision support system that derives recovery requirements from the time-dependent impact of service disruption and orders recovery actions during an incident according to severity, time pressure, and service dependencies. The methodology is the principal contribution of the work. The decision support system implements the methodology so that it can be demonstrated on realistic scenarios and evaluated.
+
+The chapter presents the background of the project, states the problem it addresses, and describes the proposed solution. It then sets out the aim and objectives, the significance of the work, the project approach, the scope, the expected deliverables, and the assumptions and limitations, and it closes with the organization of the report.
+
+\section{Background}
+
+\subsection{Business Continuity and Recovery Requirements}
+
+BCM is the organizational capability to continue delivering prioritized products and services at acceptable levels following a disruption. It spans policy, planning, analysis, preparedness, response, and recovery, and it is commonly organized as a management system of the kind specified in ISO 22301. Within this capability, BIA supplies the analytical basis for deciding what must be recovered and how quickly. Guidance from the National Institute of Standards and Technology (NIST) positions BIA as the means of connecting mission-essential functions and supporting assets to impact values and, through them, to priorities for risk response \cite{quinn2022bia}.
+
+The outputs of a BIA take the form of recovery requirements, each of which answers a different question. The MTPD marks the duration of disruption beyond which the consequences become unacceptable. The RTO is the target time within which a service or supporting resource should be resumed, and it is set so as to leave a margin before the MTPD is reached. The recovery point objective (RPO) limits the tolerable loss of data, measured in time, and the minimum business continuity objective (MBCO) states the lowest level of service that is acceptable while full recovery is pending. A requirement is usable only when it carries a unit, a scope, an approval status, and a period of validity.
+
+The consequences that justify these requirements are not constant. An interruption that is tolerable for a few hours may lead to a regulatory breach, a significant financial loss, or a risk to safety after a day, and the different dimensions of impact do not mature at the same pace. A BIA therefore describes impact as a profile across successive time intervals and not as a single rating \cite{quinn2022bia}. This temporal profile is the natural evidence from which the MTPD and the RTO should be derived. It also explains why the urgency of a service changes as an incident continues.
+
+\subsection{Dependencies and Recovery Priority}
+
+Services seldom stand alone. A service may rely on applications, data, facilities, specialist roles, suppliers, or other services, and these relations are directional: the loss of an enabling element affects the services that depend on it, whereas the reverse does not necessarily hold. Research on process-based impact propagation shows that the effects of an incident travel along such dependency structures, and its case study identified high-risk paths that had previously been overlooked \cite{raptaki2025impact}. Work on post-disaster restoration reaches a compatible conclusion from a different direction. It finds that the order of recovery should reflect both the importance of the end service and the state of the infrastructure that supports it, and that decisions must be revisited as new information arrives \cite{shahverdi2025recovery}.
+
+Two consequences follow. The first is that criticality and recovery priority are different notions. Criticality is an approved assessment of the consequences of losing a service. Recovery priority is a judgment about a specific incident at a specific moment, and it depends on the time already elapsed, the margin that remains before the recovery objectives are exceeded, the scope of the impact, the position of the service in the dependency structure, and the availability of workarounds. The second is that a supporting resource whose own impact rating is modest may deserve early attention because several important services depend on it.
+
+\subsection{Information Systems for Business Continuity}
+
+Information systems have been applied to BCM in several ways. A mining-based business continuity information system for educational institutions uses association-rule analysis on survey data to expose patterns in preparedness \cite{idrees2019bcis}. A quantitative method for planning recovery extends use-case estimation with technical, environmental, and unexpected factors in order to estimate recovery effort and compare it with recovery objectives \cite{podaras2016tools}. The process-mining study cited above automates dependency discovery and impact propagation for cyber incidents \cite{raptaki2025impact}, and the restoration study applies stochastic optimization to the scheduling of specialist crews \cite{shahverdi2025recovery}.
+
+Each of these contributions addresses one analytical mechanism and does so effectively. Among the studies reviewed for this project, however, none sets out explicit and inspectable rules that connect the time-dependent impact profile of a service and its dependencies to the recovery requirements assigned to it and to the order in which recovery should proceed during an incident. That connection is the subject of this project.
+
+\section{Problem Statement}
+
+In practice, the connection is often made through expert judgment. Impact profiles are assessed in workshops, recovery objectives are agreed in discussion, and when an incident occurs the order of recovery is decided by the people who are present. Judgment is indispensable in this process, but when it is not supported by stated rules it produces three difficulties.
+
+The first is inconsistency. Two analysts examining the same impact profile can assign different values of the MTPD and the RTO, and nothing in the process shows which value is better supported. Consistency across services is equally fragile. A service may be given an RTO of four hours while depending on a database whose own RTO is eight hours, in which case the objective of the service cannot be met even if every planned action succeeds.
+
+The second is the substitution of static criticality for incident priority. A label such as high or critical is assigned at preparation time. If it is used directly during an incident, it ignores the time that has elapsed, the margin that remains, and the position of the service in the dependency structure. Ordering by label can direct effort to a highly critical service whose enabling resource has not yet been restored.
+
+The third is the limited explainability of the outcome. A recommended order that cannot be traced to the requirements, rules, and records behind it cannot be challenged while the incident is in progress or reviewed once it is over. When the supporting information is also spread across separate documents and records, assembling the evidence costs time that an incident rarely allows.
+
+These difficulties share a cause: the derivation of recovery requirements and recovery priorities is not governed by explicit and repeatable rules. The problem addressed by this project is therefore stated as follows.
+
+\begin{quote}
+The recovery requirements and recovery priorities on which continuity decisions depend are seldom derived through explicit, repeatable rules that relate the time-dependent impact of service disruption and the dependencies among services to the resulting requirement or recovery order. This limits the consistency, explainability, and defensibility of recovery decisions.
+\end{quote}
+
+The problem is one of method before it is one of tooling. A dashboard that presents recovery information more quickly does not remedy it, because the quality of the presented values still depends on how they were derived. Nor does the problem call for transferring authority from accountable people to an algorithm. The solution must make the reasoning explicit and leave the decision with the human decision maker.
+
+\section{Proposed Solution}
+
+The proposed solution is named Masar, the Arabic word for path. The name alludes to the dependency paths along which a disruption travels and to the path along which recovery proceeds. Masar has two parts: a methodology, called Time-Dependent Recovery Prioritization (TDRP), and a decision support system that implements it.
+
+TDRP operates in three stages. The first stage derives recovery requirements from the impact profile of each service. A set of rules examines the profile across successive time intervals and identifies the interval in which impact in any dimension first reaches an unacceptable level, which establishes the MTPD. Further rules set the RTO so that the time needed to resume the service, together with the work required afterward to return to normal operation, fits within that limit. Consistency rules then check the derived values against one another and against the dependencies among services, for instance that a supporting resource is never given a recovery objective later than that of a service relying on it. Where an approved value already exists and differs from the derived one, the discrepancy is reported to the user and is not resolved silently.
+
+The second stage orders recovery during an incident. Starting from the elements reported as disrupted, the methodology identifies the services that are affected directly and, by following recorded dependencies, those that are affected indirectly. Governance rules are applied first. They cover obligations that cannot be traded away, such as legal and safety duties, and conditions such as an exceeded recovery objective, and they operate on a non-compensatory basis so that a favorable value on one criterion cannot conceal a breach on another. The remaining services are then positioned according to the severity of the consequences of continued disruption and the time pressure relative to their recovery objectives. Priority is propagated along dependencies so that an enabling resource is never ranked below the services that rely on it.
+
+The third stage provides explanation and accountability. Each derived requirement and each recommended order is stored together with the rules that were applied, the input values, the source records, and the version of the method. An authorized user can accept the recommendation or override it, and an override is recorded with its rationale.
+
+The Masar system implements these stages as a web-based application. It comprises a unified business continuity data model that holds services, impact profiles, recovery objectives, dependencies, resources, and source documents as related records within a single system; a rule engine that executes the methodology; and an operational dashboard that presents the affected services, dependency paths, recovery margins, and the recommended order together with its explanation. Because the records are maintained within the system, the work does not depend on integrating separate external systems. Its concern is the quality of the derivation and not the collection of data.
+
+A rule-based design is chosen deliberately. Explicit rules can be read, challenged, and revised by continuity professionals, they return the same result for the same input, and they do not require a history of past incidents of the size that statistical learning would need and that many organizations do not hold. The optimization approach reported for lifeline restoration is formulated for infrastructure networks and specialist crews \cite{shahverdi2025recovery}, and adapting it to enterprise services would require data that continuity teams are unlikely to possess. The rule-based design therefore gives up claims of mathematical optimality in exchange for transparency and feasibility.
+
+\section{Aim and Objectives}
+
+The aim of the project is to develop and evaluate a rule-based methodology that derives recovery requirements and recovery priorities for business services from time-dependent impact and service dependencies, and to demonstrate it through a decision support system that explains its results and preserves human decision authority.
+
+The aim is pursued through the following objectives.
+
+\begin{enumerate}[label=O\arabic*.,leftmargin=1.3cm]
+    \item Establish the conceptual basis of the methodology by defining time-dependent impact, recovery requirements, dependencies, and recovery priority, drawing on continuity standards and existing research.
+    \item Develop rules that derive the MTPD and the RTO from the time-dependent impact profile of a service and that verify the consistency of the derived requirements with each other and with service dependencies.
+    \item Develop incident-time prioritization rules that combine governance rules, an assessment of severity and time pressure, and the propagation of priority along dependencies.
+    \item Implement the methodology in a decision support system that comprises a unified data model, a rule engine, and an operational dashboard, and that provides explanation, source traceability, and a record of human decisions.
+    \item Evaluate the methodology and the system through representative disruption scenarios, expert review, functional testing, and comparison with a manual prioritization process.
+\end{enumerate}
+
+\section{Significance of the Project}
+
+The first contribution of the project is to the method itself. Recovery requirements and recovery priorities are normally the product of professional judgment, and much of the reasoning behind them remains tacit. By expressing that reasoning as explicit rules, the project makes it open to inspection, comparison, and refinement, and it provides a procedure that can be applied to different services and organizations because the impact scales and thresholds it relies on are configurable.
+
+The second contribution is practical. Rules that are applied identically to every service give continuity teams a way to obtain consistent requirements and to detect conflicts before they matter, such as a supporting resource with an objective later than that of the service it enables. During an incident, a recommendation that carries its own explanation shortens the time needed to understand why one action precedes another, and the stored decision record supports review after the event.
+
+The third contribution lies in information systems research. The project produces a purposeful artifact, a method together with an instantiation of it, and evaluates that artifact against both technical and human criteria. In doing so it applies data modeling, dependency analysis, rule-based decision logic, and interface design to an operational problem in which the transparency of the result is as important as its correctness.
+
+\section{Project Approach}
+
+The project follows the design science paradigm, which connects a practical problem to the construction and evaluation of a purposeful artifact. Design science distinguishes constructs, models, methods, and instantiations as the possible outputs of such work, and it requires rigorous evaluation of the artifact against the problem it addresses \cite{hevner2004design}. In this project, the vocabulary of time-dependent impact and recovery requirements forms the constructs, the data model forms a model, TDRP is the method, and the Masar system is the instantiation.
+
+The work is organized according to the six activities of the design science research methodology: problem identification and motivation, definition of the objectives of a solution, design and development, demonstration, evaluation, and communication \cite{peffers2007dsrm}. The present chapter addresses the first two activities. The design and development activity produces the methodology and the system, the demonstration applies them to representative disruption scenarios, the evaluation assesses them, and this report is the vehicle of communication.
+
+Evaluation draws on the dimensions of information systems success, namely information quality, system quality, use, user satisfaction, and net benefits \cite{delone2003success}. Technical correctness of the rules is therefore not treated as sufficient. The evaluation also considers whether the information presented is complete and trustworthy, whether users can understand and act on the recommendation, and whether the result improves the speed and consistency of prioritization.
+
+\section{Project Scope}
+
+The project concentrates on the derivation of recovery requirements and recovery priorities and on the information needed to support and explain them. Within this boundary, the scope includes the rules that derive the MTPD and the RTO from impact profiles and check their consistency; the rules that identify affected services, apply governance conditions, and order recovery during an incident; a unified data model for services, impact profiles, recovery objectives, dependencies, resources, procedures, source documents, incidents, and decisions; a rule engine and an operational dashboard that present the result with its explanation and source references; role-based access, audit records, and the recording of decisions and overrides; and an evaluation using synthetic or anonymized data and defined scenarios. The RPO and the MBCO are stored and displayed alongside the other objectives, but their derivation is not part of the methodology.
+
+Several activities lie outside the scope. The project does not author business continuity plans, execute recovery actions or technical failover, control production systems, or manage crisis communication and notification. It does not assess the likelihood of disruptive events, which belongs to risk assessment, and it does not discover dependencies automatically from event logs or compute optimal schedules for recovery teams. These exclusions keep the work focused on the decision layer of business continuity and make a rigorous evaluation feasible.
+
+The solution is intended to be independent of any particular organization. The impact scales, time intervals, thresholds, and governance rules are configurable parameters and not fixed values, so that the methodology can be adapted to organizations with different structures, service catalogs, and continuity policies.
+
+\section{Expected Deliverables}
+
+The project will deliver a conceptual model and terminology for time-dependent recovery prioritization; the rules for deriving recovery requirements; the rules for prioritizing recovery during an incident; a working Masar prototype consisting of the data model, the rule engine, and the dashboard; a set of evaluation scenarios with a non-sensitive data set and an evaluation report; and technical and user documentation. Table~\ref{tab:objectives-deliverables} relates each objective to the deliverables that satisfy it and to the chapter in which they are presented.
+
+\begin{table}[htbp]
+\centering
+\caption{Relation between project objectives, deliverables, and chapters}
+\label{tab:objectives-deliverables}
+\small
+\begin{tabularx}{\textwidth}{p{1.9cm}Xp{2.4cm}}
+\toprule
+Objective & Deliverable & Chapter\\
+\midrule
+O1 & Conceptual model and terminology & 2 and 3\\
+\addlinespace
+O2 & Rules for deriving MTPD and RTO and checking their consistency & 3\\
+\addlinespace
+O3 & Rules for incident-time prioritization & 3\\
+\addlinespace
+O4 & Masar prototype with data model, rule engine, and dashboard; technical and user documentation & 3 and 4\\
+\addlinespace
+O5 & Evaluation scenarios, non-sensitive data set, and evaluation report & 4\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Assumptions and Limitations}
+
+The output of the methodology depends on the quality of its input. Incomplete impact profiles, missing dependencies, outdated objectives, or unapproved records reduce the reliability of a derived requirement or a recommended order. The system can expose such conditions and lower the confidence attached to a result, but it cannot infer operational relationships that have not been recorded. The work therefore assumes that impact profiles and dependencies are available in structured form and have been approved by their owners.
+
+Continuity policies and impact scales differ between organizations. The rules must be configured and reviewed by domain experts before they are used with a particular organization, and the project cannot validate every organization-specific policy. The evaluation will use a bounded set of services, scenarios, and participants. Its results can show that the methodology and the system behave as intended and can provide evidence about consistency, explainability, and usability under the evaluated conditions, but they cannot establish performance across all sectors, organizational structures, or types of crisis. Adoption in production would require further security testing, data migration, and governance approval.
+
+Finally, recovery prioritization contains professional and managerial judgment that calculation cannot fully replace. Legal duties, safety considerations, public consequences, contractual commitments, and rapidly changing incident information may justify a decision that differs from the recommendation. For this reason the system is designed to explain, to record, and to defer to the accountable decision maker.
+
+\section{Organization of the Report}
+
+The remainder of the report is organized as follows. Chapter~2 reviews the standards and the research on business continuity information management, business impact analysis, dependency modeling, recovery prioritization, and explainable decision support, and it identifies the gap that the project addresses. Chapter~3 presents the methodology: the conceptual model, the rules for deriving recovery requirements, the rules for incident-time prioritization, the data model, and the architecture of the system. Chapter~4 reports the implementation of the prototype and the results of its evaluation. Chapter~5 summarizes the contributions, discusses the limitations, and proposes directions for further work. Appendix~A contains supplementary material.

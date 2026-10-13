@@ -1,0 +1,60 @@
+% Core layout & fonts
+\usepackage{geometry}
+\usepackage{mathptmx}          % Times New Roman
+\usepackage{setspace}          % line-spacing control
+
+% Graphics & figures
+\usepackage{graphicx}
+\graphicspath{{figures/}}      % look for images in ./figures/
+\usepackage{float}             % [H] placement specifier
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{rotating}    % sidewaystable
+
+% Mathematics
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{nicefrac}    % \nicefrac{1}{320}
+
+% Algorithms & code
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+\lstset{basicstyle=\small\ttfamily, breaklines=true}
+
+% Colours & hyperlinks
+\usepackage{xcolor}
+\usepackage[colorlinks=true,
+            linkcolor=black,
+            citecolor=blue,
+            urlcolor=blue]{hyperref}
+
+% Bibliography
+\usepackage[numbers,sort&compress]{natbib}
+
+% Appendices
+\usepackage[toc,page]{appendix}
+
+% Misc
+\usepackage{pdfpages}
+\usepackage{lipsum}
+\usepackage{enumitem}
+
+% Custom commands
+\newcommand{\eat}[1]{}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\blue}[1]{\textbf{\color{blue}#1}}
+
+\renewcommand{\bibname}{References}
+\renewcommand{\contentsname}{Contents}
+\newgeometry{left=3.0cm,right=2.5cm,top=2.5cm,bottom=2.5cm} % setting of margins
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}

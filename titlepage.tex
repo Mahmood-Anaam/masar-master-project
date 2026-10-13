@@ -1,0 +1,9 @@
+% \includepdf[pages=-]{titlepage.pdf} % include Title page and basmlah page as PDF file.
+
+% \includepdf[pages=-]{thesisapproval.pdf} % include thesis approval as PDF file (this page should added once the final thesis version is approved).
+
+\pagenumbering{roman} \setcounter{page}{1} 
+
+\input{abstract.tex}
+\newpage
+\includepdf[pages=-, pagecommand={}]{arabicabstract.pdf} % include Arabic abstract as PDF file of single page.
