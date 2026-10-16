@@ -19,3 +19,6 @@
 main.pdf
 tmp/
 output/
+
+# Chapter-specific generated PDF
+introduction-review.pdf

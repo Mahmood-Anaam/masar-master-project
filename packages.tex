@@ -24,8 +24,9 @@
 \usepackage{nicefrac}    % \nicefrac{1}{320}
 
 % Algorithms & code
-\usepackage{algorithm}
-\usepackage{algorithmic}
+% Optional until an algorithm environment is needed in a later chapter.
+\IfFileExists{algorithm.sty}{\usepackage{algorithm}}{}
+\IfFileExists{algorithmic.sty}{\usepackage{algorithmic}}{}
 \usepackage{listings}
 \lstset{basicstyle=\small\ttfamily, breaklines=true}
 
