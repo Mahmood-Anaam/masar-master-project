@@ -6,7 +6,7 @@ This is a **non-thesis master's project in Information Systems at King Saud Univ
 
 ## Current delivery
 
-The `develop` branch was created from `overleaf` at `61010c368885d5835212072dad07dc034aed68d0`. Chapter 1 has been revised against `docs/assets/Guidlines.md` and the supervisor's feedback. The final academic review is recorded in [`docs/IS595-introduction-final-review.md`](docs/IS595-introduction-final-review.md). Chapter 2 is now complete: 24 body pages and two reference pages, with fourteen fully read academic studies and two NIST guidance sources. Its scope and verification are documented in [the completion record](docs/IS595-literature-review-completion.md). Work on the next chapter awaits approval.
+The `develop` branch was created from `overleaf` at `61010c368885d5835212072dad07dc034aed68d0`. Chapter 1 has been revised against `docs/assets/Guidlines.md` and the supervisor's feedback. The final academic review is recorded in [`docs/IS595-introduction-final-review.md`](docs/IS595-introduction-final-review.md). Chapter 2 is now complete: 25 body pages and two reference pages, with fourteen fully read academic studies and two NIST guidance sources. Its final academic review is documented in [the final review record](docs/IS595-literature-review-final-review.md). Work on the next chapter awaits approval.
 
 Build the chapter-only submissions from the repository root:
 
