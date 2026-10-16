@@ -1,5 +1,7 @@
 # IS595 Introduction Revision Record
 
+> This file records the initial revision. The subsequent final academic review is documented in [IS595-introduction-final-review.md](IS595-introduction-final-review.md); the current chapter source reflects that final review.
+
 ## Delivery scope
 
 - Repository: `Mahmood-Anaam/masar-master-project`.
