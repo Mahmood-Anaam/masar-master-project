@@ -1,2 +1,297 @@
 \chapter{Literature Review}
 \label{ch:literaturereview}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+
+\section{Overview and Review Approach}
+\label{sec:lr_overview}
+
+This chapter reviews the body of work on which the proposed TDRP methodology and the Masar decision support system rest. It moves from the general to the specific. The review starts with business continuity management (BCM) as a discipline and its treatment in information systems research (Section~\ref{sec:lr_bcm}). It then turns to the Saudi national frameworks that set the regulatory and practical setting for this project (Section~\ref{sec:lr_saudi}). From there it narrows to the two themes at the center of the proposal: business impact analysis (BIA) and recovery parameters (Section~\ref{sec:lr_bia}), and dependency modelling and criticality (Section~\ref{sec:lr_dependencies}). Section~\ref{sec:lr_systems} examines the information systems that support continuity decisions, including academic decision support proposals and commercial platforms. Section~\ref{sec:lr_gap} compares what the reviewed work provides with what the project requires and states the resulting research gap.
+
+Two documents served as the principal sources throughout: the business continuity section of the Saudi National Framework for Risk, Emergency and Business Continuity Management \cite{nrcnationalframework} and the business continuity management system section of the Digital Government Authority guideline \cite{dga2025bcm}. Both are written in Arabic, and the descriptions given here are the author's own rendering of their content. Academic literature was located through publisher, repository, and indexing services using combinations of terms such as business continuity management, business impact analysis, maximum tolerable period of disruption, recovery time objective, dependency, criticality, and decision support. A study was retained if it addressed impact assessment, recovery objectives, dependencies or criticality, or the use of information systems in continuity management. Commercial platforms were examined through the vendors' public documentation. Some publications were available only through their abstracts and bibliographic records. Statements about those works are therefore limited to what the abstracts report, and this limitation is repeated where it matters.
+
+\section{Business Continuity Management: Concepts and Perspectives}
+\label{sec:lr_bcm}
+
+\subsection{Definition, Lifecycle, and Standards}
+\label{subsec:lr_bcm_standards}
+
+Business continuity management is generally described as a management process that enables an organization to keep delivering its essential products and services at acceptable levels when it is disrupted, and to recover afterwards. The international reference point is ISO 22301, which specifies requirements for a business continuity management system \cite{iso22301}. Both Saudi documents build on it. The DGA guideline names ISO 22301:2019 together with companion international standards on continuity strategies, business impact analysis, and exercises as the principal international references, and it lists its own risk management and business continuity controls and the National Framework as the leading local ones \cite[p.~102]{dga2025bcm}. The guideline also organizes the management system around the Plan-Do-Check-Act cycle, so that planning covers impact analysis and risk assessment, implementation covers strategies and plans, verification covers exercises, and correction covers documentation and continual improvement \cite[p.~103]{dga2025bcm}.
+
+For technology, the best-known guidance comes from contingency planning for information systems. The NIST publication on contingency planning for federal information systems treats the recovery of systems as a planning problem in its own right and relates it to the business processes the systems support \cite{nist80034}. The same relationship appears in the Saudi guidance, where plans for recovering information technology and communications are expected to follow the recovery requirements of critical procedures rather than being drawn up independently of them \cite[p.~121]{dga2025bcm}. The point matters for this project because it places the business service, and not the technical system, at the origin of recovery requirements.
+
+\subsection{Business Continuity in the Information Systems Literature}
+\label{subsec:lr_bcm_is}
+
+Information systems research has approached continuity from several directions. Gibb and Buchanan proposed a framework for the design, implementation, and monitoring of a business continuity management programme within the context of an information strategy \cite{gibb2006framework}. The abstract emphasizes that risk can arise from external events such as disasters and utility failures and also from organizational change, for example automation or outsourcing. The contribution is therefore a programme-level framework that ties continuity to information strategy, and it does not prescribe how recovery requirements for individual services are to be calculated.
+
+J\"arvel\"ainen extended a business continuity framework to the context of information systems and validated it through a survey of IT managers and chief information officers in large private and public organizations in Finland \cite{jarvelainen2013incidents}. The reported results indicate that the embeddedness of continuity practices in an organization is associated with perceived business impacts, whereas organizational alertness and preparedness did not show the direct relation that earlier theory had suggested. The study also points to the influence of committed managers and employees. Its value for the present work lies in the evidence that continuity of information systems is a managerial and social matter as well as a technical one, which supports the decision to treat Masar as a tool that informs responsible personnel rather than one that replaces their judgment.
+
+Niemimaa reviewed 83 peer-reviewed papers published between 2000 and 2012 from a range of disciplines, organized the contributions into four themes (social aspects, technology, salience of continuity, and models that improve continuity), and proposed an integrative framework for information systems continuity \cite{niemimaa2015review}. The review also identified research gaps. Its theme on models that improve continuity is the one closest to the present project, since TDRP is a model for deriving and expressing recovery priorities.
+
+Empirical work on the application of continuity frameworks adds a practical perspective. Fani and Subriadi tested a business continuity plan framework with eight elements and thirty-eight activities in four organizations: a bank, two service companies, and a manufacturer \cite{fani2019multiusable}. Within the business impact analysis element, the framework contains activities for collecting business process and IT data, prioritizing IT services, prioritizing business processes, analyzing disruption impact, and determining recovery time. The reported results show that most activities could be carried out but some needed adjustment. In particular, the organizations that adopted a different order for the impact-related activities reasoned that IT services and business processes cannot be prioritized until the disruption impact analysis has been done. This observation is directly relevant here, because it matches the sequence on which TDRP is built: impact assessment first, priorities afterwards, and supporting dependencies related to services only once the services have been assessed. The authors also note that the framework had to be adapted to different organizational types, which supports the case for configurable rather than fixed procedures.
+
+Labus and colleagues proposed an adaptive e-business continuity management framework for organizations that rely on e-business technologies. The framework comprises steps for business impact analysis, risk assessment, and the continuity plan, and it was implemented and evaluated in three financial organizations \cite{labus2020adaptive}. According to the abstract, the main finding is that business impact analysis and the continual improvement of the management system are the driving factors for establishing an adaptive e-business continuity management. The full text could not be consulted for this review, so the framework's internal procedures are not discussed here. The headline finding is nevertheless consistent with the choice made in this project to concentrate on the impact analysis stage.
+
+\subsection{Business Continuity in Public Sector Organizations}
+\label{subsec:lr_bcm_public}
+
+Because the Saudi guidance addresses government entities and providers of essential services, the public sector literature is pertinent. Cedergren and Hassel conducted a scoping review of public sector BCM and its close counterpart, continuity of operations planning \cite{cedergren2025public}. They report limited but growing scholarly interest, with attention increasing markedly during the COVID-19 pandemic. Leadership support, organizational commitment, and training appear as key factors in implementation, whereas multi-stakeholder collaboration and resource constraints appear among the challenges. The literature, they note, often points to low maturity in public organizations, although it also shows steady progress. These findings suggest two considerations for the present project. Where resources are constrained, tools that lower the effort of maintaining continuity information are likely to be valuable, and because public entities work within frameworks set by regulators, such tools need to follow the logic of those frameworks.
+
+\section{The Saudi Regulatory Context}
+\label{sec:lr_saudi}
+
+\subsection{The National Framework for Risk, Emergency and Business Continuity Management}
+\label{subsec:lr_nrc}
+
+The business continuity section of the National Framework, issued by the General Secretariat of the National Risk Council, addresses entities that provide essential services and necessary products and the owners and operators of critical infrastructure \cite[p.~218]{nrcnationalframework}. Its policy statement asks these entities to establish and activate their own continuity management, to carry out business impact analysis, to assess and treat continuity risks, to develop strategies and plans, to run exercises, to monitor performance, and to correct and improve. Within the impact analysis requirement it names the identification of essential services and the supporting processes and activities, and the determination of the maximum tolerable period of disruption and the recovery time objective. It also mentions a minimum business continuity objective and a recovery point objective for data-dependent activities, which lie outside the scope of this project.
+
+The framework places continuity inside what it calls the resilience cycle, a sequence of stages for managing risks, emergencies, and continuity that comprises anticipation and assessment, prevention, business continuity, preparedness, response, and recovery \cite[pp.~219--220]{nrcnationalframework}. In that arrangement, business impact analysis contributes to the first stage, because the impact of an interruption feeds the assessment of continuity risks, and the outputs of impact analysis shape the preventive and preparatory programmes that follow.
+
+The most detailed material for the present purpose is the description of the impact analysis itself \cite[pp.~231--239]{nrcnationalframework}. The framework asks entities to follow a clear and defined methodology and lists nine steps. The entity first identifies its essential services and necessary products and the processes, procedures, and activities that support them. It then defines criteria for the impact of disruption, assesses impact over time, and defines the time frames for resuming activities. The remaining steps are to prioritize services, products, and activities, to identify the resources required and the dependencies and interdependencies involved, and to prepare a BIA report approved by the competent authority. The impact criteria are expected to be assembled into a matrix of the entity's own design, with examples including financial, legal and regulatory, reputational, beneficiary, operational, health and safety, and contractual impact. The framework distinguishes impacts internal to the entity from external impacts that fall on beneficiaries. Its worked example grades each criterion on a five-level scale from very low to catastrophic, illustrating thresholds such as financial loss in Saudi riyals and the share of beneficiaries affected.
+
+The framework defines the maximum tolerable period of disruption as the longest time an entity can tolerate interruption of the service or product, after which the negative effects become unacceptable. It defines the recovery time objective as the acceptable period for returning to normal delivery, resuming activities, and recovering resources after the interruption. The entity is asked to use the data from the analysis, particularly the recovery time objective, to prioritize its services and activities so that restoration can proceed in priority order. An illustrative table maps five levels of impact to recovery time guidance, running from a catastrophic level with recovery within eight hours to a very low level with recovery within two weeks (Table~\ref{tab:lr_rto_levels}) \cite[p.~235]{nrcnationalframework}. The framework presents this as a guiding example, and entities set their own values.
+
+On resources and dependencies, the framework lists categories of supporting resources that include human resources, financial services, transport and logistics, data, information and communication systems, buildings and facilities, and consumables \cite[p.~234]{nrcnationalframework}. It then treats dependency and interdependency as important inputs to impact analysis. Three types are distinguished: primary dependency on services supplied by another critical infrastructure, internal dependency among the entity's own processes and systems, and dependency of end beneficiaries on outputs affected by another infrastructure's failure. Dependencies also fall into four categories, namely physical, digital, geographic, and logical \cite[pp.~238--239]{nrcnationalframework}. This typology resembles the interdependency classes developed in the critical infrastructure literature, which are discussed in Section~\ref{subsec:lr_interdependency}. The framework requires dependencies to be identified but gives no rule for deriving the criticality of a dependency from the services that rely on it.
+
+\subsection{The Digital Government Authority Guideline}
+\label{subsec:lr_dga}
+
+The DGA guideline on risk management and business continuity for digital government devotes a section to the business continuity management system \cite[pp.~98--146]{dga2025bcm}. It identifies five principal benefits: proactive decision support in crises, higher efficiency and effectiveness in limiting the effect of interruptions, a stronger culture of risk awareness, support for strategic objectives, and greater resilience and sustainability of operations. Its methodology covers impact analysis and risk assessment, establishment of the management system, strategies, plans, recovery plans for information technology and communications, incident response, training, exercises, and documentation and improvement \cite[pp.~102--103]{dga2025bcm}.
+
+Within the impact analysis, the guideline asks the entity to determine critical processes, the impact of their interruption over time, and the recovery requirements, including resources such as human resources, equipment, technical systems, and facilities \cite[pp.~115--116]{dga2025bcm}. It states that the time sequence of the assessment depends on the sensitivity of the entity's services: some entities consider that impact begins after thirty minutes and so start the sequence there, while others begin after a day or two. This observation is significant for design, since it implies that the time scale of an assessment cannot be fixed in advance.
+
+For government digital platforms and applications, the Authority developed a classification matrix (Figure~59 of the guideline) that each entity applies to its own platforms for different groups of beneficiaries \cite[pp.~117--119]{dga2025bcm}. The matrix grades four impact factors, namely reputational, legal and regulatory, financial, and beneficiary impact, and associates each level with a target recovery time. Where the factors disagree, the entity takes the highest level. The levels shown in the extract consulted run from very critical, with a four-hour target, through critical (eight hours) and important (twelve hours) to medium (twenty-four hours), and the financial thresholds descend accordingly from one million to fifty thousand Saudi riyals per hour (Table~\ref{tab:lr_rto_levels}). The extract consulted does not reproduce every cell of the matrix, so this review reports only the elements it could read.
+
+The guideline devotes particular attention to the link between business requirements and technology. Recovery plans for information technology and communications are described as focusing on the technical systems and communication systems that support critical procedures. They are to be developed in alignment with the requirements for recovering those procedures, and where technical capabilities fall short of business requirements, the gaps are carried into the continuity strategy together with proposed remedies \cite[p.~121]{dga2025bcm}. Continuity plans, for their part, are expected to set out the internal and external dependencies of procedures and services \cite[p.~121]{dga2025bcm}. The guideline also groups continuity risks by the type of resource supporting critical operations, such as documents, service providers, information systems, personnel, and facilities \cite[p.~120]{dga2025bcm}.
+
+\subsection{Synthesis of the Two Sources}
+\label{subsec:lr_saudi_synthesis}
+
+The two sources are complementary. The National Framework supplies a general methodology for impact analysis that is deliberately entity-defined: criteria, scales, time frames, and thresholds are left to each entity and approved by its authority. The DGA guideline places the same logic in the digital government setting, adds an explicit classification matrix with target recovery times, and stresses the dependence of recovery on technical systems. Taken together they establish four points that bear directly on this project, summarized in Table~\ref{tab:lr_nrc_dga}. First, impact is to be assessed against several criteria and over time. Second, the maximum tolerable period of disruption and the recovery time objective are the main time parameters. Third, services are to be prioritized from the results of the analysis. Fourth, dependencies, including technical ones, are to be identified and the recovery of technology is to follow business requirements.
+
+What the sources do not provide is equally informative. Neither prescribes a computational procedure for moving from a series of time-based impact grades to a maximum tolerable period of disruption and a recovery time objective, nor a rule by which the criticality of a supporting dependency follows from that of the services it supports. The DGA matrix, which fixes levels and targets for platforms, is a classification device and works at a different level from a configurable derivation procedure. These absences are consistent with the sources' role as guidance and not as algorithms, and they define the space in which a methodology such as TDRP can operate.
+
+\begin{table}[htbp]
+\centering
+\caption{Illustrative recovery-time guidance in the two Saudi sources}
+\label{tab:lr_rto_levels}
+\small
+\begin{tabularx}{\textwidth}{@{}l l l Y@{}}
+\toprule
+\textbf{Source} & \textbf{Level} & \textbf{Recovery target} & \textbf{Remarks} \\
+\midrule
+National Framework \cite{nrcnationalframework} & Catastrophic & 0 to 8 hours & Activity is of the utmost importance; restore as quickly as possible \\
+ & High & 8 to 24 hours & Restore within one day \\
+ & Medium & 1 to 2 days & Interruption of up to two days can be tolerated \\
+ & Low & 1 week & Not critical; one week tolerated \\
+ & Very low & 2 weeks & Not important; two weeks tolerated \\
+\addlinespace
+DGA guideline \cite{dga2025bcm} & Very critical & 4 hours & Financial threshold of 1{,}000{,}000 SAR per hour \\
+ & Critical & 8 hours & Financial threshold of 500{,}000 SAR per hour \\
+ & Important & 12 hours & Financial threshold of 100{,}000 SAR per hour \\
+ & Medium & 24 hours & Financial threshold of 50{,}000 SAR per hour \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{sidewaystable}[htbp]
+\centering
+\caption{Comparison of the National Framework and the DGA guideline with respect to the project}
+\label{tab:lr_nrc_dga}
+\small
+\begin{tabularx}{\textheight}{@{}L{2.8cm} Y Y Y@{}}
+\toprule
+\textbf{Aspect} & \textbf{National Framework \cite{nrcnationalframework}} & \textbf{DGA guideline \cite{dga2025bcm}} & \textbf{Implication for TDRP and Masar} \\
+\midrule
+Scope and audience & Providers of essential services and necessary products; owners and operators of critical infrastructure & Government entities and digital government platforms and services & Both are public-sector contexts; the methodology should not depend on one sector's thresholds \\
+\addlinespace
+Impact criteria & Entity-defined matrix; examples include financial, legal and regulatory, reputation, beneficiaries, operational, health and safety, contracts & Four factors: reputational, legal and regulatory, financial, beneficiary impact & Criteria and scales must be configurable \\
+\addlinespace
+Time dimension & Impact assessed over time using time intervals defined and approved by the entity & Start of the time sequence depends on the sensitivity of the entity's services (for example 30 minutes versus a day or two) & Time scale per entity, not fixed in advance \\
+\addlinespace
+Recovery parameters & MTPD and RTO defined; illustrative five-level RTO table & Target recovery times attached to classification levels (4, 8, 12, 24 hours) & Derivation of MTPD and RTO from graded impacts is left to the entity \\
+\addlinespace
+Prioritization & Services and activities prioritized from BIA data, especially RTO & Highest level taken where factors disagree; priority of critical procedures guides recovery plans & Service-level priority follows from derived criticality and recovery time \\
+\addlinespace
+Dependencies & Resources, dependencies, and interdependencies identified; three types and four categories & Internal and external dependencies documented in plans; IT recovery aligned with critical procedures & Dependencies must be recorded and linked to services; no rule is given for their criticality \\
+\addlinespace
+Governance & BIA report approved by the competent authority & Plan-Do-Check-Act management system; approved matrix & Outputs should be traceable and suitable for approval \\
+\bottomrule
+\end{tabularx}
+\end{sidewaystable}
+
+\section{Business Impact Analysis and Recovery Parameters}
+\label{sec:lr_bia}
+
+\subsection{The Role of Impact Analysis}
+\label{subsec:lr_bia_role}
+
+The literature consistently treats business impact analysis as the foundation of the continuity management system, because the strategies and plans that follow depend on the requirements it establishes. The DGA guideline describes the impact analysis phase as the cornerstone of the system, in which processes are analyzed, critical ones identified, and recovery priorities set, and from which continuity plans are then drawn up \cite[pp.~120--121]{dga2025bcm}. The National Framework likewise frames the analysis as the step that yields the essential services, the time frames for resuming them, and the resources and dependencies on which they rely \cite[pp.~231--234]{nrcnationalframework}. Torabi, Rezaei Soufi, and Sahebjamnia describe BIA as a key part of the continuity management system, in which an organization's key products and services and its critical functions are determined together with their continuity-related indices, namely the maximum tolerable period of disruption and the minimum business continuity objective \cite{torabi2014framework}. The empirical studies reviewed in Section~\ref{subsec:lr_bcm_is} point the same way, with Labus and colleagues identifying impact analysis as a driving factor in establishing an adaptive continuity management system \cite{labus2020adaptive}.
+
+The two time parameters used in this project have consistent definitions in the Saudi sources. The maximum tolerable period of disruption marks the point beyond which the consequences of interruption become unacceptable, and the recovery time objective is the target for resuming the service \cite[p.~233]{nrcnationalframework}. The DGA guideline depicts both on a single timeline, with the recovery time objective falling within the maximum tolerable period \cite[pp.~115--116]{dga2025bcm}. The relation between the two is thus one of tolerance and commitment: the first is a judgment about when damage becomes unacceptable, and the second is a recovery target set so that the first is not exceeded.
+
+\subsection{Quantitative and Decision-Oriented Approaches}
+\label{subsec:lr_bia_quant}
+
+A line of research associated with Torabi and colleagues has developed quantitative support for continuity planning. The BIA framework of Torabi and colleagues, applied in a case study, establishes the indices mentioned above for key products and critical functions \cite{torabi2014framework}. Sahebjamnia, Torabi, and Mansouri proposed a framework for integrated business continuity and disaster recovery planning that is presented as a decision support framework for resuming and recovering critical operations after disruption and was validated on a real case \cite{sahebjamnia2015integrated}. Rezaei Soufi, Torabi, and Sahebjamnia addressed the selection of business continuity plans. Their approach starts from a risk assessment that identifies the disruptive incidents for which plans are needed, then selects among candidate plans using models that aim to maximize organizational resilience while minimizing the cost of establishing the plans, and it was demonstrated on a real case \cite{rezaeisoufi2019quantitative}.
+
+The same research group has carried the logic of impact analysis over to physical assets. Aghabegloo and colleagues use BIA to identify the assets that are required to keep key products and services available and then rank them through an asset criticality index. Their first framework is built on a Bayesian network that conditions criticality on economic, social, environmental, and resilience factors \cite{aghabegloo2023bia}. A later framework combines BIA, a physical asset risk assessment matrix, and a mathematical model that estimates asset continuity parameters, using a hybrid fuzzy best-worst and TOPSIS method, and it was applied to a petrochemical company \cite{aghabegloo2024integrating}. Both studies rest on the idea that the criticality of an asset is to be read from the products and services it helps to deliver, which is the same idea that underlies the treatment of dependencies in this project. They differ from it in scope and technique: they concern physical assets in asset-intensive industries and use expert judgment, historical data, and quantitative risk scenarios as inputs, and they rely on multi-criteria and probabilistic models.
+
+Considered together, these contributions share a pattern. They treat the results of impact analysis as inputs to an optimization or ranking stage that selects plans, allocates resources, or orders assets. Based on the abstracts and accessible text consulted, they do not describe a procedure by which an organization can state, and later change, the rules that turn successive time-based impact grades into a maximum tolerable period of disruption and a recovery time objective for each service. That step is performed by the analysts, usually by judgment, and its output is taken as given.
+
+\subsection{Evidence on Practice}
+\label{subsec:lr_bia_practice}
+
+Practice-oriented studies reinforce the importance of the step. Fani and Subriadi found that organizations rearranged the impact-related activities so that disruption impact analysis came first, and that the framework's activities needed adjustment to fit the organization \cite{fani2019multiusable}. Labus and colleagues report that impact analysis was decisive in their implementations \cite{labus2020adaptive}. Neither work claims to offer a formalized and configurable derivation of recovery parameters, and both indicate that organizations adapt the procedure to their circumstances. This is consistent with the Saudi position that criteria, scales, and time frames belong to the entity, and it motivates configurability as a design requirement for a methodology intended for several organizations.
+
+\section{Dependencies and Criticality}
+\label{sec:lr_dependencies}
+
+\subsection{Interdependency in the Critical Infrastructure Literature}
+\label{subsec:lr_interdependency}
+
+The vocabulary of dependency analysis in continuity management owes much to research on critical infrastructure. Rinaldi, Peerenboom, and Kelly presented a conceptual framework for infrastructure interdependencies in which they define the terms infrastructure, dependency, and interdependency and treat infrastructures as complex adaptive systems \cite{rinaldi2001identifying}. Their central claim is that what happens to one infrastructure can affect others directly and indirectly, and across wide areas, so that disruptions propagate. The National Framework shares this vocabulary: it defines dependency as a relationship in which one party relies on services or products provided by another for effective continuity of operations, and interdependency as the mutual form of that relationship \cite[p.~238]{nrcnationalframework}. Its four categories of dependency (physical, digital, geographic, and logical) are of a kind with the classes distinguished in the interdependency literature. The relevant lesson for continuity management is that dependencies are properties of how services are delivered, and they have to be identified before the consequences of failure can be traced.
+
+\subsection{Modelling Resource Dependencies for Impact Analysis}
+\label{subsec:lr_dependency_models}
+
+Two studies are especially pertinent because they model dependencies among resources and trace the effect of failures. Redlich and colleagues present a model-driven workbench for process-centric business impact analysis \cite{redlich2014mdbia}. Their starting observation is that business processes and the resource infrastructure that supports them are usually treated as separate domains: process analysis considers only the resources directly associated with activities, and impact analysts have to consolidate information from different modelling languages by hand. To address this, they introduce a metamodel (called GenericBCM) in which resources, dependencies, threats, failure effects, and recoveries can be described. Dependencies may be conditional, for example a resource becomes unavailable if one resource fails, or if two others fail together, and a failure is delegated to dependent resources through these relationships. The model is transformed into a performance analysis model and simulated together with a business process model, so that the effect of a disruption on process performance can be predicted. The authors evaluate the workbench qualitatively on an example with five resources (technical staff, desktop computers, power, an uninterruptible power supply, and an office) and report its use in industrial cases within a European research project in dam safety and eHealth. They note that the tool is a design-time instrument, and they propose real-time monitoring and decision support as future work.
+
+Zambon and colleagues address the availability of IT infrastructures. They present the qualitative time dependency model, intended to be used with standard risk assessment methods, which assesses availability risks through the propagation of availability incidents across an IT architecture \cite{zambon2011qualtd}. The problem they identify is that an incident affecting a marginal component can propagate to more essential components that depend on it. Their model builds on an earlier quantitative model but replaces the quantitative data, which are costly to obtain, with qualitative scales. It was validated on the authentication and authorization system of a large multinational company and evaluated against the stakeholders' goals.
+
+Both works propagate the effect of failure upward, from resources through dependencies to processes, and both are valuable for understanding what a failure would do. They do not address the converse question that arises when the services are already known to be critical and the organization wishes to know how critical each supporting component should therefore be considered. Redlich and colleagues in fact observe that no tool existed to model failure dependencies among resources and that the field lacked support for impact analysts \cite{redlich2014mdbia}. The propagation of criticality downward, from a service to the supporting dependencies it relies on, and the treatment of dependencies shared by several services are not discussed in the studies consulted.
+
+\subsection{Criticality Assessment}
+\label{subsec:lr_criticality}
+
+The asset criticality work discussed above approaches the question from the opposite side. It starts from the products or services that must continue and identifies the assets they need \cite{aghabegloo2023bia,aghabegloo2024integrating}. Its criticality index combines business impact with other factors, and its inputs come from expert judgment and from risk scenarios. In this respect it is the nearest academic counterpart to the inheritance idea used in this project, although it addresses physical assets and uses quantitative and probabilistic models rather than a documented rule applied to dependencies that are linked to services. The Saudi sources, finally, require dependencies to be identified and recovery plans to follow business requirements \cite{nrcnationalframework,dga2025bcm}, but they leave open how the criticality of a dependency is to be determined.
+
+\section{Information Systems for Continuity Decisions}
+\label{sec:lr_systems}
+
+\subsection{Academic Decision Support Proposals}
+\label{subsec:lr_dss}
+
+Decision support has been proposed for continuity management at several levels. Schätter and colleagues present a decision support methodology for disaster-caused business continuity management, part of the Reactive Disaster and supply chain Risk decision Support System, which gives decision makers a robust recommendation on resource allocation under differing levels of information availability \cite{schatter2019decision}. A simulation case study applies it to a food retailer affected by a pandemic. The methodology addresses the period after a severe disruption, in which uncertainty, complexity, and time pressure are high, and it concentrates on resource allocation. The workbench of Redlich and colleagues is a design-time instrument for predicting process-level consequences \cite{redlich2014mdbia}, and the framework of Sahebjamnia and colleagues supports the planning of recovery \cite{sahebjamnia2015integrated}. Each addresses a different decision, and none, in the material reviewed, is concerned with transparent and reconfigurable derivation of service criticality and recovery requirements from BIA data, or with presenting service priorities and their supporting systems in one operational view.
+
+\subsection{Commercial Business Continuity Platforms}
+\label{subsec:lr_commercial}
+
+Commercial platforms provide the clearest picture of how continuity information is managed in practice. Three were examined through their public documentation. The descriptions below are limited to what the vendors state publicly, and the internal algorithms of these products are not open to inspection.
+
+The business continuity management application of ServiceNow supports a business impact analysis workflow in which questionnaires assessing impact categories and dependencies drive the calculation of recovery time objectives, recovery point objectives, and recovery tiers, and the analysis is reviewed, approved, and archived \cite{servicenowbcm}. Dependencies of services and applications are assessed, and the application integrates with the platform's configuration management database, so that dependencies can be refreshed from that source. Third-party descriptions of the product add that it calculates priority scores for services on factors such as revenue, regulatory, and customer impact, although this is not a statement of the vendor itself. The distinguishing strength is the integration with an operational inventory of business services and applications.
+
+Fusion Risk Management describes a governed service-and-dependency model that connects applications and infrastructure to the business services they support, so that, when a failure occurs, technology leaders can trace the effect on services and prioritize recovery using current dependency data \cite{fusionrm}. The vendor's material also covers impact tolerances, scenario testing, and mapping of critical services to their dependencies. This is the commercial offering nearest to the idea of presenting affected services and the systems on which they depend, although the public material emphasizes operational resilience in regulated sectors and does not describe the rules by which impact grades are converted to recovery parameters.
+
+The GlobalSUITE platform documents a pre-impact-analysis module in which users grade, from very low to very high, the effect of several impact types on a service across a configured time scale \cite{globalsuite}. The platform can display the maximum impact per time step and calculates the maximum tolerable period of disruption either manually or automatically. The automatic option offers three criteria: the first time at which an impact reaches a level chosen by the user, the first time at which the average of the impacts reaches that level, and the first time at which a specific impact type reaches it. Individual assessments made by different departments for the same service can be consolidated by average, weighted average, maximum, or minimum, and users can record a minimum operating level and a resumption deadline. This is the closest published parallel to the time-dependent derivation at the center of TDRP. The documentation describes a fixed set of selection and consolidation criteria and does not describe, on the page consulted, the linking of technical systems to services or the inheritance of criticality.
+
+Table~\ref{tab:lr_commercial} compares the three platforms with respect to the capabilities that matter to the present project. Two observations follow. First, the commercial products have independently arrived at the same two building blocks as the academic and regulatory literature: impact assessed over time, and dependencies linked to services. Second, they differ in how far they publish the logic that connects them. Where the logic is visible, as in the automatic calculation offered by GlobalSUITE, it is a short list of fixed criteria. Where a calculation is mentioned but its rules are not published, as in the ServiceNow documentation, the logic cannot be examined. For an academic project that must be able to explain and evaluate its decision logic, this is a limitation of the commercial tools as models, and it supports the decision to define the rules explicitly.
+
+\begin{sidewaystable}[htbp]
+\centering
+\caption{Commercial business continuity platforms examined, based on public vendor documentation}
+\label{tab:lr_commercial}
+\small
+\begin{tabularx}{\textheight}{@{}L{2.6cm} Y Y Y Y@{}}
+\toprule
+\textbf{Platform} & \textbf{Impact assessment and recovery parameters} & \textbf{Dependency handling} & \textbf{Prioritization and presentation} & \textbf{Observations for this project} \\
+\midrule
+ServiceNow Business Continuity Management \cite{servicenowbcm} & Questionnaire-driven BIA workflow with configurable impact categories; calculates RTO, RPO, and recovery tiers; review and approval; PDF and Word reports & Dependency assessments; integration with the configuration management database, with scheduled refresh of dependencies & Recovery tiers; dashboards for recovery progress; priority scores described in third-party material & Strong integration with an operational inventory; calculation rules are not described in the documentation examined \\
+\addlinespace
+Fusion Risk Management \cite{fusionrm} & Impact tolerances and scenario testing for critical services & Governed service-and-dependency model linking applications and infrastructure to business services & Traces the effect of a failure on services and supports recovery prioritization & Closest to the dependency view envisaged for Masar; derivation of recovery parameters from graded impacts is not described in the pages examined \\
+\addlinespace
+GlobalSUITE \cite{globalsuite} & Impact table per service over a configured time scale (very low to very high); manual or automatic MTPD with three criteria; consolidation across departments (average, weighted average, maximum, minimum) & Service catalogue and business-relationship features exist; linking of supporting dependencies to a service's criticality is not described in the page consulted & Maximum-impact graph; minimum operating level; resumption deadline & Closest published parallel to time-dependent derivation of MTPD; criteria are a fixed list \\
+\bottomrule
+\end{tabularx}
+\end{sidewaystable}
+
+\section{Comparative Analysis and Research Gap}
+\label{sec:lr_gap}
+
+The preceding sections reviewed regulatory guidance, academic studies, and commercial products. Table~\ref{tab:lr_studies} summarizes the academic studies and Table~\ref{tab:lr_gap} compares the three categories of source against the capabilities the project requires. The comparison draws only on what each source reports, and an entry of ``not reported'' means that the material consulted does not describe the capability, not that the capability is absent.
+
+\begin{sidewaystable}[htbp]
+\centering
+\caption{Summary of the academic studies reviewed}
+\label{tab:lr_studies}
+\footnotesize
+\begin{tabularx}{\textheight}{@{}L{2.9cm} L{3.4cm} Y Y@{}}
+\toprule
+\textbf{Study} & \textbf{Focus} & \textbf{Approach and evidence} & \textbf{Relevance to TDRP and Masar} \\
+\midrule
+Gibb and Buchanan \cite{gibb2006framework} & BCM programme within information strategy & Framework for design, implementation, and monitoring & Programme-level frame; no derivation of service recovery requirements \\
+\addlinespace
+J\"arvel\"ainen \cite{jarvelainen2013incidents} & Continuity management in information systems & Framework validated by survey of IT managers and CIOs in Finland & Continuity is managerial and social, which supports decision support rather than automation \\
+\addlinespace
+Niemimaa \cite{niemimaa2015review} & IS continuity & Narrative review of 83 papers (2000--2012); four themes; integrative framework & Positions models for improving continuity as a research stream \\
+\addlinespace
+Fani and Subriadi \cite{fani2019multiusable} & BCP framework applicability & Tested in four organizations; BIA activities include IT service and process prioritization & Impact analysis should precede prioritization; adaptation to organization needed \\
+\addlinespace
+Labus et al. \cite{labus2020adaptive} & Adaptive e-business continuity management & Framework implemented in three financial organizations (abstract only) & BIA identified as a driving factor \\
+\addlinespace
+Torabi et al. \cite{torabi2014framework} & Business impact analysis & BIA framework with MTPD and MBCO; case study (abstract only) & Establishes BIA indices for services and functions \\
+\addlinespace
+Sahebjamnia et al. \cite{sahebjamnia2015integrated} & Integrated BCP and disaster recovery planning & Decision support framework validated in a real case (abstract only) & Planning of recovery rather than derivation of priorities \\
+\addlinespace
+Rezaei Soufi et al. \cite{rezaeisoufi2019quantitative} & Selection of continuity plans & Risk assessment plus optimization models; real case (abstract only) & Downstream of BIA; assumes continuity requirements are known \\
+\addlinespace
+Aghabegloo et al. \cite{aghabegloo2023bia,aghabegloo2024integrating} & Physical asset criticality from BIA & Bayesian network; fuzzy BWM-TOPSIS; petrochemical case & Criticality read from the services an asset supports; physical assets, quantitative models \\
+\addlinespace
+Rinaldi et al. \cite{rinaldi2001identifying} & Infrastructure interdependencies & Conceptual framework & Vocabulary and logic of dependencies \\
+\addlinespace
+Redlich et al. \cite{redlich2014mdbia} & Process-centric BIA with resource dependencies & Model-driven workbench; GenericBCM metamodel; simulation; qualitative evaluation & Models failure propagation upward; design-time tool \\
+\addlinespace
+Zambon et al. \cite{zambon2011qualtd} & Availability risk in IT architectures & Qualitative time dependency model; real-world validation & Incident propagation across IT dependencies \\
+\addlinespace
+Sch\"atter et al. \cite{schatter2019decision} & Decision support for disaster-caused BCM & Decision support methodology; simulation case study & Resource allocation after disruption \\
+\addlinespace
+Cedergren and Hassel \cite{cedergren2025public} & Public sector BCM & Scoping review & Context for public-sector entities \\
+\bottomrule
+\end{tabularx}
+\end{sidewaystable}
+
+\begin{sidewaystable}[htbp]
+\centering
+\caption{Capability comparison across the three categories of source}
+\label{tab:lr_gap}
+\small
+\begin{tabularx}{\textheight}{@{}L{3.8cm} Y Y Y Y@{}}
+\toprule
+\textbf{Capability} & \textbf{Saudi guidance} & \textbf{Academic studies} & \textbf{Commercial platforms} & \textbf{TDRP and Masar (proposed)} \\
+\midrule
+Impact graded over time against several criteria & Required; scales entity-defined & Treated as input to BIA studies & Documented (time-scale impact tables) & Core input \\
+\addlinespace
+Procedure that derives MTPD and RTO from graded impacts & Not prescribed & Not reported in the material reviewed & Fixed criteria in one product; others not described & Configurable rules, documented and traceable \\
+\addlinespace
+Entity-configurable rules and thresholds & Entity defines criteria and approves & Not reported & Partly (configurable scales and categories) & Central design requirement \\
+\addlinespace
+Service-level priority from criticality and recovery time & Required in principle & Optimization or ranking models downstream of BIA & Tiers and scores & Explicit rules \\
+\addlinespace
+Dependencies linked to services & Required; types described & Failure-propagation models; asset criticality & Documented in two products & Recorded and linked \\
+\addlinespace
+Criticality inherited by dependencies, including shared ones & Not prescribed & Asset criticality from supported products (physical assets) & Not described & Documented rule; default is the highest criticality \\
+\addlinespace
+Traceability of a result to assessments and rules & Approval of report required & Not a central concern & Approval workflows; rule logic not visible & Result traceable to inputs and rules \\
+\addlinespace
+Operational view of affected services and their dependencies & Not prescribed & Design-time or planning tools & Dashboards (one product traces failure impact to services) & Operational dashboard \\
+\bottomrule
+\end{tabularx}
+\end{sidewaystable}
+
+Four gaps emerge from this comparison. The first concerns the derivation of recovery parameters. The Saudi guidance asks entities to determine the maximum tolerable period of disruption and the recovery time objective from time-based impact assessments but does not provide a procedure for doing so \cite{nrcnationalframework,dga2025bcm}. The academic work reviewed concentrates on what follows the analysis, such as plan selection and asset ranking \cite{rezaeisoufi2019quantitative,sahebjamnia2015integrated,aghabegloo2024integrating}, and one commercial product documents a short list of fixed criteria \cite{globalsuite}. A configurable, documented rule set for this step was not found in the sources consulted.
+
+The second gap concerns configurability together with transparency. The Saudi sources leave criteria, scales, and time frames to each entity, and the empirical studies show that organizations adapt procedures to their circumstances \cite{fani2019multiusable}. Combining configurable rules with results that can be traced back to the inputs and rules that produced them is, in the material reviewed, not described.
+
+The third gap concerns the relationship between services and the supporting dependencies on which they rely. Failure-propagation models trace effects from resources to processes \cite{redlich2014mdbia,zambon2011qualtd}, and asset criticality work reads criticality from supported products \cite{aghabegloo2023bia}. The Saudi sources require dependencies to be identified and recovery to follow business requirements \cite{nrcnationalframework,dga2025bcm}. What was not found is a documented rule by which a supporting dependency takes on the criticality of the services it supports, with a defined treatment of dependencies shared by several services.
+
+The fourth gap concerns presentation for use during a disruption. Commercial platforms offer dashboards and, in one case, impact tracing across dependencies \cite{fusionrm,servicenowbcm}, but their decision logic is not open to examination, and the academic tools reviewed are mostly design-time or planning instruments \cite{redlich2014mdbia,schatter2019decision}. A system that shows affected services by criticality alongside the dependencies they need, derived from rules that the organization has configured and can inspect, would address this gap.
+
+TDRP and Masar are proposed against this background. They do not seek to replace the standards, the Saudi guidance, or existing platforms. Their intended contribution is narrower: a transparent and configurable procedure for the step that the guidance leaves open, a documented rule for relating dependencies to the services they support, and an information system that applies the procedure and presents its results in one place. The design science tradition described in Chapter~\ref{ch:introduction} provides the methodological footing for building and evaluating an artifact of this kind \cite{hevner2004design,peffers2007dsrm}.
+
+\section{Chapter Summary}
+\label{sec:lr_summary}
+
+This chapter has reviewed the literature from the general to the specific. At the general level, business continuity management is established practice with international standards, and information systems research has examined its frameworks, its social dimension, and its application in different organizations. At the national level, the Saudi National Framework and the DGA guideline define impact analysis, the maximum tolerable period of disruption and the recovery time objective, prioritization, and dependencies, while deliberately leaving criteria, scales, and thresholds to each entity. At the specific level, the academic literature offers quantitative planning models, dependency models for failure propagation, asset criticality analysis, and decision support for resource allocation, and commercial platforms offer integrated workflows and dependency views. Across these bodies of work, a documented and configurable procedure for deriving recovery parameters from time-dependent impact assessments, a rule linking the criticality of dependencies to the services they support, and an operational view that combines the two were not found. These findings frame the methodology and the system proposed in this project.
