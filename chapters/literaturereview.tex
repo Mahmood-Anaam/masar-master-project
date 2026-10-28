@@ -1,2 +1,328 @@
 \chapter{Literature Review}
 \label{ch:literaturereview}
+
+This chapter examines the literature relevant to business continuity and critical service recovery prioritization, with particular attention to the relationship between time-dependent impact assessments, recovery requirements, and explicit decision rules. The review brings together continuity standards and national guidance, business impact analysis research, prioritization methods, relevant dependency models, and decision support systems. It moves from the general field toward the specific problem defined in Chapter~\ref{ch:introduction}, and concludes by assessing the evidence for the proposed Time-Dependent Recovery Prioritization (TDRP) methodology and its implementation in Masar.
+
+The chapter is organized from the general to the specific. Section~\ref{sec:lr_bcm} presents the concepts, international standards, and Saudi national guidance on which business continuity management rests. Section~\ref{sec:lr_bia} narrows the focus to business impact analysis, time-dependent impact assessment, and the derivation of recovery parameters. Section~\ref{sec:lr_prioritization} reviews approaches to service criticality and recovery prioritization, and Section~\ref{sec:lr_dependencies} examines supporting dependencies and the assignment of their criticality. Section~\ref{sec:lr_dss} examines decision support concepts and comparable continuity management systems. Section~\ref{sec:lr_methods} reviews the research and evaluation methods applied in related studies. Section~\ref{sec:lr_gap} synthesizes the reviewed evidence, establishes the supported research gap, and positions the project against it, and Section~\ref{sec:lr_summary} summarizes the chapter.
+
+% =====================================================================
+% APPROVED ROADMAP (Task 1): second supplied roadmap with the agreed
+% refinements. Approved by the project author on 29 October 2026.
+% The opening paragraphs are draft chapter prose. The comment blocks
+% describe intended coverage and rationale, not completed review findings.
+% Replace the planning blocks with evidence-based academic synthesis,
+% section by section, in Task 3 after source collection in Task 2.
+% Candidate sources and product capabilities must be verified before use;
+% no source collection or substantive section drafting is undertaken here.
+%
+% Final chapter target: approximately 27 pages (double-spaced), within
+% the required 20--30 pages; tables and a possible figure are included.
+% Budget: opening 0.5 + scope 0.5 + BCM 4 + BIA 5 + prioritization 3.5
+% + dependencies 3.5 + DSS 4 + methods 2.5 + synthesis 3 + summary 0.5.
+% Confirm actual pagination after substantive writing; reduce peripheral
+% coverage before cutting the central BIA and prioritization analysis.
+%
+% OVERLAP CONTROL: Describe each study's main contribution in its primary
+% section. Discuss a distinct contribution elsewhere where necessary,
+% using Section~\ref{} links without repeating its full description.
+% Revisit studies in the final comparison to synthesize their findings.
+% Do not impose a one-study/one-section restriction on relevant evidence.
+%
+% EVIDENCE CONTROLS: Assess each approach on its documented assumptions,
+% methods, outputs, and evaluation. Do not predetermine weaknesses of
+% multi-criteria methods or assume rule-based methods are intrinsically
+% more transparent or correct. Distinguish mandatory requirements,
+% recommendations, research findings, vendor claims, and project choices.
+% Use \cite{key} for verified claims and retain IEEEtran in main.tex;
+% check bibliographic metadata and add DOI fields where available.
+%
+% TABLE CONTROL: Store every table definition in tables/*.tex and insert
+% it with \input{tables/filename}. No empty table inputs are added now.
+% Choose sidewaystable only if the complete table fits legibly on one
+% rotated page; otherwise split the comparison or use a suitable
+% multipage layout. Check for clipped content in the compiled document.
+% =====================================================================
+
+\paragraph{Review Scope and Evidence Selection}
+% PURPOSE: Briefly explain how the evidence base is formed before the
+% thematic review, without adding a ninth numbered section.
+% LENGTH: about 0.5 page, separate from the opening paragraphs.
+% CONTENT: Focus on service-level temporal impacts, criticality, MTPD/RTO,
+% recovery priorities, supporting-dependency criticality, and relevant DSS.
+% In Task 2, document actual databases and search sources, search dates
+% and terms, inclusion/exclusion criteria, language and full-text access
+% limits, and the balance between foundational and recent work. Describe
+% the search as systematic only if the executed procedure warrants it.
+% Extract context, inputs, temporal model, criteria, decision logic,
+% configurability, dependencies, explanation, outputs, evaluation, and
+% limitations into a common source-to-section evidence map. Separate
+% scholarly evidence, normative guidance, and documented product claims.
+% WHY: Makes selection and comparison transparent and bounds gap claims.
+
+The review will focus on the evidence linking time-dependent service impacts to recovery requirements, priorities, and the criticality of supporting dependencies. Its scope statement will report the search and selection procedure actually completed in the source collection stage, together with the limitations of the resulting evidence base.
+
+\section{Business Continuity Management}
+\label{sec:lr_bcm}
+% PURPOSE: General background of the field.
+% WHY: Establishes the vocabulary and the normative landscape before the
+%   analysis narrows. Terminology (business continuity, BCM and BCMS,
+%   resilience, and the relation to risk management and disaster recovery)
+%   is settled in short introductory paragraphs so that later sections use
+%   one vocabulary. The Introduction used the terms; it is not repeated.
+% LENGTH: about 4 pages.
+
+\subsection{Standards and Frameworks}
+\label{sec:lr_standards}
+% CONTENT: ISO 22301 and ISO 22313, ISO/TS 22317 on BIA, NIST SP 800-34,
+%   and the BCI Good Practice Guidelines: BCM lifecycle, treatment of BIA
+%   and recovery objectives, and how each addresses the conversion of
+%   impacts into recovery targets. Verify current editions and applicability
+%   in Task 2; distinguish requirements, recommendations, and examples.
+%   Treat the listed documents as candidates, not an obligatory catalogue.
+% TABLE: tables/lr_standards_comparison.tex.
+
+This subsection will compare relevant continuity and BIA guidance, establishing the conceptual and normative basis for the review. It will distinguish prescribed requirements from recommendations, examples, and matters left to organizational judgement.
+
+\subsection{National Guidance in Saudi Arabia}
+\label{sec:lr_saudi}
+% CONTENT: In-depth analysis of the National Framework for Risk, Emergency
+%   and Business Continuity Management and the DGA guideline (both in
+%   docs/sources): impact classification, time intervals, recovery
+%   requirements, and the scope left for organizational configuration.
+%   Verify claims against the actual supplied documents and editions.
+% WHY: Applied setting of the project; the Introduction cites these
+%   documents for the problem, this subsection analyzes their content.
+
+This subsection will examine the national documents relevant to the project, with emphasis on impact classification, assessment periods, and recovery requirements. The analysis will clarify their implications for organizational configuration without presuming that they mandate a particular computational procedure.
+
+\section{Business Impact Analysis}
+\label{sec:lr_bia}
+% PURPOSE: Review the analysis that produces the inputs of TDRP.
+% WHY: MTPD and RTO are the outputs the project derives; the section shows
+%   how they are defined and how research obtains them.
+% LENGTH: about 5 pages.
+
+\subsection{BIA Process and Impact Categories}
+\label{sec:lr_bia_process}
+% CONTENT: Aims of BIA, activity- versus service-oriented analysis, impact
+%   categories (financial, operational, legal and regulatory,
+%   reputational), data collection practice, usual outputs.
+% SOURCES: ISO/TS 22317, BCI guidance, torabi2014framework.
+
+This subsection will review how studies define the unit of assessment, collect interruption-impact data, and establish impact criteria. Its purpose is to identify the basis and limitations of the service-level assessments used in subsequent decision methods.
+
+\subsection{Time-Dependent Impact Assessment}
+\label{sec:lr_time_impact}
+% CONTENT: Review impact-over-time functions and interval-based assessment
+% before examining the recovery parameters derived from those assessments.
+% Compare assessment periods, impact scales, unacceptable-impact thresholds,
+% and the treatment of multiple impact dimensions, missing periods,
+% boundary values, and no threshold crossing within the assessed horizon.
+% Examine assumptions about impact trajectories; do not assume that every
+% dimension grows smoothly, continuously, or at the same rate.
+% WHY: Time dependence is central to TDRP and warrants a distinct subsection.
+
+This subsection will examine how studies represent disruption impacts over time and interpret unacceptable-impact thresholds. It will compare temporal granularity and the treatment of incomplete or boundary cases, providing the temporal foundation for the recovery-parameter discussion that follows.
+
+\subsection{Recovery Parameters}
+\label{sec:lr_parameters}
+% CONTENT: Focus on MTPD and RTO, their definitions, derivation, and the
+% relationship supported by the applicable sources. Distinguish tolerable
+% disruption, recovery targets, and demonstrated recovery capability.
+% Explain MTD terminology, RPO, MBCO, or work recovery time only where
+% needed to distinguish concepts; they are not additional project outputs.
+% FIGURE (optional): An original, explicitly illustrative temporal-impact
+% diagram marking MTPD/RTO under stated assumptions. Do not imply a
+% universal trajectory or derive exact threshold times from discrete
+% observations without an explicit interpretation rule. Decide whether
+% a stepwise or schematic presentation best matches the reviewed model.
+% Keep the source in figures/ and add TikZ to packages.tex in Task 3 only
+% if it is actually needed for the approved figure.
+
+This subsection will examine the definitions and derivation of MTPD and RTO, distinguishing tolerability limits from recovery targets and demonstrated capability. Related parameters will be introduced only where they clarify those distinctions.
+
+\subsection{Analytical Approaches to BIA}
+\label{sec:lr_bia_approaches}
+% CONTENT: Quantitative and semi-quantitative frameworks, fuzzy and
+%   multi-criteria techniques used to estimate impact, and BIA embedded in
+%   integrated continuity and recovery planning.
+% SOURCES: torabi2014framework, sahebjamnia2015integrated, and further
+%   studies from Task 2.
+% TABLE: tables/lr_bia_studies.tex (sidewaystable): objective, input data,
+%   technique, output, treatment of time.
+
+This subsection will compare analytical methods used to estimate impacts and establish recovery requirements. It will concentrate on their assumptions, inputs, temporal treatment, outputs, and validation; their use in service ranking will be considered separately in Section~\ref{sec:lr_prioritization}.
+
+\section{Service Criticality and Recovery Prioritization}
+\label{sec:lr_prioritization}
+% PURPOSE: Review how the literature moves from assessed impact to a
+%   criticality classification and a relative recovery ranking.
+% WHY: These are related but distinct outputs in the project's objectives.
+% BOUNDARY: Section~\ref{sec:lr_bia} covers how impact and time parameters
+%   are obtained; this section covers how they are turned into a ranking.
+% LENGTH: about 3.5 pages.
+
+\subsection{Multi-Criteria Approaches}
+\label{sec:lr_mcdm}
+% CONTENT: AHP, TOPSIS, fuzzy variants, weighted scoring for process or
+%   service criticality, where relevant studies justify their inclusion.
+%   Assess assumptions, weight elicitation, sensitivity, traceability, and
+%   validation study by study. Report strengths and limitations supported
+%   by evidence, without assigning the family a predetermined weakness.
+
+This subsection will assess relevant scoring and multi-criteria approaches to service criticality and recovery priority. Their strengths and limitations will be established from the selected studies rather than assumed from the methodological family to which they belong.
+
+\subsection{Rule-Based Approaches}
+\label{sec:lr_rules}
+% CONTENT: Impact matrices, threshold rules, tiered recovery classes in
+%   guidance and practice. Examine demonstrated reproducibility,
+%   explainability, configurability, tie handling, and incomplete inputs.
+%   Assess whether these properties are supported by implementation and
+%   evaluation; explicit rules alone do not establish correctness.
+
+This subsection will examine explicit classification and prioritization rules, including thresholds and recovery classes. It will assess the evidence for configurability, consistent execution, and traceable outputs, and distinguish these properties from demonstrated correctness.
+
+\subsection{Recovery Sequencing}
+\label{sec:lr_sequencing}
+% CONTENT: Work on recovery scheduling and resource allocation after a
+%   disruption, included to mark the boundary of the project: TDRP ranks
+%   services and does not generate an executable recovery schedule.
+
+This subsection will briefly review relevant scheduling and resource-allocation studies to clarify the boundary between relative service priority and operational recovery planning. It will not extend the proposed contribution to the generation of executable recovery schedules.
+
+\section{Dependency Modeling}
+\label{sec:lr_dependencies}
+% PURPOSE: Review how supporting resources and shared dependencies are
+%   represented and valued.
+% WHY: The project links services to dependencies and assigns them
+%   criticality.
+% LENGTH: about 3.5 pages, with emphasis on service relationships and
+%   criticality assignment. Keep wider infrastructure theory brief.
+
+\subsection{Service Dependencies}
+\label{sec:lr_service_dependency}
+% CONTENT: Service mapping and configuration-management practice,
+%   dependency identification in BIA guidance, and shared supporting
+%   resources. Relate each representation to the service-level scope.
+%   Avoid implying that a dependency association establishes recovery
+%   precedence, resource capacity, or a feasible operational schedule.
+
+This subsection will review representations of services and the resources that support them, including shared dependencies. It will identify the relationships needed for the project while distinguishing association from capacity analysis or operational precedence.
+
+\subsection{Interdependency Models}
+\label{sec:lr_interdependency}
+% CONTENT: Briefly examine relevant interdependency classes, graph models,
+%   or input-output inoperability models only where they clarify the
+%   boundary of the proposed service-to-dependency association. Rinaldi
+%   et al. and Haimes and Jiang are candidate leads, subject to verification.
+%   Distinguish failure propagation from inherited criticality; TDRP does
+%   not model infrastructure-wide cascading failure or perform simulation.
+%   Do not expand this subsection into a separate infrastructure survey.
+
+This subsection will consider wider interdependency models only where they clarify the scope and limitations of the proposed association model. The discussion will distinguish failure propagation from the assignment of supporting-resource criticality.
+
+\subsection{Criticality of Dependencies}
+\label{sec:lr_criticality}
+% CONTENT: Compare documented criticality-assignment approaches for
+%   supporting resources, especially shared dependencies. Use inherited
+%   criticality consistently; it is not an inherited recovery priority.
+%   Examine the assumptions and limitations of aggregation rules actually
+%   found in the sources. The highest-criticality inheritance rule remains
+%   the project's proposed default to evaluate, not a universal requirement.
+
+This subsection will compare documented approaches to assigning criticality to shared supporting resources. It will position highest-criticality inheritance as a proposed rule to evaluate and keep dependency criticality distinct from service recovery priority.
+
+\section{Decision Support Systems for Business Continuity}
+\label{sec:lr_dss}
+% PURPOSE: Move from methods to systems.
+% WHY: Masar is a DSS and must be placed within DSS research and within
+%   the market of continuity software.
+% LENGTH: about 4 pages.
+
+\subsection{Foundations}
+\label{sec:lr_dss_foundations}
+% CONTENT: DSS definitions and types (Power; Arnott and Pervan),
+%   knowledge-driven and rule-based designs, business rules and rule
+%   engines, and the role of explanation and transparency. Focus on
+%   separating assessment data, organizational configuration, and rules,
+%   and tracing displayed outputs to their inputs and applied settings.
+%   Keep theoretical coverage tied to Masar rather than a general DSS survey.
+
+This subsection will establish the decision-support concepts relevant to Masar, focusing on explicit rules, organizational configuration, and explanations. It will examine how outputs can remain connected to their assessment data and calculation settings.
+
+\subsection{Decision Support in Continuity and Disaster Management}
+\label{sec:lr_dss_domain}
+% CONTENT: Published DSS and prototypes supporting BIA, continuity planning,
+%   recovery requirements, prioritization, or dependency interpretation.
+%   Include emergency/disaster systems only where they provide a directly
+%   relevant comparison. Compare supported decisions, inputs, explicit
+%   logic, outputs, explanation, and evaluation. Preserve Masar's stated
+%   dashboard role; do not extend it to incident simulation, autonomous
+%   action recommendations, or execution of recovery decisions.
+
+This subsection will examine published systems and prototypes that support decisions comparable to those addressed by Masar. Broader disaster-management systems will be included only when they offer a directly relevant methodological or evaluation comparison.
+
+\subsection{Continuity Management Software}
+\label{sec:lr_tools}
+% CONTENT: Select a small, justified set of comparable BCM platforms with
+%   substantive documentation of BIA, recovery requirements, service
+%   prioritization, dependency mapping, or traceable dashboard outputs.
+%   Distinguish research prototypes from commercial/open systems. Compare
+%   temporal assessment, MTPD/RTO, rules, configuration, dependencies,
+%   explanation, and validation using documented evidence. Record product
+%   versions/access dates and identify grey literature and vendor claims.
+%   An undocumented capability is not established, not necessarily absent;
+%   do not infer Masar's superiority from a feature checklist.
+% TABLE: tables/lr_tools_comparison.tex (sidewaystable).
+
+This subsection will compare a justified selection of documented continuity tools against the project's decision-support requirements. It will separate documented capabilities from vendor claims and distinguish unavailable evidence from evidence that a capability is absent.
+
+\section{Research Methods and Evaluation}
+\label{sec:lr_methods}
+% PURPOSE: Cover the ``similar research methods'' element of the chapter.
+% CONTENT: How related studies build and validate their artifacts (design
+%   science applications, case studies, illustrative examples, test-case
+%   and scenario-based verification, expert evaluation) and the criteria
+%   used to judge correctness and usefulness. Hevner et al. and Peffers
+%   et al. are cited in the Introduction, so the emphasis is on
+%   evaluation practice (for example Venable et al.). Describes related
+%   studies only; the project's own method belongs to the methodology
+%   chapter. Compare evidence for correctness, reproducibility,
+%   configuration sensitivity, boundary/missing-data handling, shared
+%   dependency rules, traceability, and usefulness where studies address
+%   them. Distinguish prototype/scenario validation from demonstrated
+%   effectiveness during real disruptions; record evaluation limitations.
+% LENGTH: about 2.5 pages.
+
+This section will compare how related studies develop and evaluate their methods and systems, with particular attention to correctness, consistency, traceability, and usefulness. It will identify methodological lessons and evidence limitations while reserving the project's own research protocol for the methodology chapter.
+
+\section{Synthesis and Research Gap}
+\label{sec:lr_gap}
+% PURPOSE: Consolidate the review and state the gap.
+% CONTENT: Comparison of the closest approaches along fixed dimensions
+%   (service-level focus, time dependence, configurability, explicit
+%   rules, traceability, dependency treatment, implementation status),
+%   then the gap and the positioning of TDRP and Masar. The gap is
+%   stated as a gap in the reviewed sources, not as a claim about all
+%   existing work, and is linked to the objectives in
+%   Section~\ref{sec:objectives_solution}. No previously unreviewed studies
+%   are introduced, but reviewed studies are revisited comparatively.
+%   Distinguish genuine methodological gaps from reporting limitations
+%   and context-specific choices, and include contrary findings. Explain
+%   how the supported gap relates to all five objectives: service
+%   criticality/MTPD/RTO, relative priorities, dependency criticality, the
+%   Masar DSS/dashboard, and evaluation. Separate adopted concepts,
+%   adapted techniques, and proposed rules; detailed algorithms and
+%   architecture belong in later chapters. Do not claim universal novelty
+%   or improved incident outcomes from prototype-level evidence.
+% TABLE: tables/lr_comparison_matrix.tex.
+% LENGTH: about 3 pages.
+
+This section will integrate the reviewed evidence through a focused comparison of the closest approaches, then establish the supported gap and its connection to the five project objectives. It will distinguish adopted concepts, adapted techniques, and proposed rules without assuming universal novelty or incident-level effectiveness.
+
+\section{Chapter Summary}
+\label{sec:lr_summary}
+% CONTENT: Short synthesis of the main findings and a bridge to the
+%   methodology chapter. About half a page.
+
+The chapter will conclude with the main findings supported by the completed review and their implications for TDRP and Masar. The summary will connect the evidence to the next chapter without introducing new claims or repeating the full project motivation.
