@@ -1,6 +1,54 @@
-% \includepdf[pages=-]{titlepage.pdf} % include Title page and basmlah page as PDF file.
+\definecolor{titleblue}{RGB}{20,60,110}
 
-% \includepdf[pages=-]{thesisapproval.pdf} % include thesis approval as PDF file (this page should added once the final thesis version is approved).
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+
+{\large\bfseries Kingdom of Saudi Arabia}\\[2pt]
+{\large Ministry of Education}\\[2pt]
+{\large\bfseries King Saud University}\\[2pt]
+{\large College of Computer and Information Sciences}\\[2pt]
+{\large Department of Information Systems}
+
+\vspace{1.2cm}
+
+\IfFileExists{figures/ksu-logo.png}{%
+  \includegraphics[width=7cm]{figures/ksu-logo.png}%
+}{%
+  \fbox{\parbox[c][3.2cm][c]{5.5cm}{\centering\small\itshape King Saud University logo\\(place figures/ksu-logo.png)}}%
+}
+
+\vspace{1.4cm}
+
+{\color{titleblue}\rule{0.82\textwidth}{1.2pt}}\\[0.5cm]
+{\color{titleblue}\Large\bfseries A Decision Support System for Business Continuity\\[4pt]
+and Critical Service Recovery Prioritization\par}
+\vspace{0.3cm}
+{\color{titleblue}\rule{0.82\textwidth}{1.2pt}}
+
+\vspace{1.4cm}
+
+{\large A Master's Project Submitted in Partial Fulfillment of the Requirements\\[2pt]
+for the Master's Degree in Information Systems}
+
+\vspace{1.6cm}
+
+{\normalsize Prepared by}\\[6pt]
+{\Large\bfseries Gharam Bati Alshahrani}\\[3pt]
+% {\large University ID: 449720056}
+
+\vspace{1.2cm}
+
+{\normalsize Supervised by}\\[6pt]
+{\Large\bfseries Dr.\ Hussein Ali Hazazi}
+
+\vfill
+
+{\large Riyadh, Saudi Arabia}\\[2pt]
+{\large October 2026}
+\end{titlepage}
+
+% \includepdf[pages=-]{thesisapproval.pdf} % include the approval page as PDF once the final version is approved.
 
 \pagenumbering{roman} \setcounter{page}{1} 
 
