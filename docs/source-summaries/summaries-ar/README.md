@@ -1,6 +1,6 @@
 # الملخصات البحثية العربية
 
-توجد 26 مجموعة ملخصات ثنائية اللغة تمثل 25 عملًا؛ فالدليل العربي للهيئة ومقتطفه عمل واحد. يوضح كل ملخص نوع الدليل والنسخة ونطاق القراءة وحدود الاستنتاج. ولا تعني قراءة الفهرس قراءة المعيار الكامل، ولا تعني مراجعة المنتج اختباره.
+توجد 29 مجموعة ملخصات ثنائية اللغة تمثل 28 عملًا؛ فالدليل العربي للهيئة ومقتطفه عمل واحد. يوضح كل ملخص نوع الدليل والنسخة ونطاق القراءة وحدود الاستنتاج. ولا تعني قراءة الفهرس قراءة المعيار الكامل، ولا تعني مراجعة المنتج اختباره.
 
 | مفتاح الاستشهاد | الملخص العربي | English | الأقسام |
 |---|---|---|---|
@@ -30,6 +30,9 @@
 | servicenow2025datasheet | [ServiceNow Business Continuity Management: solution brief](<servicenow2025datasheet.md>) | [English](<../summaries-en/servicenow2025datasheet.md>) | 2.5, 2.7 |
 | fusion2026bcm | [Fusion Business Continuity Management](<fusion2026bcm.md>) | [English](<../summaries-en/fusion2026bcm.md>) | 2.5, 2.7 |
 | riskonnect2026bcm | [Riskonnect Business Continuity Management Software](<riskonnect2026bcm.md>) | [English](<../summaries-en/riskonnect2026bcm.md>) | 2.5, 2.7 |
+| russo2023maturity | [Exploring a Multidisciplinary Assessment of Organisational Maturity in Business Continuity: A Perspective and Future Research Outlook](<russo2023maturity.md>) | [English](<../summaries-en/russo2023maturity.md>) | 2.1, 2.2, 2.6, 2.7 |
+| nist2018criticality | [Criticality Analysis Process Model: Prioritizing Systems and Components](<nist2018criticality.md>) | [English](<../summaries-en/nist2018criticality.md>) | 2.2, 2.3, 2.4, 2.7 |
+| arnott2005descriptive | [A Descriptive Analysis of Decision Support Systems Research Between 1990 and 2003](<arnott2005descriptive.md>) | [English](<../summaries-en/arnott2005descriptive.md>) | 2.5, 2.6, 2.7 |
 
 تُراجع [خريطة الأدلة](../evidence-map.md) و[وثيقة الاختيار والوصول](../search-and-selection.md) قبل الكتابة. يُستشهد بالمنشور الأصلي ومفتاحه في references.bib، لا بالملخص بوصفه دراسة مستقلة.
 

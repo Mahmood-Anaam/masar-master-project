@@ -4,9 +4,9 @@ Task 2 evidence collection, reviewed 29 October 2026. The approved eight-section
 
 ## Inventory and access
 
-- **26 reviewed source items represent 25 distinct works**: the Arabic DGA parent guide and its BCM extract are one work.
+- **29 reviewed source items represent 28 distinct works**: the Arabic DGA parent guide and its BCM extract are one work. Three sources (russo2023maturity, nist2018criticality, arnott2005descriptive) were added in a later corpus extension to cover gaps in field overview, criticality analysis, and DSS foundations.
 - **13 PDFs:** nine newly archived files (seven CC articles and two NIST reports), plus four supplied government PDFs preserved unchanged.
-- **13 access records** represent reviewed material whose full file is not redistributed or whose evidence is a public web record.
+- **16 access records** represent reviewed material whose full file is not redistributed or whose evidence is a public web record. The three extension sources are access records because the review environment could not download their PDFs; the reading links are in each record.
 - One additional legacy reference, Torabi 2014, is metadata-only and excluded from full-text synthesis.
 - [Manifest](manifest.json) records keys, versions, coverage, rights, hashes, paths and section mapping. [Search/selection](../source-summaries/search-and-selection.md) records scope and limits.
 
@@ -38,6 +38,9 @@ Task 2 evidence collection, reviewed 29 October 2026. The approved eight-section
 | servicenow2025datasheet | [ServiceNow Business Continuity Management: solution brief](<servicenow2025datasheet.md>) | Complete two-page PDF; provider claims, no software test | [Summary](<../source-summaries/summaries-en/servicenow2025datasheet.md>) | [ملخص](<../source-summaries/summaries-ar/servicenow2025datasheet.md>) |
 | fusion2026bcm | [Fusion Business Continuity Management](<fusion2026bcm.md>) | Public capability descriptions reviewed; no tenant/test | [Summary](<../source-summaries/summaries-en/fusion2026bcm.md>) | [ملخص](<../source-summaries/summaries-ar/fusion2026bcm.md>) |
 | riskonnect2026bcm | [Riskonnect Business Continuity Management Software](<riskonnect2026bcm.md>) | Public capabilities and FAQ reviewed; no tenant/test | [Summary](<../source-summaries/summaries-en/riskonnect2026bcm.md>) | [ملخص](<../source-summaries/summaries-ar/riskonnect2026bcm.md>) |
+| russo2023maturity | [Exploring a Multidisciplinary Assessment of Organisational Maturity in Business Continuity: A Perspective and Future Research Outlook](<russo2023maturity.md>) | Complete HTML full text; figures via captions only | [Summary](<../source-summaries/summaries-en/russo2023maturity.md>) | [ملخص](<../source-summaries/summaries-ar/russo2023maturity.md>) |
+| nist2018criticality | [Criticality Analysis Process Model: Prioritizing Systems and Components](<nist2018criticality.md>) | Chapters 1-3 through E.2; E.3-E.5 and appendices not read | [Summary](<../source-summaries/summaries-en/nist2018criticality.md>) | [ملخص](<../source-summaries/summaries-ar/nist2018criticality.md>) |
+| arnott2005descriptive | [A Descriptive Analysis of Decision Support Systems Research Between 1990 and 2003](<arnott2005descriptive.md>) | Complete article including Tables 1-11 | [Summary](<../source-summaries/summaries-en/arnott2005descriptive.md>) | [ملخص](<../source-summaries/summaries-ar/arnott2005descriptive.md>) |
 
 ## Rights and versions
 

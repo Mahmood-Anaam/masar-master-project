@@ -16,7 +16,7 @@ Include material when it supports a specific roadmap function, its identity/vers
 
 Full text was preferred to abstracts. A failed access attempt did not justify reconstructing a paper from secondary citations. Duplicate editions, predecessor studies and an extract of a parent guide are not independent evidence. The corpus is organized by contribution rather than treating every source as equally strong.
 
-The deliverable contains **26 reviewed file-level source items, 25 distinct works, 26 English–Arabic summary pairs and 26 bibliography entries**. The bibliography count includes the pre-existing Torabi article whose full text was not obtained. The Arabic DGA parent and extract share one key; the different English document has a separate key. Eleven reviewed journal articles, two NIST reports, three distinct Saudi guidance versions/works, one DSS historical overview, three ISO public records and five vendor records make up the 25 reviewed works. This arithmetic is an inventory, not a search-screening flow.
+The original deliverable contained **26 reviewed file-level source items, 25 distinct works, 26 English–Arabic summary pairs and 26 bibliography entries**; the extension below raises these to 29, 28, 29 and 29. The bibliography count includes the pre-existing Torabi article whose full text was not obtained. The Arabic DGA parent and extract share one key; the different English document has a separate key. Eleven reviewed journal articles, two NIST reports, three distinct Saudi guidance versions/works, one DSS historical overview, three ISO public records and five vendor records make up the 25 reviewed works. This arithmetic is an inventory, not a search-screening flow.
 
 ## Access-limited candidates
 
@@ -63,3 +63,33 @@ The review remains broad-to-specific and analytical; the evidence map identifies
 - Built the full report successfully, with no unresolved citations/references. The scratch environment lacked the IEEEtran style and algorithms package; official CTAN copies were used temporarily for validation, without adding unrelated package files to the repository.
 - Checked all 13 PDF files with pdfinfo, all manifest SHA-256 values, all 26 paired basenames and summary/index links.
 - Confirmed the four supplied PDF files and all chapter/title/package files remain unchanged. No Task 3 section drafting was included.
+
+## Corpus extension (29 October 2026)
+
+After the roadmap and first corpus were merged, the corpus was audited against each approved section. The audit found the collection honest and well documented but thin in several places (see the gaps list in the evidence map). Three sources were added where full text could be read:
+
+| Key | Gap addressed | Reading basis |
+|---|---|---|
+| russo2023maturity | Field-level overview of BCM research (Section 2.1) | Complete open-access HTML full text |
+| nist2018criticality | Criticality analysis with ranges and dependency mapping (Sections 2.3, 2.4) | Front matter and Chapters 1-3 through E.2; E.3-E.5 and appendices not read |
+| arnott2005descriptive | DSS foundations and research critique (Section 2.5.1) | Complete article via a full-text mirror |
+
+Search used general web search, publisher pages, repository records and DOI metadata. As before, this is purposive and not a systematic review. The environment could not download publisher PDFs, so the three additions are access records with reading links, not archived files.
+
+### Candidates identified but not added
+
+| Candidate | Reason |
+|---|---|
+| Torabi, Rezaei Soufi and Sahebjamnia (2014), Safety Science 68 | No legitimate open full text found again; remains metadata-only. |
+| Charoenthammachoke et al. (2020), J. Disaster Res. 15(5), 546-555 | Open-access BCM literature review identified (doi 10.20965/jdr.2020.p0546); not yet read, so not added. |
+| Schätter et al. (2019), Decision Support Systems 118, 10-20; Merz, Hiete and Bertsch (2009), Int. J. Critical Infrastructures 5 | Relevant continuity DSS and multicriteria BCP studies, but only abstracts and metadata were accessible. |
+| Hosack et al. (2012), JAIS 13(5) | DSS research commentary; full text was not reached. |
+| A two-page AHP critical-process prioritization paper from ISAHP 2016 | Read, but the extracted text carries no author metadata and presents summary results only; excluded as unsuitable for citation. |
+| Fusion dependency-mapping and recovery-optimization pages (fusionrm.com) | Vendor claims relevant to Sections 2.3.3 and 2.5.3; not yet recorded as an access record. |
+
+These outcomes describe this search only. Library or author access could close several of them in a later revision.
+
+### Validation for the extension
+
+- The 29-entry bibliography parses through BibTeX without warnings. The IEEEtran style file was not available in this environment, so this syntax check used the standard `plain` style; a full build with IEEEtran is still needed. The new keys are `russo2023maturity`, `nist2018criticality` and `arnott2005descriptive`.
+- The manifest was updated with SHA-256 values of the three access records, and the four README indexes were updated.
