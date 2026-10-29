@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "review_date": "2026-10-29",
-  "scope": "Task 2 only: source corpus and bilingual research summaries, not chapter drafting",
-  "reviewed_source_items": 26,
-  "distinct_reviewed_works": 25,
+  "scope": "Task 2 only: source corpus and bilingual research summaries, not chapter drafting; extended with three gap-filling sources on 29 October 2026",
+  "reviewed_source_items": 34,
+  "distinct_reviewed_works": 33,
   "additional_legacy_metadata_only": 1,
   "records": [
     {
@@ -696,6 +696,227 @@
       "sections": [],
       "accessed": "2026-10-29",
       "sha256": "3e0552496639f3c856cb671311ae10e93bd2eaf76927d4b9469fc505371657d3"
+    },
+    {
+      "id": "russo2023maturity",
+      "bibtex_key": "russo2023maturity",
+      "work_id": "russo2023maturity",
+      "title": "Exploring a Multidisciplinary Assessment of Organisational Maturity in Business Continuity: A Perspective and Future Research Outlook",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete HTML full text read, including Tables 1-4 and references; figures read through captions only",
+      "source_path": "docs/sources/russo2023maturity.md",
+      "source_url": "https://www.mdpi.com/2076-3417/13/21/11846",
+      "doi": "10.3390/app132111846",
+      "version": "Applied Sciences 13(21), article 11846, 30 October 2023",
+      "accessed": "2026-10-29",
+      "rights": "Open access (CC BY; page metadata cites 3.0, footer cites 4.0). PDF not archived; access record only.",
+      "sha256": "e1390134bf97548eb5e3e3a65f2ade1dbb373832c9f032a4210b10c94005ad7e",
+      "sections": [
+        "2.1",
+        "2.2",
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/russo2023maturity.md",
+        "ar": "docs/source-summaries/summaries-ar/russo2023maturity.md"
+      },
+      "reviewed_copy_url": "https://www.mdpi.com/2076-3417/13/21/11846/pdf",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "nist2018criticality",
+      "bibtex_key": "nist2018criticality",
+      "work_id": "nist2018criticality",
+      "title": "Criticality Analysis Process Model: Prioritizing Systems and Components",
+      "type": "government technical report",
+      "status": "reviewed",
+      "review_coverage": "Front matter, Executive Summary, Chapters 1-3 through the start of E.2; E.3-E.5 and Appendices B-E not read",
+      "source_path": "docs/sources/nist2018criticality.md",
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8179.pdf",
+      "doi": "10.6028/NIST.IR.8179",
+      "version": "NIST IR 8179, April 2018, 94 pages",
+      "accessed": "2026-10-29",
+      "rights": "Free NIST publication; PDF not archived; access record only.",
+      "sha256": "ca33549ef3c99cefe762cd8bb51bfa09d7dd703cd80008775dc7fc67f6b44786",
+      "sections": [
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/nist2018criticality.md",
+        "ar": "docs/source-summaries/summaries-ar/nist2018criticality.md"
+      },
+      "reviewed_copy_url": "https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8179.pdf",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "arnott2005descriptive",
+      "bibtex_key": "arnott2005descriptive",
+      "work_id": "arnott2005descriptive",
+      "title": "A Descriptive Analysis of Decision Support Systems Research Between 1990 and 2003",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete article including Tables 1-11 and references",
+      "source_path": "docs/sources/arnott2005descriptive.md",
+      "source_url": "https://doi.org/10.3127/ajis.v12i2.90",
+      "doi": "10.3127/ajis.v12i2.90",
+      "version": "Australasian Journal of Information Systems 12(2), May 2005, pp. 178-191",
+      "accessed": "2026-10-29",
+      "rights": "Open-access journal; licence not visible in the reading copy; PDF not archived; access record only.",
+      "sha256": "5038f4a627076a67962e07c9e780c3f7e0df5c10d14d24d6400ceb83c286bb59",
+      "sections": [
+        "2.5",
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/arnott2005descriptive.md",
+        "ar": "docs/source-summaries/summaries-ar/arnott2005descriptive.md"
+      },
+      "reviewed_copy_url": "https://distantreader.org/stacks/journals/ajis02/ajis02-90.htm",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "elshekeil2017precesion",
+      "bibtex_key": "elshekeil2017precesion",
+      "work_id": "elshekeil2017precesion",
+      "title": "PRECESION: Progressive Recovery and Restoration Planning of Interdependent Services in Enterprise Data Centers",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete article including Tables 1-5; figures via captions",
+      "source_path": "docs/sources/elshekeil2017precesion.md",
+      "source_url": "https://doi.org/10.1016/j.dcan.2017.08.001",
+      "doi": "10.1016/j.dcan.2017.08.001",
+      "version": "Digital Communications and Networks, 2017 (in-press version, pp. 1-9)",
+      "accessed": "2026-10-29",
+      "rights": "CC BY-NC-ND 4.0 per article; PDF not archived; access record only.",
+      "sha256": "671bda6e008f9cb3c95c31af7d24a4ab31c49afed9b45f305cd236a7bd0b63b7",
+      "sections": [
+        "2.3",
+        "2.4",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/elshekeil2017precesion.md",
+        "ar": "docs/source-summaries/summaries-ar/elshekeil2017precesion.md"
+      },
+      "reviewed_copy_url": "https://www.cse.iitk.ac.in/users/amitangshu/1-s2.0-S2352864817300846-main.pdf",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "vonderassen2024quanttm",
+      "bibtex_key": "vonderassen2024quanttm",
+      "work_id": "vonderassen2024quanttm",
+      "title": "QuantTM: Business-Centric Threat Quantification for Risk Management and Cyber Resilience",
+      "type": "preprint",
+      "status": "reviewed",
+      "review_coverage": "Complete preprint including Tables I-X and equations 1-5; figures via captions",
+      "source_path": "docs/sources/vonderassen2024quanttm.md",
+      "source_url": "https://arxiv.org/abs/2402.14140",
+      "doi": "10.48550/arXiv.2402.14140",
+      "version": "arXiv:2402.14140v1, 21 February 2024",
+      "accessed": "2026-10-29",
+      "rights": "arXiv preprint; no licence verified; PDF not archived; access record only.",
+      "sha256": "2fb3a79e68c61299c4a08e06ee5bb351c994a7d90ec20659397efedad7ca432d",
+      "sections": [
+        "2.2",
+        "2.3",
+        "2.5",
+        "2.6"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/vonderassen2024quanttm.md",
+        "ar": "docs/source-summaries/summaries-ar/vonderassen2024quanttm.md"
+      },
+      "reviewed_copy_url": "https://arxiv.org/pdf/2402.14140",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "globalsuite2025prebia",
+      "bibtex_key": "globalsuite2025prebia",
+      "work_id": "globalsuite2025prebia",
+      "title": "GlobalSuite Solutions: Pre-BIA (user manual page)",
+      "type": "vendor documentation",
+      "status": "reviewed",
+      "review_coverage": "Complete page text; screenshots and linked pages not reviewed; no software test",
+      "source_path": "docs/sources/globalsuite2025prebia.md",
+      "source_url": "https://help.globalsuitesolutions.com/en/globalsuite/v1/pre-bia",
+      "doi": null,
+      "version": "GlobalSuite user manual v1; page last modified 2025-12-23",
+      "accessed": "2026-10-29",
+      "rights": "Public web page; described in original words, not copied.",
+      "sha256": "52d10de581f0754675f7f9245a31ab48519e9a57705446e3bb1c544b505b8d1f",
+      "sections": [
+        "2.2",
+        "2.3",
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/globalsuite2025prebia.md",
+        "ar": "docs/source-summaries/summaries-ar/globalsuite2025prebia.md"
+      },
+      "reviewed_copy_url": "https://help.globalsuitesolutions.com/en/globalsuite/v1/pre-bia",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "grasp2025bia",
+      "bibtex_key": "grasp2025bia",
+      "work_id": "grasp2025bia",
+      "title": "GRASP GRC: Business Impact Analysis Assessment in the BCM module",
+      "type": "vendor documentation",
+      "status": "reviewed",
+      "review_coverage": "Complete assessment page; configuration and protection-needs pages not opened; no software test",
+      "source_path": "docs/sources/grasp2025bia.md",
+      "source_url": "https://docs.grasp-grc.com/en/apps/bcm/bia/assessment.html",
+      "doi": null,
+      "version": "Online documentation; no release or date shown",
+      "accessed": "2026-10-29",
+      "rights": "Public web page; described in original words, not copied.",
+      "sha256": "eceaea3bf8a0a3f23acaff7e7bc6a3eadd3de0e9b50961764d3c0dc9ac8b45df",
+      "sections": [
+        "2.2",
+        "2.4",
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/grasp2025bia.md",
+        "ar": "docs/source-summaries/summaries-ar/grasp2025bia.md"
+      },
+      "reviewed_copy_url": "https://docs.grasp-grc.com/en/apps/bcm/bia/assessment.html",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "verinice2025bcm",
+      "bibtex_key": "verinice2025bcm",
+      "work_id": "verinice2025bcm",
+      "title": "verinice: Business Continuity Management domain (SerNet)",
+      "type": "open-source project and vendor web pages",
+      "status": "reviewed",
+      "review_coverage": "BCM domain page read in full; product page and news item seen as search excerpts only; tutorial documentation not reached",
+      "source_path": "docs/sources/verinice2025bcm.md",
+      "source_url": "https://verinice.com/en/solutions/domains/business-continuity-management",
+      "doi": null,
+      "version": "Web pages read 2026-10-29; no release identifier",
+      "accessed": "2026-10-29",
+      "rights": "Public web pages; described in original words. Licence of the newer web generation not verified.",
+      "sha256": "2900b4d9ffb4aacfb711dc2b2548e3c34f9b84c4f78030366acede4220c5bc8d",
+      "sections": [
+        "2.4",
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/verinice2025bcm.md",
+        "ar": "docs/source-summaries/summaries-ar/verinice2025bcm.md"
+      },
+      "reviewed_copy_url": "https://verinice.com/en/solutions/domains/business-continuity-management",
+      "added_in": "corpus extension, 2026-10-29"
     }
   ]
 }

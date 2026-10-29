@@ -1,6 +1,6 @@
 # English research summaries
 
-26 bilingual source-item pairs represent 25 distinct works. Each summary states its evidence type, reviewed version and coverage; catalogue access does not mean full-standard reading.
+34 bilingual source-item pairs represent 33 distinct works. Each summary states its evidence type, reviewed version and coverage; catalogue access does not mean full-standard reading.
 
 | Citation key | English summary | Arabic | Sections |
 |---|---|---|---|
@@ -30,6 +30,14 @@
 | servicenow2025datasheet | [ServiceNow Business Continuity Management: solution brief](<servicenow2025datasheet.md>) | [العربية](<../summaries-ar/servicenow2025datasheet.md>) | 2.5, 2.7 |
 | fusion2026bcm | [Fusion Business Continuity Management](<fusion2026bcm.md>) | [العربية](<../summaries-ar/fusion2026bcm.md>) | 2.5, 2.7 |
 | riskonnect2026bcm | [Riskonnect Business Continuity Management Software](<riskonnect2026bcm.md>) | [العربية](<../summaries-ar/riskonnect2026bcm.md>) | 2.5, 2.7 |
+| russo2023maturity | [Exploring a Multidisciplinary Assessment of Organisational Maturity in Business Continuity: A Perspective and Future Research Outlook](<russo2023maturity.md>) | [العربية](<../summaries-ar/russo2023maturity.md>) | 2.1, 2.2, 2.6, 2.7 |
+| nist2018criticality | [Criticality Analysis Process Model: Prioritizing Systems and Components](<nist2018criticality.md>) | [العربية](<../summaries-ar/nist2018criticality.md>) | 2.2, 2.3, 2.4, 2.7 |
+| arnott2005descriptive | [A Descriptive Analysis of Decision Support Systems Research Between 1990 and 2003](<arnott2005descriptive.md>) | [العربية](<../summaries-ar/arnott2005descriptive.md>) | 2.5, 2.6, 2.7 |
+| elshekeil2017precesion | [PRECESION: Progressive Recovery and Restoration Planning of Interdependent Services in Enterprise Data Centers](<elshekeil2017precesion.md>) | [العربية](<../summaries-ar/elshekeil2017precesion.md>) | 2.3, 2.4, 2.7 |
+| vonderassen2024quanttm | [QuantTM: Business-Centric Threat Quantification for Risk Management and Cyber Resilience](<vonderassen2024quanttm.md>) | [العربية](<../summaries-ar/vonderassen2024quanttm.md>) | 2.2, 2.3, 2.5, 2.6 |
+| globalsuite2025prebia | [GlobalSuite Solutions: Pre-BIA (user manual page)](<globalsuite2025prebia.md>) | [العربية](<../summaries-ar/globalsuite2025prebia.md>) | 2.2, 2.3, 2.5, 2.7 |
+| grasp2025bia | [GRASP GRC: Business Impact Analysis Assessment in the BCM module](<grasp2025bia.md>) | [العربية](<../summaries-ar/grasp2025bia.md>) | 2.2, 2.4, 2.5, 2.7 |
+| verinice2025bcm | [verinice: Business Continuity Management domain (SerNet)](<verinice2025bcm.md>) | [العربية](<../summaries-ar/verinice2025bcm.md>) | 2.4, 2.5, 2.7 |
 
 Read the [evidence map](../evidence-map.md) and [selection/access record](../search-and-selection.md) before drafting. Cite original publications using references.bib keys, not summary filenames.
 
