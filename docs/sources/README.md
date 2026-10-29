@@ -1,0 +1,56 @@
+# Literature-review source corpus
+
+Task 2 evidence collection, reviewed 29 October 2026. The approved eight-section roadmap remains unchanged.
+
+## Inventory and access
+
+- **26 reviewed source items represent 25 distinct works**: the Arabic DGA parent guide and its BCM extract are one work.
+- **13 PDFs:** nine newly archived files (seven CC articles and two NIST reports), plus four supplied government PDFs preserved unchanged.
+- **13 access records** represent reviewed material whose full file is not redistributed or whose evidence is a public web record.
+- One additional legacy reference, Torabi 2014, is metadata-only and excluded from full-text synthesis.
+- [Manifest](manifest.json) records keys, versions, coverage, rights, hashes, paths and section mapping. [Search/selection](../source-summaries/search-and-selection.md) records scope and limits.
+
+| Citation key | Source / access record | Coverage | English | العربية |
+|---|---|---|---|---|
+| hevner2004design | [Design Science in Information Systems Research](<hevner2004design.md>) | Complete article; main framework and evaluation guidance | [Summary](<../source-summaries/summaries-en/hevner2004design.md>) | [ملخص](<../source-summaries/summaries-ar/hevner2004design.md>) |
+| peffers2007dsrm | [A Design Science Research Methodology for Information Systems Research](<peffers2007dsrm.md>) | Complete article; six activities and four retrospective examples | [Summary](<../source-summaries/summaries-en/peffers2007dsrm.md>) | [ملخص](<../source-summaries/summaries-ar/peffers2007dsrm.md>) |
+| sahebjamnia2015integrated | [Integrated Business Continuity and Disaster Recovery Planning: Towards Organizational Resilience](<sahebjamnia2015integrated.md>) | Complete accepted manuscript; supplement not obtained | [Summary](<../source-summaries/summaries-en/sahebjamnia2015integrated.md>) | [ملخص](<../source-summaries/summaries-ar/sahebjamnia2015integrated.md>) |
+| assetcriticality2023 | [A BIA-Based Quantitative Framework for Built Physical Asset Criticality Analysis under Sustainability and Resilience](<assetcriticality2023.pdf>) | Complete 30-page article; separate supplementary calculations not reviewed | [Summary](<../source-summaries/summaries-en/assetcriticality2023.md>) | [ملخص](<../source-summaries/summaries-ar/assetcriticality2023.md>) |
+| amm2023bia | [Business Impact Analysis of AMM Data: A Case Study](<amm2023bia.pdf>) | Complete 30-page article | [Summary](<../source-summaries/summaries-en/amm2023bia.md>) | [ملخص](<../source-summaries/summaries-ar/amm2023bia.md>) |
+| container2021bia | [The Application of Business Impact Analysis Due to Electricity Disruption in a Container Terminal](<container2021bia.pdf>) | Complete 17-page article | [Summary](<../source-summaries/summaries-en/container2021bia.md>) | [ملخص](<../source-summaries/summaries-ar/container2021bia.md>) |
+| raptaki2025propagation | [Automated Cybersecurity Impact Propagation across Business Processes Using Process Mining Techniques](<raptaki2025propagation.pdf>) | Complete 17-page article; predecessor PRIA not counted independently | [Summary](<../source-summaries/summaries-en/raptaki2025propagation.md>) | [ملخص](<../source-summaries/summaries-ar/raptaki2025propagation.md>) |
+| rinaldi2001interdependencies | [Identifying, Understanding, and Analyzing Critical Infrastructure Interdependencies](<rinaldi2001interdependencies.md>) | Complete 15-page article | [Summary](<../source-summaries/summaries-en/rinaldi2001interdependencies.md>) | [ملخص](<../source-summaries/summaries-ar/rinaldi2001interdependencies.md>) |
+| venable2016feds | [FEDS: A Framework for Evaluation in Design Science Research](<venable2016feds.pdf>) | Complete 13-page publisher article; embedded final-page CC BY notice verified | [Summary](<../source-summaries/summaries-en/venable2016feds.md>) | [ملخص](<../source-summaries/summaries-ar/venable2016feds.md>) |
+| bcms2026reference | [Business Continuity Management—Identifying Relevant Processes for a Reference Model](<bcms2026reference.pdf>) | Complete 21-page article | [Summary](<../source-summaries/summaries-en/bcms2026reference.md>) | [ملخص](<../source-summaries/summaries-ar/bcms2026reference.md>) |
+| selfassessment2025 | [An Approach to Business Continuity Self-Assessment](<selfassessment2025.pdf>) | Complete 37-page article; editable questionnaire/software and raw data not obtained | [Summary](<../source-summaries/summaries-en/selfassessment2025.md>) | [ملخص](<../source-summaries/summaries-ar/selfassessment2025.md>) |
+| nist2010contingency | [Contingency Planning Guide for Federal Information Systems](<nist2010contingency.pdf>) | Complete main chapters and appendices; repeated A templates compared | [Summary](<../source-summaries/summaries-en/nist2010contingency.md>) | [ملخص](<../source-summaries/summaries-ar/nist2010contingency.md>) |
+| quinn2025bia | [Using Business Impact Analysis to Inform Risk Prioritization and Response](<quinn2025bia.pdf>) | Complete 27-page updated report | [Summary](<../source-summaries/summaries-en/quinn2025bia.md>) | [ملخص](<../source-summaries/summaries-ar/quinn2025bia.md>) |
+| power2007history | [A Brief History of Decision Support Systems](<power2007history.md>) | Complete public narrative, timeline and references | [Summary](<../source-summaries/summaries-en/power2007history.md>) | [ملخص](<../source-summaries/summaries-ar/power2007history.md>) |
+| dga2025bcm | [DGA BCM section: Arabic extract](<Digital Government Authority-Business Continuity Section-ar.pdf>) | Complete supplied 54-page extract, including relevant definitions/annexes | [Summary](<../source-summaries/summaries-en/Digital Government Authority-Business Continuity Section-ar.md>) | [ملخص](<../source-summaries/summaries-ar/Digital Government Authority-Business Continuity Section-ar.md>) |
+| dga2025bcm | [DGA integrated guideline: complete Arabic parent](<Guideline of Risk and Business Continuity Management for Digital Government.V1.0-ar.pdf>) | Focused review: front matter, complete BCM division, documentation, definitions and relevant annexes; broader risk division not fully synthesized | [Summary](<../source-summaries/summaries-en/Guideline of Risk and Business Continuity Management for Digital Government.V1.0-ar.md>) | [ملخص](<../source-summaries/summaries-ar/Guideline of Risk and Business Continuity Management for Digital Government.V1.0-ar.md>) |
+| dga2025guidelineen | [DGA integrated guideline: English issue 1.0](<Guideline of Risk and Business Continuity Management for Digital Government.V1.0-en.pdf>) | Focused review: pp. 3–9, 97–138 and BCM annexes 152–154; risk procedures pp. 10–96 not fully reviewed | [Summary](<../source-summaries/summaries-en/Guideline of Risk and Business Continuity Management for Digital Government.V1.0-en.md>) | [ملخص](<../source-summaries/summaries-ar/Guideline of Risk and Business Continuity Management for Digital Government.V1.0-en.md>) |
+| nrcnationalframework | [National Framework: supplied Arabic BCM extract](<National Risk Council-Business Continuity Section-ar.pdf>) | Complete supplied extract; Arabic OCR plus visual RTO example; uncertain numerical appendix cells not used | [Summary](<../source-summaries/summaries-en/National Risk Council-Business Continuity Section-ar.md>) | [ملخص](<../source-summaries/summaries-ar/National Risk Council-Business Continuity Section-ar.md>) |
+| iso22301catalogue | [ISO 22301:2019 public catalogue](<iso22301catalogue.md>) | Public catalogue/abstract only; full standard not obtained or reviewed | [Summary](<../source-summaries/summaries-en/iso22301catalogue.md>) | [ملخص](<../source-summaries/summaries-ar/iso22301catalogue.md>) |
+| iso22313catalogue | [ISO 22313:2020 public catalogue](<iso22313catalogue.md>) | Public catalogue/abstract only; full standard not obtained or reviewed | [Summary](<../source-summaries/summaries-en/iso22313catalogue.md>) | [ملخص](<../source-summaries/summaries-ar/iso22313catalogue.md>) |
+| iso22317catalogue | [ISO/TS 22317:2021 public catalogue](<iso22317catalogue.md>) | Public catalogue/abstract only; full standard not obtained or reviewed | [Summary](<../source-summaries/summaries-en/iso22317catalogue.md>) | [ملخص](<../source-summaries/summaries-ar/iso22317catalogue.md>) |
+| servicenow2025rto | [Calculating RTO and RPO](<servicenow2025rto.md>) | Original public calculation body reviewed; generated overview excluded; no software test | [Summary](<../source-summaries/summaries-en/servicenow2025rto.md>) | [ملخص](<../source-summaries/summaries-ar/servicenow2025rto.md>) |
+| servicenow2025bia | [Business impact analysis](<servicenow2025bia.md>) | Original public workflow body reviewed; generated overview excluded; no software test | [Summary](<../source-summaries/summaries-en/servicenow2025bia.md>) | [ملخص](<../source-summaries/summaries-ar/servicenow2025bia.md>) |
+| servicenow2025datasheet | [ServiceNow Business Continuity Management: solution brief](<servicenow2025datasheet.md>) | Complete two-page PDF; provider claims, no software test | [Summary](<../source-summaries/summaries-en/servicenow2025datasheet.md>) | [ملخص](<../source-summaries/summaries-ar/servicenow2025datasheet.md>) |
+| fusion2026bcm | [Fusion Business Continuity Management](<fusion2026bcm.md>) | Public capability descriptions reviewed; no tenant/test | [Summary](<../source-summaries/summaries-en/fusion2026bcm.md>) | [ملخص](<../source-summaries/summaries-ar/fusion2026bcm.md>) |
+| riskonnect2026bcm | [Riskonnect Business Continuity Management Software](<riskonnect2026bcm.md>) | Public capabilities and FAQ reviewed; no tenant/test | [Summary](<../source-summaries/summaries-en/riskonnect2026bcm.md>) | [ملخص](<../source-summaries/summaries-ar/riskonnect2026bcm.md>) |
+
+## Rights and versions
+
+Archived CC articles retain original notices and author attribution in paired summaries. FEDS is CC BY 3.0 according to its final-page notice; six other newly archived articles are CC BY 4.0. NIST SP 800-34 states that it is not subject to copyright; both NIST reports retain attribution. The four supplied PDFs are unchanged; public classification is not asserted to be an open licence.
+
+Other copyrighted reading PDFs are not republished in this public repository. Their records link the DOI and reading copy, with version and hash metadata. Public ISO/vendor pages have original access descriptions, not copied websites. Complete paid ISO standards were not acquired or reviewed. A markdown access record is not the original full text.
+
+The English and Arabic DGA documents have different identifiers/issues/date presentation. Original filenames are preserved but actual cover metadata controls identification. NRC includes separately paginated supplementary material; no publication year was invented.
+
+## Pending legacy article
+
+[Torabi 2014](torabi2014framework.md) remains in references.bib because the introduction already cites it. Only metadata was checked; no detailed summary was fabricated. Obtain legitimate full text before substantive Chapter 2 use.
+
+## Citation
+
+Use original publication keys from references.bib with LaTeX \cite{key}. The report selects IEEEtran. Summaries are research aids, not separately citable scholarly publications. Distinguish guidance, vendor claims, conceptual arguments and empirical results.

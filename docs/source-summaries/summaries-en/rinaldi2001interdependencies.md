@@ -1,0 +1,24 @@
+# Identifying, Understanding, and Analyzing Critical Infrastructure Interdependencies
+
+## Identity and access
+Steven M. Rinaldi, James P. Peerenboom, **Terrence** K. Kelly (spelling on the PDF). IEEE Control Systems Magazine 21(6), 11–25, December 2001. DOI: https://doi.org/10.1109/37.969131. Key: `rinaldi2001interdependencies`. Complete 15-page article obtained from an author-profile ResearchGate link and its main text, figures and reference list examined. IEEE copyright; no redistribution licence identified, so the repository provides an access record and this original summary rather than republishing the PDF.
+
+## Purpose and conceptual approach
+The article develops a taxonomy for infrastructure interdependencies, drawing on historical disruptions, infrastructure practice and workshop discussions. It is a conceptual synthesis rather than an experiment or a validated recovery-ranking algorithm. Examples include the Galaxy 4 communications failure and California's 2000–2001 power crisis. Historical policy/market examples describe their period; they are not current regulatory guidance.
+
+A **dependency** is a link through which the state of one infrastructure affects or correlates with another; an **interdependency** is a bidirectional relationship across links (pp. 13–14). The authors view infrastructures as complex adaptive systems, with interacting agents possessing location, capabilities and memory. Emergent system behavior need not be predictable by adding isolated component properties.
+
+## Taxonomy and analytical content
+Six dimensions structure the analysis (Figure 1; pp. 12–23): types of interdependency; environmental context; coupling/response behavior; infrastructure characteristics; failure types; and operating state. Four principal relationship types are physical (material/commodity flows), cyber (information), geographic (shared exposure through proximity), and logical (other mechanisms including decisions and markets). The classes are not mutually exclusive. Geographic correlation can arise from a common event without one component causing the other's failure (pp. 14–16).
+
+Coupling varies in tightness/slack, direct versus higher-order linkage, linear versus complex interactions, and adaptive versus inflexible response (pp. 18–20). Backup stocks and substitutes can delay the consequences of an upstream failure. Feedback loops and indirect paths can change impacts. Granularity spans parts, units, subsystems, systems, infrastructures and interconnected infrastructures; relevant spatial and temporal scales depend on the analysis objective. Millisecond control failures and weeks of fuel buffering cannot be treated as the same temporal mechanism (pp. 21–22).
+
+Three failure patterns are distinguished: **cascading**, where one disruption causes another; **escalating**, where one disruption worsens an independently occurring disruption or lengthens its restoration; and **common cause**, where the same event disrupts multiple networks. Normal operation, stressed operation, and repair/recovery may have different dependencies. Repair crews can depend on transport even where ordinary delivery primarily depends on power and communications (pp. 22–23).
+
+## Modeling implications and evidence limits
+The discussion reviews agent-based, network, physical, economic and other modeling approaches, stressing that merely linking existing models does not resolve incompatible assumptions, time steps, data requirements or emergent behavior (pp. 23–24). Data maintenance, real-time change, distributed ownership, proprietary information and security constrain analysis. Useful metrics must match their measured effects, support data collection/model validation and enable meaningful comparison. The paper calls for better metrics; it does not supply a universal set with validated numerical cut-offs.
+
+No participant sample, optimization benchmark, classification accuracy or quantified improvement in recovery is reported. Illustrative historical cases motivate the taxonomy but do not validate every causal mechanism or a specific inheritance policy. Its 2001 assessment of the field must not be presented as the state of research in 2026.
+
+## Use in the approved roadmap
+Primary: §2.4 dependencies; secondary §§2.2, 2.3 and 2.7. It supports explicit relationship direction/type, shared-resource exposure, indirect paths and operating-context distinctions. For Masar, the highest-supported-service criticality rule is a **project policy to evaluate**, not a theorem derived from this taxonomy. Service importance, dependency importance, failure likelihood, propagation speed and executable recovery precedence are separate constructs. A static service–dependency map can support reviewable prioritization without claiming to simulate these infrastructure dynamics.
