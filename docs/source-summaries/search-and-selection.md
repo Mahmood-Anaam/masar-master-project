@@ -16,7 +16,7 @@ Include material when it supports a specific roadmap function, its identity/vers
 
 Full text was preferred to abstracts. A failed access attempt did not justify reconstructing a paper from secondary citations. Duplicate editions, predecessor studies and an extract of a parent guide are not independent evidence. The corpus is organized by contribution rather than treating every source as equally strong.
 
-The original deliverable contained **26 reviewed file-level source items, 25 distinct works, 26 English–Arabic summary pairs and 26 bibliography entries**; the extension below raises these to 29, 28, 29 and 29. The bibliography count includes the pre-existing Torabi article whose full text was not obtained. The Arabic DGA parent and extract share one key; the different English document has a separate key. Eleven reviewed journal articles, two NIST reports, three distinct Saudi guidance versions/works, one DSS historical overview, three ISO public records and five vendor records make up the 25 reviewed works. This arithmetic is an inventory, not a search-screening flow.
+The original deliverable contained **26 reviewed file-level source items, 25 distinct works, 26 English–Arabic summary pairs and 26 bibliography entries**; the extension below raises these to 32, 31, 32 and 32. The bibliography count includes the pre-existing Torabi article whose full text was not obtained. The Arabic DGA parent and extract share one key; the different English document has a separate key. Eleven reviewed journal articles, two NIST reports, three distinct Saudi guidance versions/works, one DSS historical overview, three ISO public records and five vendor records make up the 25 reviewed works. This arithmetic is an inventory, not a search-screening flow.
 
 ## Access-limited candidates
 
@@ -66,13 +66,16 @@ The review remains broad-to-specific and analytical; the evidence map identifies
 
 ## Corpus extension (29 October 2026)
 
-After the roadmap and first corpus were merged, the corpus was audited against each approved section. The audit found the collection honest and well documented but thin in several places (see the gaps list in the evidence map). Three sources were added where full text could be read:
+After the roadmap and first corpus were merged, the corpus was audited against each approved section. The audit found the collection honest and well documented but thin in several places (see the gaps list in the evidence map). Six sources were added where full text could be read:
 
 | Key | Gap addressed | Reading basis |
 |---|---|---|
 | russo2023maturity | Field-level overview of BCM research (Section 2.1) | Complete open-access HTML full text |
 | nist2018criticality | Criticality analysis with ranges and dependency mapping (Sections 2.3, 2.4) | Front matter and Chapters 1-3 through E.2; E.3-E.5 and appendices not read |
 | arnott2005descriptive | DSS foundations and research critique (Section 2.5.1) | Complete article via a full-text mirror |
+| elshekeil2017precesion | Recovery sequencing under dependencies (Sections 2.3.3, 2.4) | Complete in-press article |
+| vonderassen2024quanttm | Time-dependent impact modeling and a BIA prototype with evaluation (Sections 2.2.3, 2.5.2, 2.6) | Complete arXiv preprint |
+| globalsuite2025prebia | Commercial MTPD derivation and consolidation rules (Section 2.5.3) | Complete vendor help page |
 
 Search used general web search, publisher pages, repository records and DOI metadata. As before, this is purposive and not a systematic review. The environment could not download publisher PDFs, so the three additions are access records with reading links, not archived files.
 
@@ -93,3 +96,7 @@ These outcomes describe this search only. Library or author access could close s
 
 - The 29-entry bibliography parses through BibTeX without warnings. The IEEEtran style file was not available in this environment, so this syntax check used the standard `plain` style; a full build with IEEEtran is still needed. The new keys are `russo2023maturity`, `nist2018criticality` and `arnott2005descriptive`.
 - The manifest was updated with SHA-256 values of the three access records, and the four README indexes were updated.
+
+### Second reading of central originals
+
+The English DGA guideline (pp. 115-119) and NIST IR 8286D were re-read against their PDFs, and detailed supplements were appended to their English and Arabic summaries: the five-tier BIA matrix with its hourly financial thresholds and RTOs, and the asset definition, dependency-recording, and consistency passages. Both supplements keep reviewer observations apart from the documents' own statements. The remaining central PDFs were not re-read in this pass.

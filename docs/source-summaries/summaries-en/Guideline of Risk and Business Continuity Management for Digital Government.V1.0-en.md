@@ -26,3 +26,27 @@ Documentation management emphasizes standard forms, controlled archiving, workfl
 This is primary institutional guidance, not a case-study evaluation or a measured performance comparison. No numerical effectiveness estimate or Masar validation is established. Public classification does not itself establish a new open redistribution licence.
 
 Map principally to §2.1 Saudi guidance and §§2.2–2.5, with limits in §2.7. Use this separate citation when relying on English wording, especially version-specific details. It supports explicit, reviewable impact criteria and service-resource information; it does not establish full compliance, authorize replacing human approvals, or prove that a ranking is an executable recovery schedule.
+
+## Detailed supplement from a second reading of the original (pp. 115–119)
+
+**Figure 58 (p. 116).** A timeline relating backups, the incident, expected recovery time versus required recovery time, the recovery point objective, the recovery time objective, and the maximum tolerable period of disruption. The RTO sits inside the MTPD.
+
+**Figure 59, the BIA matrix (pp. 117–118).** Five impact levels are crossed with four factors (stakeholder, financial, legal and regulatory, reputational), and each level carries a targeted recovery time. Entities classify each platform and, where the factors differ, adopt the highest level. The targeted times are subject to continuous review.
+
+| Level | Stakeholder scope | Financial threshold | Legal/regulatory | Targeted RTO |
+|---|---|---|---|---|
+| Very critical | Complete impact across Saudi Arabia on all three beneficiary groups (government entities, businesses and supply chains, citizens and residents) | Up to SAR 1,000,000 per hour or 0.0115% of the service's annual revenue, whichever is greater | Loss of compliance certification or exposure to lawsuits and penalties | 4 hours |
+| Critical | Complete impact across Saudi Arabia on one or more groups | SAR 500,000 per hour or 0.00575% | Suspension of compliance certification or legal exposure | 8 hours |
+| Important | One or more regions, affecting one group | SAR 100,000 per hour or 0.00115% | Warning of suspension, clarification requests, potential accountability | 12 hours |
+| Moderate | One or more governorates within a region | SAR 50,000 per hour or 0.000575% | Warning notice or clarification request | 24 hours |
+| Low | A single centre or body, such as a university | SAR 10,000 per hour (the printed percentage is garbled) | Clarification request without legal violation | 48 hours |
+
+The reputational column runs from damage to the overall reputation of digital government, including the Kingdom's ranking on the United Nations E-Government Development Index, down to no noticeable media attention.
+
+**Table 24 (p. 119).** An illustrative row classifies a unified national platform with stakeholder impact critical, financial low, legal low, reputational moderate. The highest level, critical, gives an 8-hour RTO.
+
+**Observations by the reviewer (not statements of the guideline).**
+- Financial thresholds are expressed per hour, so a time rate is embedded in the tier definition, but the matrix assigns one level and one RTO per platform. It does not present an impact trajectory across successive time points. The text separately lets each entity choose the start of the impact timeline, for example after half an hour or after one or two days (p. 116).
+- The stakeholder column mixes scope (national, regional, governorate, centre) with severity, so the five levels are not defined on a single scale.
+- The stated hourly amounts fall by factors of 2, 5, 2, and 5 from level to level (by the reviewer's calculation), and the percentages follow the same ratios for the first four tiers. The printed percentage for the low tier is unreadable and should not be reconstructed.
+- No computed example shows how the percentage-of-revenue and the hourly amount interact when they disagree beyond the phrase "whichever is greater", and no example covers a platform whose impacts are assessed at several time points.

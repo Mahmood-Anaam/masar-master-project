@@ -2,8 +2,8 @@
   "schema_version": 1,
   "review_date": "2026-10-29",
   "scope": "Task 2 only: source corpus and bilingual research summaries, not chapter drafting; extended with three gap-filling sources on 29 October 2026",
-  "reviewed_source_items": 29,
-  "distinct_reviewed_works": 28,
+  "reviewed_source_items": 32,
+  "distinct_reviewed_works": 31,
   "additional_legacy_metadata_only": 1,
   "records": [
     {
@@ -778,6 +778,89 @@
         "ar": "docs/source-summaries/summaries-ar/arnott2005descriptive.md"
       },
       "reviewed_copy_url": "https://distantreader.org/stacks/journals/ajis02/ajis02-90.htm",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "elshekeil2017precesion",
+      "bibtex_key": "elshekeil2017precesion",
+      "work_id": "elshekeil2017precesion",
+      "title": "PRECESION: Progressive Recovery and Restoration Planning of Interdependent Services in Enterprise Data Centers",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete article including Tables 1-5; figures via captions",
+      "source_path": "docs/sources/elshekeil2017precesion.md",
+      "source_url": "https://doi.org/10.1016/j.dcan.2017.08.001",
+      "doi": "10.1016/j.dcan.2017.08.001",
+      "version": "Digital Communications and Networks, 2017 (in-press version, pp. 1-9)",
+      "accessed": "2026-10-29",
+      "rights": "CC BY-NC-ND 4.0 per article; PDF not archived; access record only.",
+      "sha256": "671bda6e008f9cb3c95c31af7d24a4ab31c49afed9b45f305cd236a7bd0b63b7",
+      "sections": [
+        "2.3",
+        "2.4",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/elshekeil2017precesion.md",
+        "ar": "docs/source-summaries/summaries-ar/elshekeil2017precesion.md"
+      },
+      "reviewed_copy_url": "https://www.cse.iitk.ac.in/users/amitangshu/1-s2.0-S2352864817300846-main.pdf",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "vonderassen2024quanttm",
+      "bibtex_key": "vonderassen2024quanttm",
+      "work_id": "vonderassen2024quanttm",
+      "title": "QuantTM: Business-Centric Threat Quantification for Risk Management and Cyber Resilience",
+      "type": "preprint",
+      "status": "reviewed",
+      "review_coverage": "Complete preprint including Tables I-X and equations 1-5; figures via captions",
+      "source_path": "docs/sources/vonderassen2024quanttm.md",
+      "source_url": "https://arxiv.org/abs/2402.14140",
+      "doi": "10.48550/arXiv.2402.14140",
+      "version": "arXiv:2402.14140v1, 21 February 2024",
+      "accessed": "2026-10-29",
+      "rights": "arXiv preprint; no licence verified; PDF not archived; access record only.",
+      "sha256": "2fb3a79e68c61299c4a08e06ee5bb351c994a7d90ec20659397efedad7ca432d",
+      "sections": [
+        "2.2",
+        "2.3",
+        "2.5",
+        "2.6"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/vonderassen2024quanttm.md",
+        "ar": "docs/source-summaries/summaries-ar/vonderassen2024quanttm.md"
+      },
+      "reviewed_copy_url": "https://arxiv.org/pdf/2402.14140",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "globalsuite2025prebia",
+      "bibtex_key": "globalsuite2025prebia",
+      "work_id": "globalsuite2025prebia",
+      "title": "GlobalSuite Solutions: Pre-BIA (user manual page)",
+      "type": "vendor documentation",
+      "status": "reviewed",
+      "review_coverage": "Complete page text; screenshots and linked pages not reviewed; no software test",
+      "source_path": "docs/sources/globalsuite2025prebia.md",
+      "source_url": "https://help.globalsuitesolutions.com/en/globalsuite/v1/pre-bia",
+      "doi": null,
+      "version": "GlobalSuite user manual v1; page last modified 2025-12-23",
+      "accessed": "2026-10-29",
+      "rights": "Public web page; described in original words, not copied.",
+      "sha256": "52d10de581f0754675f7f9245a31ab48519e9a57705446e3bb1c544b505b8d1f",
+      "sections": [
+        "2.2",
+        "2.3",
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/globalsuite2025prebia.md",
+        "ar": "docs/source-summaries/summaries-ar/globalsuite2025prebia.md"
+      },
+      "reviewed_copy_url": "https://help.globalsuitesolutions.com/en/globalsuite/v1/pre-bia",
       "added_in": "corpus extension, 2026-10-29"
     }
   ]

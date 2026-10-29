@@ -1,6 +1,6 @@
 # Bilingual literature-review research summaries
 
-Task 2 prepares evidence for the approved Chapter 2 roadmap: **29 English–Arabic pairs representing 28 distinct reviewed works**. Torabi 2014 is an additional metadata-only legacy record, excluded from synthesis. No chapter prose section is drafted here.
+Task 2 prepares evidence for the approved Chapter 2 roadmap: **32 English–Arabic pairs representing 31 distinct reviewed works**. Torabi 2014 is an additional metadata-only legacy record, excluded from synthesis. No chapter prose section is drafted here.
 
 - [English index](summaries-en/README.md)
 - [فهرس العربية](summaries-ar/README.md)

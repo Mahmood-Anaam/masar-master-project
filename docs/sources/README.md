@@ -4,9 +4,9 @@ Task 2 evidence collection, reviewed 29 October 2026. The approved eight-section
 
 ## Inventory and access
 
-- **29 reviewed source items represent 28 distinct works**: the Arabic DGA parent guide and its BCM extract are one work. Three sources (russo2023maturity, nist2018criticality, arnott2005descriptive) were added in a later corpus extension to cover gaps in field overview, criticality analysis, and DSS foundations.
+- **32 reviewed source items represent 31 distinct works**: the Arabic DGA parent guide and its BCM extract are one work. Six sources (russo2023maturity, nist2018criticality, arnott2005descriptive, elshekeil2017precesion, vonderassen2024quanttm, globalsuite2025prebia) were added in a later corpus extension to cover gaps in field overview, criticality analysis, and DSS foundations.
 - **13 PDFs:** nine newly archived files (seven CC articles and two NIST reports), plus four supplied government PDFs preserved unchanged.
-- **16 access records** represent reviewed material whose full file is not redistributed or whose evidence is a public web record. The three extension sources are access records because the review environment could not download their PDFs; the reading links are in each record.
+- **19 access records** represent reviewed material whose full file is not redistributed or whose evidence is a public web record. The six extension sources are access records because the review environment could not download their PDFs; the reading links are in each record.
 - One additional legacy reference, Torabi 2014, is metadata-only and excluded from full-text synthesis.
 - [Manifest](manifest.json) records keys, versions, coverage, rights, hashes, paths and section mapping. [Search/selection](../source-summaries/search-and-selection.md) records scope and limits.
 
@@ -41,6 +41,9 @@ Task 2 evidence collection, reviewed 29 October 2026. The approved eight-section
 | russo2023maturity | [Exploring a Multidisciplinary Assessment of Organisational Maturity in Business Continuity: A Perspective and Future Research Outlook](<russo2023maturity.md>) | Complete HTML full text; figures via captions only | [Summary](<../source-summaries/summaries-en/russo2023maturity.md>) | [ملخص](<../source-summaries/summaries-ar/russo2023maturity.md>) |
 | nist2018criticality | [Criticality Analysis Process Model: Prioritizing Systems and Components](<nist2018criticality.md>) | Chapters 1-3 through E.2; E.3-E.5 and appendices not read | [Summary](<../source-summaries/summaries-en/nist2018criticality.md>) | [ملخص](<../source-summaries/summaries-ar/nist2018criticality.md>) |
 | arnott2005descriptive | [A Descriptive Analysis of Decision Support Systems Research Between 1990 and 2003](<arnott2005descriptive.md>) | Complete article including Tables 1-11 | [Summary](<../source-summaries/summaries-en/arnott2005descriptive.md>) | [ملخص](<../source-summaries/summaries-ar/arnott2005descriptive.md>) |
+| elshekeil2017precesion | [PRECESION: Progressive Recovery and Restoration Planning of Interdependent Services in Enterprise Data Centers](<elshekeil2017precesion.md>) | Complete article including Tables 1-5 | [Summary](<../source-summaries/summaries-en/elshekeil2017precesion.md>) | [ملخص](<../source-summaries/summaries-ar/elshekeil2017precesion.md>) |
+| vonderassen2024quanttm | [QuantTM: Business-Centric Threat Quantification for Risk Management and Cyber Resilience](<vonderassen2024quanttm.md>) | Complete preprint; peer-reviewed version not checked | [Summary](<../source-summaries/summaries-en/vonderassen2024quanttm.md>) | [ملخص](<../source-summaries/summaries-ar/vonderassen2024quanttm.md>) |
+| globalsuite2025prebia | [GlobalSuite Solutions: Pre-BIA (user manual page)](<globalsuite2025prebia.md>) | Public documentation reviewed; no tenant/test | [Summary](<../source-summaries/summaries-en/globalsuite2025prebia.md>) | [ملخص](<../source-summaries/summaries-ar/globalsuite2025prebia.md>) |
 
 ## Rights and versions
 
