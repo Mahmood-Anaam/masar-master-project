@@ -1,0 +1,701 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-29",
+  "scope": "Task 2 only: source corpus and bilingual research summaries, not chapter drafting",
+  "reviewed_source_items": 26,
+  "distinct_reviewed_works": 25,
+  "additional_legacy_metadata_only": 1,
+  "records": [
+    {
+      "id": "hevner2004design",
+      "bibtex_key": "hevner2004design",
+      "work_id": "hevner2004design",
+      "title": "Design Science in Information Systems Research",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete article; main framework and evaluation guidance",
+      "source_path": "docs/sources/hevner2004design.md",
+      "source_url": "https://doi.org/10.2307/25148625",
+      "doi": "10.2307/25148625",
+      "version": "Published journal article, 2004",
+      "accessed": "2026-10-29",
+      "rights": "Copyright MIS Quarterly; access record only.",
+      "sha256": "796102d34e24645ba66a4d6e516d0816d73276cb1277c82d6b7d8532b32aa4a8",
+      "sections": [
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/hevner2004design.md",
+        "ar": "docs/source-summaries/summaries-ar/hevner2004design.md"
+      },
+      "reviewed_pdf_sha256": "fc827ea7cf5f20dcd0207fecd25489ccb854195c2581d33183ce5235e046a121",
+      "reviewed_copy_url": "https://ailab-ua.github.io/courses/MIS611D/hevner-2004-design_science_in_is_research.pdf"
+    },
+    {
+      "id": "peffers2007dsrm",
+      "bibtex_key": "peffers2007dsrm",
+      "work_id": "peffers2007dsrm",
+      "title": "A Design Science Research Methodology for Information Systems Research",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete article; six activities and four retrospective examples",
+      "source_path": "docs/sources/peffers2007dsrm.md",
+      "source_url": "https://doi.org/10.2753/MIS0742-1222240302",
+      "doi": "10.2753/MIS0742-1222240302",
+      "version": "Winter 2007–2008 journal issue; bibliographic year 2007",
+      "accessed": "2026-10-29",
+      "rights": "Publisher copyright; access record only.",
+      "sha256": "82d9c40063d458170734ee21b85a3aa63988375949ff61b72f8ad4e4705f8b45",
+      "sections": [
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/peffers2007dsrm.md",
+        "ar": "docs/source-summaries/summaries-ar/peffers2007dsrm.md"
+      },
+      "reviewed_pdf_sha256": "4ceca6bb5aa1373f31c3220fc09c3a26f688e66762dc626324fbb309d77c7372",
+      "reviewed_copy_url": "https://zhang.ist.psu.edu/teaching/504/readings/Peffers.pdf"
+    },
+    {
+      "id": "sahebjamnia2015integrated",
+      "bibtex_key": "sahebjamnia2015integrated",
+      "work_id": "sahebjamnia2015integrated",
+      "title": "Integrated Business Continuity and Disaster Recovery Planning: Towards Organizational Resilience",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete accepted manuscript; supplement not obtained",
+      "source_path": "docs/sources/sahebjamnia2015integrated.md",
+      "source_url": "https://bura.brunel.ac.uk/bitstream/2438/11835/1/Fulltext.pdf",
+      "doi": "10.1016/j.ejor.2014.09.055",
+      "version": "Accepted manuscript; published EJOR 2015",
+      "accessed": "2026-10-29",
+      "rights": "Accepted manuscript copyright; no public redistribution permission established.",
+      "sha256": "ea5388d482f90fe32fa0f789713f0ca0adfcf25c93b03f98dd7e84030461d827",
+      "sections": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/sahebjamnia2015integrated.md",
+        "ar": "docs/source-summaries/summaries-ar/sahebjamnia2015integrated.md"
+      },
+      "reviewed_pdf_sha256": "b3e9dbacadf2ebee408a36a59e278457465da67677070f63ebe04ccb539bc904",
+      "reviewed_copy_url": "https://bura.brunel.ac.uk/bitstream/2438/11835/1/Fulltext.pdf"
+    },
+    {
+      "id": "assetcriticality2023",
+      "bibtex_key": "assetcriticality2023",
+      "work_id": "assetcriticality2023",
+      "title": "A BIA-Based Quantitative Framework for Built Physical Asset Criticality Analysis under Sustainability and Resilience",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete 30-page article; separate supplementary calculations not reviewed",
+      "source_path": "docs/sources/assetcriticality2023.pdf",
+      "source_url": "https://www.mdpi.com/2075-5309/13/1/264/pdf",
+      "doi": "10.3390/buildings13010264",
+      "version": null,
+      "accessed": "2026-10-29",
+      "rights": "CC BY 4.0; unmodified publisher PDF, author attribution in paired summaries.",
+      "sha256": "9acc867248788f289d225bff24d0e7c0f0619a968673e3c333eac8dd99a31a6d",
+      "sections": [
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/assetcriticality2023.md",
+        "ar": "docs/source-summaries/summaries-ar/assetcriticality2023.md"
+      }
+    },
+    {
+      "id": "amm2023bia",
+      "bibtex_key": "amm2023bia",
+      "work_id": "amm2023bia",
+      "title": "Business Impact Analysis of AMM Data: A Case Study",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete 30-page article",
+      "source_path": "docs/sources/amm2023bia.pdf",
+      "source_url": "https://www.mdpi.com/2571-5577/6/5/82/pdf",
+      "doi": "10.3390/asi6050082",
+      "version": null,
+      "accessed": "2026-10-29",
+      "rights": "CC BY 4.0; unmodified publisher PDF, author attribution in paired summaries.",
+      "sha256": "2a72a00a983b7ea2048bf489221e20020047f7d218aada718f6083b3f116d4b7",
+      "sections": [
+        "2.2",
+        "2.4",
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/amm2023bia.md",
+        "ar": "docs/source-summaries/summaries-ar/amm2023bia.md"
+      }
+    },
+    {
+      "id": "container2021bia",
+      "bibtex_key": "container2021bia",
+      "work_id": "container2021bia",
+      "title": "The Application of Business Impact Analysis Due to Electricity Disruption in a Container Terminal",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete 17-page article",
+      "source_path": "docs/sources/container2021bia.pdf",
+      "source_url": "https://www.mdpi.com/2071-1050/13/21/12038/pdf",
+      "doi": "10.3390/su132112038",
+      "version": null,
+      "accessed": "2026-10-29",
+      "rights": "CC BY 4.0; unmodified publisher PDF, author attribution in paired summaries.",
+      "sha256": "346125209061fc0dd3690493794019fce6777c6ee8a0973b289f01354600931c",
+      "sections": [
+        "2.2",
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/container2021bia.md",
+        "ar": "docs/source-summaries/summaries-ar/container2021bia.md"
+      }
+    },
+    {
+      "id": "raptaki2025propagation",
+      "bibtex_key": "raptaki2025propagation",
+      "work_id": "raptaki2025propagation",
+      "title": "Automated Cybersecurity Impact Propagation across Business Processes Using Process Mining Techniques",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete 17-page article; predecessor PRIA not counted independently",
+      "source_path": "docs/sources/raptaki2025propagation.pdf",
+      "source_url": "https://link.springer.com/content/pdf/10.1007/s10207-025-01040-0.pdf",
+      "doi": "10.1007/s10207-025-01040-0",
+      "version": null,
+      "accessed": "2026-10-29",
+      "rights": "CC BY 4.0; unmodified publisher PDF, author attribution in paired summaries.",
+      "sha256": "941978655d043fd569a1ab818f01a51b8b721baa087abf80416a03b4f585e815",
+      "sections": [
+        "2.3",
+        "2.4",
+        "2.5",
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/raptaki2025propagation.md",
+        "ar": "docs/source-summaries/summaries-ar/raptaki2025propagation.md"
+      }
+    },
+    {
+      "id": "rinaldi2001interdependencies",
+      "bibtex_key": "rinaldi2001interdependencies",
+      "work_id": "rinaldi2001interdependencies",
+      "title": "Identifying, Understanding, and Analyzing Critical Infrastructure Interdependencies",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete 15-page article",
+      "source_path": "docs/sources/rinaldi2001interdependencies.md",
+      "source_url": "https://doi.org/10.1109/37.969131",
+      "doi": "10.1109/37.969131",
+      "version": null,
+      "accessed": "2026-10-29",
+      "rights": "IEEE copyright; access record only.",
+      "sha256": "4150d58d31a2c06cadd227b19993366dbd7f9788d7dd1b20fcee11a860fe594f",
+      "sections": [
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/rinaldi2001interdependencies.md",
+        "ar": "docs/source-summaries/summaries-ar/rinaldi2001interdependencies.md"
+      },
+      "reviewed_pdf_sha256": "dd446c3f5fa32d52d092b2cf0f37ac6708fbaf835778145cb8eb50aa18c882cc",
+      "reviewed_copy_url": "https://www.researchgate.net/profile/James-Peerenboom/publication/3206740_Identifying_understanding_and_analyzing_critical_infrastructure_interdependencies/links/5628c9fa08aef25a243d2137/Identifying-understanding-and-analyzing-critical-infrastructure-interdependencies.pdf"
+    },
+    {
+      "id": "venable2016feds",
+      "bibtex_key": "venable2016feds",
+      "work_id": "venable2016feds",
+      "title": "FEDS: A Framework for Evaluation in Design Science Research",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete 13-page publisher article; embedded final-page CC BY notice verified",
+      "source_path": "docs/sources/venable2016feds.pdf",
+      "source_url": "https://link.springer.com/content/pdf/10.1057/ejis.2014.36.pdf",
+      "doi": "10.1057/ejis.2014.36",
+      "version": "2016 issue, first online 2014",
+      "accessed": "2026-10-29",
+      "rights": "CC BY 3.0 as stated on article final page; unmodified PDF and author attribution.",
+      "sha256": "4711c2f3ea1ff0c6578158ff37a4a1201c3e9c02ce77798690dafda70eb0e8ba",
+      "sections": [
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/venable2016feds.md",
+        "ar": "docs/source-summaries/summaries-ar/venable2016feds.md"
+      }
+    },
+    {
+      "id": "bcms2026reference",
+      "bibtex_key": "bcms2026reference",
+      "work_id": "bcms2026reference",
+      "title": "Business Continuity Management—Identifying Relevant Processes for a Reference Model",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete 21-page article",
+      "source_path": "docs/sources/bcms2026reference.pdf",
+      "source_url": "https://www.mdpi.com/2076-3417/16/7/3219/pdf",
+      "doi": "10.3390/app16073219",
+      "version": null,
+      "accessed": "2026-10-29",
+      "rights": "CC BY 4.0; unmodified publisher PDF, author attribution in paired summaries.",
+      "sha256": "d9fc2a3c7a490e0c9dc3dc442a8b771cb481e59d0b5e2db2dc772c79608f144e",
+      "sections": [
+        "2.1",
+        "2.2",
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/bcms2026reference.md",
+        "ar": "docs/source-summaries/summaries-ar/bcms2026reference.md"
+      }
+    },
+    {
+      "id": "selfassessment2025",
+      "bibtex_key": "selfassessment2025",
+      "work_id": "selfassessment2025",
+      "title": "An Approach to Business Continuity Self-Assessment",
+      "type": "peer-reviewed article",
+      "status": "reviewed",
+      "review_coverage": "Complete 37-page article; editable questionnaire/software and raw data not obtained",
+      "source_path": "docs/sources/selfassessment2025.pdf",
+      "source_url": "https://www.mdpi.com/2227-7080/13/6/242/pdf",
+      "doi": "10.3390/technologies13060242",
+      "version": null,
+      "accessed": "2026-10-29",
+      "rights": "CC BY 4.0; unmodified publisher PDF, author attribution in paired summaries.",
+      "sha256": "602fa1ac14dda72977d8d862bd98ed6668b69423879caa32940e8d21a5b9b773",
+      "sections": [
+        "2.1",
+        "2.5",
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/selfassessment2025.md",
+        "ar": "docs/source-summaries/summaries-ar/selfassessment2025.md"
+      }
+    },
+    {
+      "id": "nist2010contingency",
+      "bibtex_key": "nist2010contingency",
+      "work_id": "nist2010contingency",
+      "title": "Contingency Planning Guide for Federal Information Systems",
+      "type": "technical guidance",
+      "status": "reviewed",
+      "review_coverage": "Complete main chapters and appendices; repeated A templates compared",
+      "source_path": "docs/sources/nist2010contingency.pdf",
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf",
+      "doi": "10.6028/NIST.SP.800-34r1",
+      "version": "Revision 1, May 2010; errata through November 2010",
+      "accessed": "2026-10-29",
+      "rights": "Publication explicitly not subject to copyright (authority page); attribution retained.",
+      "sha256": "476f04d4c60b0770c1ac8b2720551972074ce78e936a3e7a535048416111d0df",
+      "sections": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/nist2010contingency.md",
+        "ar": "docs/source-summaries/summaries-ar/nist2010contingency.md"
+      }
+    },
+    {
+      "id": "quinn2025bia",
+      "bibtex_key": "quinn2025bia",
+      "work_id": "quinn2025bia",
+      "title": "Using Business Impact Analysis to Inform Risk Prioritization and Response",
+      "type": "technical guidance",
+      "status": "reviewed",
+      "review_coverage": "Complete 27-page updated report",
+      "source_path": "docs/sources/quinn2025bia.pdf",
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/ir/2025/NIST.IR.8286D-upd1.pdf",
+      "doi": "10.6028/NIST.IR.8286D-upd1",
+      "version": "February 2025, updated 26 February; supersedes 2022",
+      "accessed": "2026-10-29",
+      "rights": "NIST U.S. government publication; original PDF with attribution.",
+      "sha256": "83ba9a1e6e7b6dfdee2714e7a7ec5a84756085fff9919074db6ae7e1c89aa1b0",
+      "sections": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/quinn2025bia.md",
+        "ar": "docs/source-summaries/summaries-ar/quinn2025bia.md"
+      }
+    },
+    {
+      "id": "power2007history",
+      "bibtex_key": "power2007history",
+      "work_id": "power2007history",
+      "title": "A Brief History of Decision Support Systems",
+      "type": "author scholarly overview",
+      "status": "reviewed",
+      "review_coverage": "Complete public narrative, timeline and references",
+      "source_path": "docs/sources/power2007history.md",
+      "source_url": "https://dssresources.com/history/dsshistory.html",
+      "doi": null,
+      "version": "Header 4.1, recommended citation 4.0 dated 10 March 2007",
+      "accessed": "2026-10-29",
+      "rights": "No open redistribution licence identified; access record only.",
+      "sha256": "03e566f13de19df32c7b1e70dcec9f91950d70f7ad486d2f9bf41c1186ca15e6",
+      "sections": [
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/power2007history.md",
+        "ar": "docs/source-summaries/summaries-ar/power2007history.md"
+      }
+    },
+    {
+      "id": "Digital Government Authority-Business Continuity Section-ar",
+      "bibtex_key": "dga2025bcm",
+      "work_id": "dga2025bcm",
+      "title": "DGA BCM section: Arabic extract",
+      "type": "institutional guidance",
+      "status": "reviewed",
+      "review_coverage": "Complete supplied 54-page extract, including relevant definitions/annexes",
+      "source_path": "docs/sources/Digital Government Authority-Business Continuity Section-ar.pdf",
+      "source_url": "https://dga.gov.sa/ar/regulatory-documents/guideline-for-risk-management-and-business-continuity-for-digital-government",
+      "doi": null,
+      "version": "DGA-1-2-5-231, 13 January 2025; extracted from Arabic v3.0",
+      "accessed": "2026-10-29",
+      "rights": "Pre-existing user-supplied public guidance PDF; preserved byte-for-byte. No new open redistribution licence asserted.",
+      "sha256": "2ddc793da170c5590662061760d22b5622adc083b7f6fce8d1ed46034b442faa",
+      "sections": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/Digital Government Authority-Business Continuity Section-ar.md",
+        "ar": "docs/source-summaries/summaries-ar/Digital Government Authority-Business Continuity Section-ar.md"
+      }
+    },
+    {
+      "id": "Guideline of Risk and Business Continuity Management for Digital Government.V1.0-ar",
+      "bibtex_key": "dga2025bcm",
+      "work_id": "dga2025bcm",
+      "title": "DGA integrated guideline: complete Arabic parent",
+      "type": "institutional guidance",
+      "status": "reviewed",
+      "review_coverage": "Focused review: front matter, complete BCM division, documentation, definitions and relevant annexes; broader risk division not fully synthesized",
+      "source_path": "docs/sources/Guideline of Risk and Business Continuity Management for Digital Government.V1.0-ar.pdf",
+      "source_url": "https://dga.gov.sa/ar/regulatory-documents/guideline-for-risk-management-and-business-continuity-for-digital-government",
+      "doi": null,
+      "version": "Actual cover: v3.0, DGA-1-2-5-231, 13 January 2025; filename misleading",
+      "accessed": "2026-10-29",
+      "rights": "Pre-existing user-supplied public guidance PDF; preserved byte-for-byte. No new open redistribution licence asserted.",
+      "sha256": "33cce5aad83127616657fd495fbe0e418a596076764a064fac346282a73983f8",
+      "sections": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/Guideline of Risk and Business Continuity Management for Digital Government.V1.0-ar.md",
+        "ar": "docs/source-summaries/summaries-ar/Guideline of Risk and Business Continuity Management for Digital Government.V1.0-ar.md"
+      }
+    },
+    {
+      "id": "Guideline of Risk and Business Continuity Management for Digital Government.V1.0-en",
+      "bibtex_key": "dga2025guidelineen",
+      "work_id": "dga2025guidelineen",
+      "title": "DGA integrated guideline: English issue 1.0",
+      "type": "institutional guidance",
+      "status": "reviewed",
+      "review_coverage": "Focused review: pp. 3–9, 97–138 and BCM annexes 152–154; risk procedures pp. 10–96 not fully reviewed",
+      "source_path": "docs/sources/Guideline of Risk and Business Continuity Management for Digital Government.V1.0-en.pdf",
+      "source_url": "https://dga.gov.sa/en/regulatory-documents",
+      "doi": null,
+      "version": "DGA-1-2-5-210, issue 1.0; cover 28 January / footers 29 January 2025",
+      "accessed": "2026-10-29",
+      "rights": "Pre-existing user-supplied public guidance PDF; preserved byte-for-byte. No new open redistribution licence asserted.",
+      "sha256": "207c423854c2d1de040ccf0288ae002d799a2e71b7423375660e4ee57a8820a8",
+      "sections": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/Guideline of Risk and Business Continuity Management for Digital Government.V1.0-en.md",
+        "ar": "docs/source-summaries/summaries-ar/Guideline of Risk and Business Continuity Management for Digital Government.V1.0-en.md"
+      }
+    },
+    {
+      "id": "National Risk Council-Business Continuity Section-ar",
+      "bibtex_key": "nrcnationalframework",
+      "work_id": "nrcnationalframework",
+      "title": "National Framework: supplied Arabic BCM extract",
+      "type": "institutional guidance",
+      "status": "reviewed",
+      "review_coverage": "Complete supplied extract; Arabic OCR plus visual RTO example; uncertain numerical appendix cells not used",
+      "source_path": "docs/sources/National Risk Council-Business Continuity Section-ar.pdf",
+      "source_url": "https://riskbcm.com/gsnrc_standards/",
+      "doi": null,
+      "version": "Undated extract; BCM printed pp. 216–272 plus supplementary material with separate pagination",
+      "accessed": "2026-10-29",
+      "rights": "Pre-existing user-supplied public guidance PDF; preserved byte-for-byte. No new open redistribution licence asserted.",
+      "sha256": "8d873efbbfab2e8d49ff118f3d715af422fac7b5532ad99c1f8f682e9c1bf4a3",
+      "sections": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "2.6",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/National Risk Council-Business Continuity Section-ar.md",
+        "ar": "docs/source-summaries/summaries-ar/National Risk Council-Business Continuity Section-ar.md"
+      }
+    },
+    {
+      "id": "iso22301catalogue",
+      "bibtex_key": "iso22301catalogue",
+      "work_id": "iso22301catalogue",
+      "title": "ISO 22301:2019 public catalogue",
+      "type": "public catalogue record",
+      "status": "reviewed",
+      "review_coverage": "Public catalogue/abstract only; full standard not obtained or reviewed",
+      "source_path": "docs/sources/iso22301catalogue.md",
+      "source_url": "https://www.iso.org/standard/75106.html",
+      "doi": null,
+      "version": "ISO 22301:2019",
+      "accessed": "2026-10-29",
+      "rights": "ISO copyright; original access record only, no standard text or PDF.",
+      "sha256": "29d123becbeea4b418d1a9e9878dcad14d465ad82ba6f51a3fa518dd0729b14e",
+      "sections": [
+        "2.1"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/iso22301catalogue.md",
+        "ar": "docs/source-summaries/summaries-ar/iso22301catalogue.md"
+      }
+    },
+    {
+      "id": "iso22313catalogue",
+      "bibtex_key": "iso22313catalogue",
+      "work_id": "iso22313catalogue",
+      "title": "ISO 22313:2020 public catalogue",
+      "type": "public catalogue record",
+      "status": "reviewed",
+      "review_coverage": "Public catalogue/abstract only; full standard not obtained or reviewed",
+      "source_path": "docs/sources/iso22313catalogue.md",
+      "source_url": "https://www.iso.org/standard/75107.html",
+      "doi": null,
+      "version": "ISO 22313:2020",
+      "accessed": "2026-10-29",
+      "rights": "ISO copyright; original access record only, no standard text or PDF.",
+      "sha256": "c6e74c0d0e458c62e2dbb84528e67f534b2c2dca493e5d5204c5f2eb360c026a",
+      "sections": [
+        "2.1"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/iso22313catalogue.md",
+        "ar": "docs/source-summaries/summaries-ar/iso22313catalogue.md"
+      }
+    },
+    {
+      "id": "iso22317catalogue",
+      "bibtex_key": "iso22317catalogue",
+      "work_id": "iso22317catalogue",
+      "title": "ISO/TS 22317:2021 public catalogue",
+      "type": "public catalogue record",
+      "status": "reviewed",
+      "review_coverage": "Public catalogue/abstract only; full standard not obtained or reviewed",
+      "source_path": "docs/sources/iso22317catalogue.md",
+      "source_url": "https://www.iso.org/standard/79000.html",
+      "doi": null,
+      "version": "ISO/TS 22317:2021",
+      "accessed": "2026-10-29",
+      "rights": "ISO copyright; original access record only, no standard text or PDF.",
+      "sha256": "53e813a8f7510db00503079ec7a6ce6235635e87ea389f9dfc50aa050417d1df",
+      "sections": [
+        "2.1",
+        "2.2"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/iso22317catalogue.md",
+        "ar": "docs/source-summaries/summaries-ar/iso22317catalogue.md"
+      }
+    },
+    {
+      "id": "servicenow2025rto",
+      "bibtex_key": "servicenow2025rto",
+      "work_id": "servicenow2025rto",
+      "title": "Calculating RTO and RPO",
+      "type": "vendor technical documentation",
+      "status": "reviewed",
+      "review_coverage": "Original public calculation body reviewed; generated overview excluded; no software test",
+      "source_path": "docs/sources/servicenow2025rto.md",
+      "source_url": "https://www.servicenow.com/docs/r/yokohama/governance-risk-compliance/rto-rpo-calculation.html",
+      "doi": null,
+      "version": "Yokohama; updated 31 July 2025",
+      "accessed": "2026-10-29",
+      "rights": "No open redistribution licence identified; access record only.",
+      "sha256": "c7bcccddb90e1300b4f971bbd9bdd73dbb37e05fa234cc75120102c78f8bd618",
+      "sections": [
+        "2.2",
+        "2.3",
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/servicenow2025rto.md",
+        "ar": "docs/source-summaries/summaries-ar/servicenow2025rto.md"
+      }
+    },
+    {
+      "id": "servicenow2025bia",
+      "bibtex_key": "servicenow2025bia",
+      "work_id": "servicenow2025bia",
+      "title": "Business impact analysis",
+      "type": "vendor technical documentation",
+      "status": "reviewed",
+      "review_coverage": "Original public workflow body reviewed; generated overview excluded; no software test",
+      "source_path": "docs/sources/servicenow2025bia.md",
+      "source_url": "https://www.servicenow.com/docs/r/yokohama/governance-risk-compliance/bia-uib.html",
+      "doi": null,
+      "version": "Yokohama; updated 31 July 2025",
+      "accessed": "2026-10-29",
+      "rights": "No open redistribution licence identified; access record only.",
+      "sha256": "1bf2dded111b96fe6ce90b055e7565b36154afb9935045aef5e81b30d8dba32e",
+      "sections": [
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/servicenow2025bia.md",
+        "ar": "docs/source-summaries/summaries-ar/servicenow2025bia.md"
+      }
+    },
+    {
+      "id": "servicenow2025datasheet",
+      "bibtex_key": "servicenow2025datasheet",
+      "work_id": "servicenow2025datasheet",
+      "title": "ServiceNow Business Continuity Management: solution brief",
+      "type": "vendor solution brief",
+      "status": "reviewed",
+      "review_coverage": "Complete two-page PDF; provider claims, no software test",
+      "source_path": "docs/sources/servicenow2025datasheet.md",
+      "source_url": "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/solution-brief/sb-bcm.pdf",
+      "doi": null,
+      "version": "Printed copyright 2025",
+      "accessed": "2026-10-29",
+      "rights": "ServiceNow all rights reserved; access record only.",
+      "sha256": "5120624064fd96d7aa21ef800613361a86e95bbe7d51979bf2445920bf38cd91",
+      "sections": [
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/servicenow2025datasheet.md",
+        "ar": "docs/source-summaries/summaries-ar/servicenow2025datasheet.md"
+      },
+      "reviewed_pdf_sha256": "fe59f5bfb3001b6ff7345cedf701a4cfdc3ddcacbded39f122c6bf82b59c478b"
+    },
+    {
+      "id": "fusion2026bcm",
+      "bibtex_key": "fusion2026bcm",
+      "work_id": "fusion2026bcm",
+      "title": "Fusion Business Continuity Management",
+      "type": "vendor product page",
+      "status": "reviewed",
+      "review_coverage": "Public capability descriptions reviewed; no tenant/test",
+      "source_path": "docs/sources/fusion2026bcm.md",
+      "source_url": "https://www.fusionrm.com/solutions/business-continuity-management/",
+      "doi": null,
+      "version": "Public page accessed 29 October 2026; no fixed software version",
+      "accessed": "2026-10-29",
+      "rights": "No open redistribution licence identified; access record only.",
+      "sha256": "260598683d94494e6a5466cf246f4eb8bb81f8e919f591003e95c804bc29acdd",
+      "sections": [
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/fusion2026bcm.md",
+        "ar": "docs/source-summaries/summaries-ar/fusion2026bcm.md"
+      }
+    },
+    {
+      "id": "riskonnect2026bcm",
+      "bibtex_key": "riskonnect2026bcm",
+      "work_id": "riskonnect2026bcm",
+      "title": "Riskonnect Business Continuity Management Software",
+      "type": "vendor product page",
+      "status": "reviewed",
+      "review_coverage": "Public capabilities and FAQ reviewed; no tenant/test",
+      "source_path": "docs/sources/riskonnect2026bcm.md",
+      "source_url": "https://riskonnect.com/business-continuity-management-software/",
+      "doi": null,
+      "version": "Page update marker September 2026; no fixed software version",
+      "accessed": "2026-10-29",
+      "rights": "No open redistribution licence identified; access record only.",
+      "sha256": "8eb50a1c0d629200a6da501ce11d41756e80f743fef89bd07f0fd1ccff4ccbcf",
+      "sections": [
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/riskonnect2026bcm.md",
+        "ar": "docs/source-summaries/summaries-ar/riskonnect2026bcm.md"
+      }
+    },
+    {
+      "id": "torabi2014framework",
+      "bibtex_key": "torabi2014framework",
+      "title": "A New Framework for Business Impact Analysis in Business Continuity Management (with a Case Study)",
+      "doi": "10.1016/j.ssci.2014.04.017",
+      "status": "metadata_only_excluded",
+      "review_coverage": "Existing introduction reference; bibliographic metadata checked. Full text not obtained; excluded from full-text synthesis.",
+      "source_path": "docs/sources/torabi2014framework.md",
+      "source_url": "https://doi.org/10.1016/j.ssci.2014.04.017",
+      "summaries": null,
+      "sections": [],
+      "accessed": "2026-10-29",
+      "sha256": "3e0552496639f3c856cb671311ae10e93bd2eaf76927d4b9469fc505371657d3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+# Search, selection and access record — Task 2
+
+Review date: **29 October 2026**. Project: TDRP methodology and Masar, a decision support system for business continuity and critical-service recovery prioritization.
+
+## Scope and method
+
+This is a focused, purposive thematic search supporting the approved eight-section roadmap, from BCM to temporal BIA, prioritization, dependencies, DSS, evaluation and synthesis. It is **not an exhaustive systematic review**: no Scopus/Web of Science export, registered protocol, PRISMA flow or reproducible database-wide result count is claimed. Candidate counts are not reconstructed from changing search-engine results.
+
+Discovery used general scholarly/web searching, DOI/Crossref metadata, OpenAlex access-location checks, publisher pages/PDFs, author/institutional repositories and citation-following from relevant papers. Primary sources were preferred: original articles, NIST reports, supplied Saudi government documents, ISO's own public catalogue and providers' own documentation. Search concepts included combinations of business continuity, business impact analysis, temporal/time-dependent impact, recovery prioritization, service/asset criticality, MCDM/fuzzy models, dependencies/interdependencies, process mining, decision support, design science and artifact evaluation. Product comparison focused on ServiceNow, Fusion and Riskonnect.
+
+Existing introduction references were screened first. Foundational older work was retained for DSS, dependencies and research methodology; recent studies were included where they supplied relevant mechanisms, cases or evaluation designs. No fixed year restriction was imposed. Publication date was checked against the review date; the March 2026 process-reference article is within scope.
+
+## Selection decisions
+
+Include material when it supports a specific roadmap function, its identity/version is verifiable, its accessible content can be examined, and its evidential scope can be stated honestly. Original scholarly articles support methods and reported findings; guidance supports definitions/process expectations; provider documentation supports disclosed functions; catalogue pages support edition/scope facts only.
+
+Full text was preferred to abstracts. A failed access attempt did not justify reconstructing a paper from secondary citations. Duplicate editions, predecessor studies and an extract of a parent guide are not independent evidence. The corpus is organized by contribution rather than treating every source as equally strong.
+
+The deliverable contains **26 reviewed file-level source items, 25 distinct works, 26 English–Arabic summary pairs and 26 bibliography entries**. The bibliography count includes the pre-existing Torabi article whose full text was not obtained. The Arabic DGA parent and extract share one key; the different English document has a separate key. Eleven reviewed journal articles, two NIST reports, three distinct Saudi guidance versions/works, one DSS historical overview, three ISO public records and five vendor records make up the 25 reviewed works. This arithmetic is an inventory, not a search-screening flow.
+
+## Access-limited candidates
+
+| Candidate | Verified identifier | Decision and reason |
+|---|---|---|
+| Torabi, Rezaei Soufi and Sahebjamnia (2014), BIA framework | 10.1016/j.ssci.2014.04.017 | Existing introduction reference retained; full text not obtained. Metadata-only, excluded from detailed synthesis; no fabricated summary. |
+| Gibb and Buchanan (2006), BCM framework | 10.1016/j.ijinfomgt.2005.11.008 | Repository attempts did not yield readable full text; not added to reviewed corpus. |
+| Herbane (2010), BCM evolution | 10.1080/00076791.2010.511185 | Repository discovery yielded metadata, not readable full text; not selected. |
+| Arnott and Pervan (2005), critical DSS analysis | 10.1057/palgrave.jit.2000035 | Publisher/repository access attempts failed or returned non-PDF/access responses; excluded from full-text corpus. Power's accessible overview is explicitly a different source. |
+| Hassel and Cedergren (2024), multi-actor continuity | 10.1111/1468-5973.12573 | Publisher access and repository discovery did not produce the full PDF; not summarized as read despite metadata indicating open access. |
+| Tjoa et al. (2008), resource-oriented planning | 10.1109/ARES.2008.206 | Candidate discovered through related work; full-text locations failed; excluded from detailed review. |
+| Full ISO 22301/22313/22317 texts | Official ISO catalogue URLs in manifest | Full paid texts not obtained. Public catalogue records are included and explicitly labeled catalogue-only. No clauses or full-standard compliance analysis claimed. |
+
+Access can change. These outcomes describe this search, not a claim that the publications are unavailable everywhere. Legitimate author/library access could support a later corpus revision. Supplements, raw datasets, editable questionnaires and commercial tenants not acquired are identified within the relevant summaries.
+
+## Download, licensing and provenance
+
+Nine new PDFs are archived: six CC BY 4.0 articles, FEDS under its embedded CC BY 3.0 notice, and two NIST reports. Four supplied government PDFs remain byte-for-byte unchanged. Other reviewed copyrighted articles and the ServiceNow brief have reading-copy links and hashes in access records/manifest; their full PDFs are not republished in the public repository. Public website content is represented by original notes rather than copied pages. No paywall was bypassed.
+
+PDF text extraction supported reading; Arabic normalization/OCR addressed broken NRC font extraction, with a visual check of its RTO example. Dense OCR table cells are not treated as reliable numeric evidence. The complete parent DGA files were reviewed for the specified BCM/context portions, not every risk-procedure page. Exact coverage is visible in their summaries and manifest.
+
+## Bibliographic and evidential corrections
+
+- Preserve all six original citation keys. Torabi remains flagged as unread full text.
+- Arabic DGA cover: version 3.0, DGA-1-2-5-231, 13 January 2025, despite a V1.0 filename. The complete guide/extract are one work.
+- English DGA cover: issue 1.0, DGA-1-2-5-210, cover 28 January versus footer 29 January 2025; separate reference.
+- Correct DGA/NRC page-scope descriptions to the supplied material; do not invent an NRC publication year.
+- NIST IR 8286D-upd1 is the February 2025 update, not an independent replication of 2022.
+- FEDS uses the 2016 issue year despite 2014 first-online publication. Peffers retains the established 2007 key/year for the Winter 2007–2008 issue.
+- Power's web header says 4.1; its recommended citation says 4.0 dated March 2007. It is not the different 2008 chapter.
+- ServiceNow's solution brief carries 2025 copyright; help pages are fixed to Yokohama, updated July 2025, rather than silently mixing product releases.
+- Journal article identifiers are identified as article numbers, not fabricated page ranges. DOI is included when identified; no DOI is invented for institutional or product pages.
+
+## Consequences for later chapter drafting
+
+The search supplies counterevidence to an overly broad novelty claim: NIST already discusses criticality inheritance, DGA illustrates maximum-impact/tier rules and ServiceNow discloses configurable RTO/RPO calculations. The synthesis should evaluate the project's particular temporal policy, service-first unit, dependency handling, transparency and artifact evaluation. Absence of a public formula is **unknown**, not proof of absent capability. No provider software was experimentally tested.
+
+The review remains broad-to-specific and analytical; the evidence map identifies where each source is useful and where inference must stop. Task 3 begins only after the user's next authorization.
+
+## Validation completed
+
+- Parsed all 26 bibliography entries through the unmodified IEEEtran BibTeX style; no BibTeX warnings.
+- Built an all-entry bibliography and inspected its three rendered pages; no clipped references or overfull boxes.
+- Built the full report successfully, with no unresolved citations/references. The scratch environment lacked the IEEEtran style and algorithms package; official CTAN copies were used temporarily for validation, without adding unrelated package files to the repository.
+- Checked all 13 PDF files with pdfinfo, all manifest SHA-256 values, all 26 paired basenames and summary/index links.
+- Confirmed the four supplied PDF files and all chapter/title/package files remain unchanged. No Task 3 section drafting was included.
