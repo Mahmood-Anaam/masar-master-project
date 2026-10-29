@@ -16,7 +16,7 @@ Include material when it supports a specific roadmap function, its identity/vers
 
 Full text was preferred to abstracts. A failed access attempt did not justify reconstructing a paper from secondary citations. Duplicate editions, predecessor studies and an extract of a parent guide are not independent evidence. The corpus is organized by contribution rather than treating every source as equally strong.
 
-The original deliverable contained **26 reviewed file-level source items, 25 distinct works, 26 English–Arabic summary pairs and 26 bibliography entries**; the extension below raises these to 32, 31, 32 and 32. The bibliography count includes the pre-existing Torabi article whose full text was not obtained. The Arabic DGA parent and extract share one key; the different English document has a separate key. Eleven reviewed journal articles, two NIST reports, three distinct Saudi guidance versions/works, one DSS historical overview, three ISO public records and five vendor records make up the 25 reviewed works. This arithmetic is an inventory, not a search-screening flow.
+The original deliverable contained **26 reviewed file-level source items, 25 distinct works, 26 English–Arabic summary pairs and 26 bibliography entries**; the extension below raises these to 34, 33, 34 and 34. The bibliography count includes the pre-existing Torabi article whose full text was not obtained. The Arabic DGA parent and extract share one key; the different English document has a separate key. Eleven reviewed journal articles, two NIST reports, three distinct Saudi guidance versions/works, one DSS historical overview, three ISO public records and five vendor records make up the 25 reviewed works. This arithmetic is an inventory, not a search-screening flow.
 
 ## Access-limited candidates
 
@@ -66,7 +66,7 @@ The review remains broad-to-specific and analytical; the evidence map identifies
 
 ## Corpus extension (29 October 2026)
 
-After the roadmap and first corpus were merged, the corpus was audited against each approved section. The audit found the collection honest and well documented but thin in several places (see the gaps list in the evidence map). Six sources were added where full text could be read:
+After the roadmap and first corpus were merged, the corpus was audited against each approved section. The audit found the collection honest and well documented but thin in several places (see the gaps list in the evidence map). Eight sources were added where full text could be read (the last two for the similar-systems survey in docs/similar-systems):
 
 | Key | Gap addressed | Reading basis |
 |---|---|---|
@@ -76,6 +76,8 @@ After the roadmap and first corpus were merged, the corpus was audited against e
 | elshekeil2017precesion | Recovery sequencing under dependencies (Sections 2.3.3, 2.4) | Complete in-press article |
 | vonderassen2024quanttm | Time-dependent impact modeling and a BIA prototype with evaluation (Sections 2.2.3, 2.5.2, 2.6) | Complete arXiv preprint |
 | globalsuite2025prebia | Commercial MTPD derivation and consolidation rules (Section 2.5.3) | Complete vendor help page |
+| grasp2025bia | Commercial time-horizon BIA with MTPD and dependency views (Section 2.5.3) | Complete documentation page |
+| verinice2025bcm | Open-source BCM domain with dependency views and impact inheritance (Sections 2.4.3, 2.5.3) | BCM page in full; other pages as excerpts |
 
 Search used general web search, publisher pages, repository records and DOI metadata. As before, this is purposive and not a systematic review. The environment could not download publisher PDFs, so the three additions are access records with reading links, not archived files.
 

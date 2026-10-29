@@ -2,8 +2,8 @@
   "schema_version": 1,
   "review_date": "2026-10-29",
   "scope": "Task 2 only: source corpus and bilingual research summaries, not chapter drafting; extended with three gap-filling sources on 29 October 2026",
-  "reviewed_source_items": 32,
-  "distinct_reviewed_works": 31,
+  "reviewed_source_items": 34,
+  "distinct_reviewed_works": 33,
   "additional_legacy_metadata_only": 1,
   "records": [
     {
@@ -861,6 +861,61 @@
         "ar": "docs/source-summaries/summaries-ar/globalsuite2025prebia.md"
       },
       "reviewed_copy_url": "https://help.globalsuitesolutions.com/en/globalsuite/v1/pre-bia",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "grasp2025bia",
+      "bibtex_key": "grasp2025bia",
+      "work_id": "grasp2025bia",
+      "title": "GRASP GRC: Business Impact Analysis Assessment in the BCM module",
+      "type": "vendor documentation",
+      "status": "reviewed",
+      "review_coverage": "Complete assessment page; configuration and protection-needs pages not opened; no software test",
+      "source_path": "docs/sources/grasp2025bia.md",
+      "source_url": "https://docs.grasp-grc.com/en/apps/bcm/bia/assessment.html",
+      "doi": null,
+      "version": "Online documentation; no release or date shown",
+      "accessed": "2026-10-29",
+      "rights": "Public web page; described in original words, not copied.",
+      "sha256": "eceaea3bf8a0a3f23acaff7e7bc6a3eadd3de0e9b50961764d3c0dc9ac8b45df",
+      "sections": [
+        "2.2",
+        "2.4",
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/grasp2025bia.md",
+        "ar": "docs/source-summaries/summaries-ar/grasp2025bia.md"
+      },
+      "reviewed_copy_url": "https://docs.grasp-grc.com/en/apps/bcm/bia/assessment.html",
+      "added_in": "corpus extension, 2026-10-29"
+    },
+    {
+      "id": "verinice2025bcm",
+      "bibtex_key": "verinice2025bcm",
+      "work_id": "verinice2025bcm",
+      "title": "verinice: Business Continuity Management domain (SerNet)",
+      "type": "open-source project and vendor web pages",
+      "status": "reviewed",
+      "review_coverage": "BCM domain page read in full; product page and news item seen as search excerpts only; tutorial documentation not reached",
+      "source_path": "docs/sources/verinice2025bcm.md",
+      "source_url": "https://verinice.com/en/solutions/domains/business-continuity-management",
+      "doi": null,
+      "version": "Web pages read 2026-10-29; no release identifier",
+      "accessed": "2026-10-29",
+      "rights": "Public web pages; described in original words. Licence of the newer web generation not verified.",
+      "sha256": "2900b4d9ffb4aacfb711dc2b2548e3c34f9b84c4f78030366acede4220c5bc8d",
+      "sections": [
+        "2.4",
+        "2.5",
+        "2.7"
+      ],
+      "summaries": {
+        "en": "docs/source-summaries/summaries-en/verinice2025bcm.md",
+        "ar": "docs/source-summaries/summaries-ar/verinice2025bcm.md"
+      },
+      "reviewed_copy_url": "https://verinice.com/en/solutions/domains/business-continuity-management",
       "added_in": "corpus extension, 2026-10-29"
     }
   ]

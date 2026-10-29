@@ -1,6 +1,6 @@
 # الملخصات البحثية العربية
 
-توجد 32 مجموعة ملخصات ثنائية اللغة تمثل 31 عملًا؛ فالدليل العربي للهيئة ومقتطفه عمل واحد. يوضح كل ملخص نوع الدليل والنسخة ونطاق القراءة وحدود الاستنتاج. ولا تعني قراءة الفهرس قراءة المعيار الكامل، ولا تعني مراجعة المنتج اختباره.
+توجد 34 مجموعة ملخصات ثنائية اللغة تمثل 33 عملًا؛ فالدليل العربي للهيئة ومقتطفه عمل واحد. يوضح كل ملخص نوع الدليل والنسخة ونطاق القراءة وحدود الاستنتاج. ولا تعني قراءة الفهرس قراءة المعيار الكامل، ولا تعني مراجعة المنتج اختباره.
 
 | مفتاح الاستشهاد | الملخص العربي | English | الأقسام |
 |---|---|---|---|
@@ -36,6 +36,8 @@
 | elshekeil2017precesion | [PRECESION: Progressive Recovery and Restoration Planning of Interdependent Services in Enterprise Data Centers](<elshekeil2017precesion.md>) | [English](<../summaries-en/elshekeil2017precesion.md>) | 2.3, 2.4, 2.7 |
 | vonderassen2024quanttm | [QuantTM: Business-Centric Threat Quantification for Risk Management and Cyber Resilience](<vonderassen2024quanttm.md>) | [English](<../summaries-en/vonderassen2024quanttm.md>) | 2.2, 2.3, 2.5, 2.6 |
 | globalsuite2025prebia | [GlobalSuite Solutions: Pre-BIA (user manual page)](<globalsuite2025prebia.md>) | [English](<../summaries-en/globalsuite2025prebia.md>) | 2.2, 2.3, 2.5, 2.7 |
+| grasp2025bia | [GRASP GRC: Business Impact Analysis Assessment in the BCM module](<grasp2025bia.md>) | [English](<../summaries-en/grasp2025bia.md>) | 2.2, 2.4, 2.5, 2.7 |
+| verinice2025bcm | [verinice: Business Continuity Management domain (SerNet)](<verinice2025bcm.md>) | [English](<../summaries-en/verinice2025bcm.md>) | 2.4, 2.5, 2.7 |
 
 تُراجع [خريطة الأدلة](../evidence-map.md) و[وثيقة الاختيار والوصول](../search-and-selection.md) قبل الكتابة. يُستشهد بالمنشور الأصلي ومفتاحه في references.bib، لا بالملخص بوصفه دراسة مستقلة.
 

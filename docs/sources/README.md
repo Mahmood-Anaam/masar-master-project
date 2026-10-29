@@ -4,9 +4,9 @@ Task 2 evidence collection, reviewed 29 October 2026. The approved eight-section
 
 ## Inventory and access
 
-- **32 reviewed source items represent 31 distinct works**: the Arabic DGA parent guide and its BCM extract are one work. Six sources (russo2023maturity, nist2018criticality, arnott2005descriptive, elshekeil2017precesion, vonderassen2024quanttm, globalsuite2025prebia) were added in a later corpus extension to cover gaps in field overview, criticality analysis, and DSS foundations.
+- **34 reviewed source items represent 33 distinct works**: the Arabic DGA parent guide and its BCM extract are one work. Eight sources (russo2023maturity, nist2018criticality, arnott2005descriptive, elshekeil2017precesion, vonderassen2024quanttm, globalsuite2025prebia, grasp2025bia, verinice2025bcm) were added in a later corpus extension to cover gaps in field overview, criticality analysis, and DSS foundations.
 - **13 PDFs:** nine newly archived files (seven CC articles and two NIST reports), plus four supplied government PDFs preserved unchanged.
-- **19 access records** represent reviewed material whose full file is not redistributed or whose evidence is a public web record. The six extension sources are access records because the review environment could not download their PDFs; the reading links are in each record.
+- **21 access records** represent reviewed material whose full file is not redistributed or whose evidence is a public web record. The eight extension sources are access records because the review environment could not download their PDFs; the reading links are in each record.
 - One additional legacy reference, Torabi 2014, is metadata-only and excluded from full-text synthesis.
 - [Manifest](manifest.json) records keys, versions, coverage, rights, hashes, paths and section mapping. [Search/selection](../source-summaries/search-and-selection.md) records scope and limits.
 
@@ -44,6 +44,8 @@ Task 2 evidence collection, reviewed 29 October 2026. The approved eight-section
 | elshekeil2017precesion | [PRECESION: Progressive Recovery and Restoration Planning of Interdependent Services in Enterprise Data Centers](<elshekeil2017precesion.md>) | Complete article including Tables 1-5 | [Summary](<../source-summaries/summaries-en/elshekeil2017precesion.md>) | [ملخص](<../source-summaries/summaries-ar/elshekeil2017precesion.md>) |
 | vonderassen2024quanttm | [QuantTM: Business-Centric Threat Quantification for Risk Management and Cyber Resilience](<vonderassen2024quanttm.md>) | Complete preprint; peer-reviewed version not checked | [Summary](<../source-summaries/summaries-en/vonderassen2024quanttm.md>) | [ملخص](<../source-summaries/summaries-ar/vonderassen2024quanttm.md>) |
 | globalsuite2025prebia | [GlobalSuite Solutions: Pre-BIA (user manual page)](<globalsuite2025prebia.md>) | Public documentation reviewed; no tenant/test | [Summary](<../source-summaries/summaries-en/globalsuite2025prebia.md>) | [ملخص](<../source-summaries/summaries-ar/globalsuite2025prebia.md>) |
+| grasp2025bia | [GRASP GRC: Business Impact Analysis Assessment in the BCM module](<grasp2025bia.md>) | Complete assessment page; configuration and protection-needs | [Summary](<../source-summaries/summaries-en/grasp2025bia.md>) | [ملخص](<../source-summaries/summaries-ar/grasp2025bia.md>) |
+| verinice2025bcm | [verinice: Business Continuity Management domain (SerNet)](<verinice2025bcm.md>) | BCM domain page read in full; product page and news item see | [Summary](<../source-summaries/summaries-en/verinice2025bcm.md>) | [ملخص](<../source-summaries/summaries-ar/verinice2025bcm.md>) |
 
 ## Rights and versions
 
