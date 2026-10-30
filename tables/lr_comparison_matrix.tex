@@ -1,0 +1,26 @@
+\begin{sidewaystable}[htbp]
+\centering
+\caption{Comparison of the closest reviewed approaches with the intended features of TDRP and Masar. ``Not documented'' means that the reviewed text does not describe the feature.}
+\label{tab:lr_comparison_matrix}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3.1cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Approach} & \textbf{Service-level focus} & \textbf{Time-indexed impact} & \textbf{Configurable scales or rules} & \textbf{Explicit derivation rule} & \textbf{Traceability of outputs} & \textbf{Dependency treatment} & \textbf{Status} \\
+\midrule
+DGA guideline and National Framework \cite{dga2025guidelineen,nrcnationalframework} & Platforms and services & Hourly thresholds per tier; entity-chosen time points & Entity classification; illustrative classes in the Framework & Highest level and tier-to-RTO mapping in the DGA guideline & Not documented & Dependency maps expected; no inheritance rule & Guidance \\
+Horalek (2023) \cite{amm2023bia} & Datasets and systems & Seven durations & Case-specific scales & MTPD read as a band; RTO chosen under constraints & Ratings shown in tables & Not documented & Worked case \\
+Sahebjamnia et al.\ (2015) \cite{sahebjamnia2015integrated} & Products and resources & Periods and recovery trajectories & Model parameters & Optimization model & Not documented & Resources as model inputs & Case study \\
+Aghabegloo et al.\ (2023) \cite{assetcriticality2023} & Assets & Recovery-time factors only & Case-specific network and thresholds & Fuzzy and Bayesian calculation & Contributor analysis & Asset relations from expert judgement & Case study \\
+Von der Assen et al.\ (2024) \cite{vonderassen2024quanttm} & Threat scenarios & Recovery level over time frames & User-entered values & Expected-loss formula & Plots of losses and trajectories & Not documented & Preprint prototype \\
+Raptaki et al.\ (2025) \cite{raptaki2025propagation} & Process activities & Not used & Case-specific threshold & Propagation algorithm & Exported graph and ranking & Inferred from event logs & Implemented application \\
+ServiceNow \cite{servicenow2025rto,servicenow2025datasheet} & Services and processes & Durations per impact category & Configurable & RTO as minimum category downtime; configured default & Approval and archive & Linked to a configuration database & Commercial \\
+GlobalSuite \cite{globalsuite2025prebia} & Services & Configurable time scale & Configurable & MTPD criteria; consolidation rules & Justification note and confidence level & Not documented & Commercial \\
+GRASP GRC \cite{grasp2025bia} & Processes & Horizons per scenario & Configurable & Set by the analyst & Recorded rationale & Linked assets and providers; single-point checks & Commercial \\
+verinice \cite{verinice2025bcm} & Processes and assets & Not documented & Described as customizable & Not documented & Not documented & Dependency view; value inheritance in asset tree & Open source \\
+\midrule
+\textbf{TDRP and Masar (intended)} & Services & Successive periods and impact dimensions & Organization-configured parameters & Documented rules for criticality, MTPD, RTO, priority, and shared dependencies & Outputs traceable to assessments and rules & Services linked to dependencies; highest supported criticality as default & Prototype to be evaluated \\
+\bottomrule
+\end{tabularx}
+\end{sidewaystable}

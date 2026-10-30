@@ -1,0 +1,20 @@
+\begin{sidewaystable}[htbp]
+\centering
+\caption{Documented capabilities of continuity management software relevant to impact assessment, recovery requirements, and dependencies (public documentation accessed on 29 October 2026; no software was tested).}
+\label{tab:lr_tools_comparison}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Tool} & \textbf{Type} & \textbf{Temporal treatment} & \textbf{MTPD and RTO} & \textbf{Configuration and rules} & \textbf{Dependencies} & \textbf{Evidence basis} \\
+\midrule
+ServiceNow Business Continuity Management \cite{servicenow2025rto,servicenow2025bia,servicenow2025datasheet} & Commercial & Impact tolerability and disruption durations for each impact category. & RTO is the minimum category downtime, with a configured maximum when no rating is intolerable; MTPD is not stated. & Configurable ratings, tolerability, and durations; approval workflow. & Linked to a configuration-management database. & Product documentation and a datasheet. \\
+Fusion Risk Management \cite{fusion2026bcm} & Commercial & Not documented on the page reviewed. & Not documented. & Not documented. & Relationship mapping with upstream and downstream dependencies. & Product page. \\
+Riskonnect BCM \cite{riskonnect2026bcm} & Commercial & Not documented on the page reviewed. & Not documented; a FAQ definition of downtime blurs RTO and tolerance. & Workflows and dashboards. & Dependency mapping. & Product page and FAQ. \\
+GlobalSuite Business Continuity \cite{globalsuite2025prebia} & Commercial & Impact table over a configurable time scale. & MTPD entered manually or derived by three criteria; consolidation by average, weighted average, maximum, or minimum; minimum operating level. & Impact types and time scale configured. & Not documented on the page reviewed. & Help page, last modified December 2025. \\
+GRASP GRC, BCM module \cite{grasp2025bia} & Commercial & Impact over configurable time horizons for each damage scenario. & RTO, MTPD, and an optional emergency operating level set by the analyst; no rule shown. & Scenarios, horizons, and damage potentials configured; rationale recorded. & Linked assets, providers, and process chains with single-point-of-failure checks. & Documentation page. \\
+verinice \cite{verinice2025bcm} & Open source (classic product stated as GPLv3) & Not documented in the sources reviewed. & Not documented. & Described as customizable. & Dependency view of processes and resources; business-impact values inherited in an asset tree (classic product). & BCM page read in full; licence and inheritance statements from page excerpts. \\
+\bottomrule
+\end{tabularx}
+\end{sidewaystable}
