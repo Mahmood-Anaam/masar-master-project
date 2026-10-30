@@ -1,0 +1,23 @@
+\begin{sidewaystable}[htbp]
+\centering
+\caption{Documented capabilities of continuity-management systems and research prototypes relevant to Masar.}
+\label{tab:lr_systems}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.5cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{System} & \textbf{Unit and purpose} & \textbf{Temporal impact} & \textbf{MTPD/RTO rule} & \textbf{Configuration} & \textbf{Dependencies} & \textbf{Evidence boundary} \\
+\midrule
+ServiceNow BCM \cite{servicenow2025bia,servicenow2025rto,servicenow2025datasheet} & BIA and continuity workflow for business processes and related items. & Impact categories assessed at configured durations. & RTO is the minimum category downtime; a configured maximum applies if no intolerable rating occurs. & Tolerability, durations, recovery tiers, and questionnaires are configurable. & Related items linked through the CMDB; aggregation of shared dependency criticality is not documented. & First-party documentation and solution brief; no tenant tested. \\
+GlobalSuite \cite{globalsuite2025prebia} & Pre-BIA by service and organizational area. & Configurable time scale with ordinal impact values. & MTPD may be manual or calculated under three documented criteria. & Consolidation by average, weighted average, maximum, or minimum. & Resource mapping is documented; inheritance rule is not. & First-party help page; product effectiveness not independently evaluated. \\
+GRASP GRC \cite{grasp2025bia} & Process-oriented BIA with recovery objectives. & Damage scenarios assessed over configurable time horizons. & MTPD and RTO are recorded; derivation rule is not shown. & Time horizons, scenarios, and rationale can be maintained. & Process dependencies and single-point-of-failure checks. & First-party documentation; analyst behavior inferred only where stated. \\
+Fusion \cite{fusion2026bcm} & Enterprise BCM lifecycle, planning, exercises, and recovery requirements. & Not documented in the reviewed page. & Not documented in the reviewed page. & Workflows and enterprise relationships are described. & People, processes, places, systems, and third parties, including upstream and downstream links. & Provider product page; no direct software evaluation. \\
+Riskonnect \cite{riskonnect2026bcm} & Enterprise BIA, planning, workflow, exercises, and dashboards. & Not documented in the reviewed page. & Calculation details not documented. & Configurable workflows are described. & Dependency mapping and enterprise-risk integration. & Provider page; algorithms and release behavior unknown. \\
+verinice \cite{verinice2025bcm} & Open-source ISMS/BCM support for processes and resources. & Not documented in the reviewed material. & Not documented in the reviewed material. & Domain and views are customizable. & Dependency views and automatic inheritance of business-impact values in an asset tree. & Public product documentation; temporal rule and current release behavior not verified. \\
+QuantTM \cite{vonderassen2024quanttm} & Research prototype for business-centric cyber-threat loss. & Persistent impact represented by recovery level over time frames. & MTPD is an input, not a derived output. & Threat, probability, impact, duration, and recovery data are entered. & Service-resource mapping is outside its scope. & Preprint, one small organization, and five-person focus group. \\
+\bottomrule
+\end{tabularx}
+\par\smallskip
+\footnotesize ``Not documented'' denotes absence from the reviewed public material, not proof that a capability is absent from the software.
+\end{sidewaystable}
