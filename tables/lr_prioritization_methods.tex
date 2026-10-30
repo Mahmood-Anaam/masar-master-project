@@ -1,0 +1,20 @@
+\begin{sidewaystable}[htbp]
+\centering
+\caption{Representative approaches to criticality assessment, recovery planning, and impact propagation.}
+\label{tab:lr_prioritization_methods}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{2.7cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Approach} & \textbf{Unit and inputs} & \textbf{Decision logic} & \textbf{Output} & \textbf{Relation to time and dependencies} & \textbf{Evidence boundary} \\
+\midrule
+NIST criticality analysis \cite{nist2018criticality} & Mission and business functions, information systems, and supporting components. & Structured criticality analysis links system and component importance to the functions they enable. & Criticality information for risk and investment prioritization. & Links functions to supporting systems; considers duration and degraded operation, but does not prescribe service MTPD/RTO mapping. & Government process model; not an empirical validation of a universal recovery-priority formula. \\
+Fuzzy asset criticality \cite{assetcriticality2023} & Built physical assets, expert assessments, site history, and resilience/sustainability factors. & Fuzzy best--worst weighting, TOPSIS, DEMATEL, and Bayesian network. & Asset criticality index and ranked contributors. & Recovery and restoration time enter as resilience factors; criterion relations are modeled, not service-to-resource inheritance. & One industrial case; authors report face validity and sensitivity analysis. \\
+Integrated continuity and recovery optimization \cite{sahebjamnia2015integrated} & Products, operating levels, resource requirements, budgets, disruption likelihoods, and BIA tolerability inputs. & Multi-objective mixed-integer optimization with interactive solution exploration. & Operating trajectories, resource allocation, and recovery times. & Discrete-time recovery under resource constraints; consumes MTPD rather than deriving it from the time-indexed BIA. & One manufacturer case and an additional hypothetical disruption. \\
+PRECESION recovery planning \cite{elshekeil2017precesion} & Interdependent enterprise data-center services and restoration constraints. & Progressive planning of service restoration under dependency and capacity constraints. & Staged recovery plan and service restoration order. & Explicitly models technical service dependencies; addresses sequence feasibility rather than service-level BIA derivation. & Model-based study in a data-center setting; not a general BCM maturity or BIA evaluation. \\
+Process-mining propagation \cite{raptaki2025propagation} & Activities and event logs from one procurement process; incident scenarios. & Process mining constructs a weighted graph and propagates relative impact across activities. & Scenario-dependent relative impact scores and ranked activities. & Dependencies are inferred from event data; no MTPD or RTO is produced. & One company and process; reported results are not failure probabilities or universal dependency strengths. \\
+Configured commercial rules \cite{servicenow2025rto,globalsuite2025prebia} & Service or category-level ratings across configured impact criteria and time horizons. & Product documentation describes minimum-downtime rules, maximum defaults, MTPD criteria, and alternative BIA consolidation options. & RTO and/or MTPD values and service classifications. & Time-indexed assessment is documented; dependency inheritance details vary and may not be disclosed. & Public vendor documentation only; no independent software test or comparative outcome study. \\
+\bottomrule
+\end{tabularx}
+\end{sidewaystable}

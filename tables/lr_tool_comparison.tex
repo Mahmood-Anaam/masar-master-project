@@ -1,0 +1,20 @@
+\begin{sidewaystable}[htbp]
+\centering
+\caption{Selected continuity-management and decision-support systems compared by publicly documented capabilities.}
+\label{tab:lr_tool_comparison}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{System and evidence} & \textbf{BIA and time representation} & \textbf{Recovery rule or output} & \textbf{Dependency support} & \textbf{Comparison boundary} \\
+\midrule
+ServiceNow BCM \cite{servicenow2025bia,servicenow2025rto,servicenow2025datasheet} & BIA workflows and impact assessment across configured durations and categories. & Documentation describes calculated RTO/RPO values, recovery tiers, and use of category downtimes with a configured maximum. & Dependency assessment connected to configuration-management data. & Product documentation and solution brief; no independent tenant test or validation of operational results. \\
+GlobalSuite Business Continuity \cite{globalsuite2025prebia} & Configurable time-indexed impact table for services and consolidated departmental BIAs. & Documentation describes manual or automatic MTPD criteria, resumption deadline, minimum operating level, confidence, and several consolidation options. & Resource mapping is described; a shared-dependency criticality aggregation rule was not documented in the reviewed material. & Public user documentation; calculation behavior not independently tested. \\
+GRASP GRC BCM \cite{grasp2025bia} & Scenario impact ratings over configured time horizons. & Records MTPD, RTO, optional emergency operating level, and assessment rationale; complete derivation details are not disclosed. & Dependency links and single-point-of-failure checks are described. & Public module documentation; parameters appear analyst-set in the reviewed page. \\
+verinice BCM \cite{verinice2025bcm} & BCM process and resource records; detailed temporal threshold calculation is not established by the reviewed page. & The public material describes BCM support but does not provide a complete MTPD/RTO calculation rule. & Process-resource dependency evaluation and a product description of impact inheritance in the asset structure. & Open-source product family; reviewed evidence does not verify all functions across editions or deployments. \\
+Fusion and Riskonnect \cite{fusion2026bcm,riskonnect2026bcm} & Public pages describe BIA and broader continuity workflows; detailed time-based calculation rules are not disclosed in the reviewed descriptions. & Recovery requirements, plans, workflows, exercises, and dashboards are described. & Relationship and dependency mapping are documented; inheritance rules are not specified in the reviewed pages. & Vendor capability descriptions only; no software installation, trial, or independent evaluation. \\
+QuantTM research prototype \cite{vonderassen2024quanttm} & Scenario-based business impact assessment with recovery levels over time frames. & Estimates expected financial loss; maximum tolerable period is an input rather than a derived result. & No service-resource dependency inheritance is described in the reviewed prototype paper. & Research preprint and prototype in a cyber-threat context; not a full BCM management suite. \\
+\bottomrule
+\end{tabularx}
+\end{sidewaystable}

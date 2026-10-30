@@ -1,6 +1,8 @@
 \chapter{Introduction}
 \label{ch:introduction}
 
+This chapter establishes the research context, problem, and proposed response. Section~\ref{sec:motivation_scope} presents the motivation and scope; Section~\ref{sec:problem_significance} states the problem and its information-systems significance; Section~\ref{sec:importance} explains its broader relevance; and Section~\ref{sec:objectives_solution} presents the objectives, TDRP methodology, and Masar system.
+
 \section{Motivation and Scope}
 \label{sec:motivation_scope}
 
@@ -10,7 +12,7 @@ Business continuity management (BCM) offers a structured way to prepare for disr
 
 Assessing the consequences of an interruption is inherently a matter of time. Services differ in how quickly the impacts of an interruption become serious, and organizations may also differ in the criteria they use to judge those impacts. The business continuity guidance of the Digital Government Authority (DGA), for instance, presents impact-based classifications and recovery targets for government digital platforms, and at the same time recognizes that the time intervals used for assessment should follow the sensitivity of the activities concerned \cite{dga2025bcm}. These principles point toward an approach in which each organization defines its own assessment periods, impact criteria, acceptable thresholds, and matching recovery rules, rather than assuming that one fixed configuration suits everyone.
 
-This project proposes \emph{Time-Dependent Recovery Prioritization} (TDRP), a configurable rule-based methodology, and \emph{Masar}, a web-based decision support system (DSS) that implements it. The approach starts from business services and their BIA results, applies explicit rules to their time-dependent impact assessments, and derives criticality, recovery requirements, and relative recovery priorities. The dependencies that support each service are then related to its criticality, and the system presents the outcome on an operational dashboard. Its purpose is to help responsible personnel interpret and use continuity information, not to replace their professional judgment or to take on responsibility for operational recovery decisions.
+This project proposes Time-Dependent Recovery Prioritization (TDRP), a configurable rule-based methodology, and Masar, a web-based decision support system (DSS) that implements it. The approach starts from business services and their BIA results, applies explicit rules to their time-dependent impact assessments, and derives criticality, recovery requirements, and relative recovery priorities. The dependencies that support each service are then related to its criticality, and the system presents the outcome on an operational dashboard. Its purpose is to help responsible personnel interpret and use continuity information, not to replace their professional judgment or to take on responsibility for operational recovery decisions.
 
 The scope of the research covers the design, implementation, and evaluation of the TDRP methodology within Masar. The central concern is the service-level assessment and prioritization process. Supporting dependencies, that is, the elements and resources on which service delivery relies, are considered only to the extent that their relationships help explain how services are delivered and what they require for recovery.
 
