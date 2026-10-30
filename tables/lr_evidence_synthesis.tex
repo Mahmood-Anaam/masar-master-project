@@ -1,0 +1,22 @@
+\begin{sidewaystable}[htbp]
+\centering
+\caption{Synthesis of reviewed evidence, implications for TDRP and Masar, and remaining limitations.}
+\label{tab:lr_synthesis}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{5pt}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3.0cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Theme} & \textbf{What the evidence establishes} & \textbf{Design implication} & \textbf{Boundary or unresolved issue} \\
+\midrule
+Organizational context & BIA processes, criteria, and time scales must be adapted to the entity \cite{iso22317catalogue,nrcnationalframework,dga2025guidelineen}. & Store impact dimensions, scales, periods, thresholds, and mappings as governed configuration. & Configuration quality and approval remain organizational responsibilities. \\
+Temporal impact & Impacts are assessed across discrete durations or continuous recovery trajectories \cite{amm2023bia,sahebjamnia2015integrated,servicenow2025rto}. & Define the interpretation of threshold equality, intervals, missing values, and unreached thresholds. & Discrete observations do not reveal the exact crossing time without an adopted policy. \\
+Criticality and recovery targets & Weighted, probabilistic, maximum-tier, and deterministic mappings all exist \cite{assetcriticality2023,dga2025guidelineen,globalsuite2025prebia}. & Keep the selected policy explicit, explainable, and linked to its input assessments. & No reviewed policy is universally superior; outputs remain conditional on values and thresholds. \\
+Dependencies & Services rely on directional, typed relationships; supporting assets can inherit mission criticality \cite{rinaldi2001interdependencies,nist2018criticality,quinn2025bia}. & Preserve service-to-dependency direction and expose the services responsible for an inherited class. & Inherited class does not measure probability, redundancy, substitutability, or failure timing. \\
+Shared dependencies & Prior work supports inheritance and conservative maximum aggregation in related contexts, but not the exact proposed rule for TDRP. & Evaluate the default maximum-over-supported-services policy and treat it as a project design decision. & Alternative policies may be preferable under different governance objectives. \\
+Priority versus schedule & Feasible sequencing additionally requires precedence, duration, resources, and incident conditions \cite{sahebjamnia2015integrated,elshekeil2017precesion}. & Present relative priorities and dependencies without claiming an executable recovery schedule. & Operational recovery effectiveness lies outside a rule-correctness evaluation. \\
+Decision support & DSS artifacts should integrate data and models while retaining human authority and a clear decision purpose \cite{arnott2005descriptive,hevner2004design}. & Provide traceable outputs, validation, role control, and explanations suitable for practitioner review. & A dashboard alone is not evidence of contribution or effectiveness. \\
+Evaluation & Artificial tests establish correctness; naturalistic evaluation can examine utility and usability \cite{venable2016feds}. & Combine boundary test cases, configuration sensitivity, traceability checks, and practitioner tasks. & Small-sample feedback cannot establish general organizational or incident outcomes. \\
+\bottomrule
+\end{tabularx}
+\end{sidewaystable}
