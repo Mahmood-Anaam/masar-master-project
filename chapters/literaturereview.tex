@@ -5,324 +5,159 @@ This chapter examines the literature relevant to business continuity and critica
 
 The chapter is organized from the general to the specific. Section~\ref{sec:lr_bcm} presents the concepts, international standards, and Saudi national guidance on which business continuity management rests. Section~\ref{sec:lr_bia} narrows the focus to business impact analysis, time-dependent impact assessment, and the derivation of recovery parameters. Section~\ref{sec:lr_prioritization} reviews approaches to service criticality and recovery prioritization, and Section~\ref{sec:lr_dependencies} examines supporting dependencies and the assignment of their criticality. Section~\ref{sec:lr_dss} examines decision support concepts and comparable continuity management systems. Section~\ref{sec:lr_methods} reviews the research and evaluation methods applied in related studies. Section~\ref{sec:lr_gap} synthesizes the reviewed evidence, establishes the supported research gap, and positions the project against it, and Section~\ref{sec:lr_summary} summarizes the chapter.
 
-% =====================================================================
-% APPROVED ROADMAP (Task 1): second supplied roadmap with the agreed
-% refinements. Approved by the project author on 29 October 2026.
-% The opening paragraphs are draft chapter prose. The comment blocks
-% describe intended coverage and rationale, not completed review findings.
-% Replace the planning blocks with evidence-based academic synthesis,
-% section by section, in Task 3 after source collection in Task 2.
-% Candidate sources and product capabilities must be verified before use;
-% no source collection or substantive section drafting is undertaken here.
-%
-% Final chapter target: approximately 27 pages (double-spaced), within
-% the required 20--30 pages; tables and a possible figure are included.
-% Budget: opening 0.5 + scope 0.5 + BCM 4 + BIA 5 + prioritization 3.5
-% + dependencies 3.5 + DSS 4 + methods 2.5 + synthesis 3 + summary 0.5.
-% Confirm actual pagination after substantive writing; reduce peripheral
-% coverage before cutting the central BIA and prioritization analysis.
-%
-% OVERLAP CONTROL: Describe each study's main contribution in its primary
-% section. Discuss a distinct contribution elsewhere where necessary,
-% using Section~\ref{} links without repeating its full description.
-% Revisit studies in the final comparison to synthesize their findings.
-% Do not impose a one-study/one-section restriction on relevant evidence.
-%
-% EVIDENCE CONTROLS: Assess each approach on its documented assumptions,
-% methods, outputs, and evaluation. Do not predetermine weaknesses of
-% multi-criteria methods or assume rule-based methods are intrinsically
-% more transparent or correct. Distinguish mandatory requirements,
-% recommendations, research findings, vendor claims, and project choices.
-% Use \cite{key} for verified claims and retain IEEEtran in main.tex;
-% check bibliographic metadata and add DOI fields where available.
-%
-% TABLE CONTROL: Store every table definition in tables/*.tex and insert
-% it with \input{tables/filename}. No empty table inputs are added now.
-% Choose sidewaystable only if the complete table fits legibly on one
-% rotated page; otherwise split the comparison or use a suitable
-% multipage layout. Check for clipped content in the compiled document.
-% =====================================================================
 
 \paragraph{Review Scope and Evidence Selection}
-% PURPOSE: Briefly explain how the evidence base is formed before the
-% thematic review, without adding a ninth numbered section.
-% LENGTH: about 0.5 page, separate from the opening paragraphs.
-% CONTENT: Focus on service-level temporal impacts, criticality, MTPD/RTO,
-% recovery priorities, supporting-dependency criticality, and relevant DSS.
-% In Task 2, document actual databases and search sources, search dates
-% and terms, inclusion/exclusion criteria, language and full-text access
-% limits, and the balance between foundational and recent work. Describe
-% the search as systematic only if the executed procedure warrants it.
-% Extract context, inputs, temporal model, criteria, decision logic,
-% configurability, dependencies, explanation, outputs, evaluation, and
-% limitations into a common source-to-section evidence map. Separate
-% scholarly evidence, normative guidance, and documented product claims.
-% WHY: Makes selection and comparison transparent and bounds gap claims.
-
 The review will focus on the evidence linking time-dependent service impacts to recovery requirements, priorities, and the criticality of supporting dependencies. Its scope statement will report the search and selection procedure actually completed in the source collection stage, together with the limitations of the resulting evidence base.
 
 \section{Business Continuity Management}
 \label{sec:lr_bcm}
-% PURPOSE: General background of the field.
-% WHY: Establishes the vocabulary and the normative landscape before the
-%   analysis narrows. Terminology (business continuity, BCM and BCMS,
-%   resilience, and the relation to risk management and disaster recovery)
-%   is settled in short introductory paragraphs so that later sections use
-%   one vocabulary. The Introduction used the terms; it is not repeated.
-% LENGTH: about 4 pages.
+
+The vocabulary of continuity work is not used uniformly in the literature, and several of its central terms overlap. A systematic review of business continuity research observes that the definition of business continuity differs from one research object to another, and it traces the field back to the disaster recovery practices of the 1980s \cite{russo2023maturity}. The contingency planning guide of the National Institute of Standards and Technology (NIST) separates business continuity plans from continuity of operations plans, crisis communications plans, cyber incident response plans, disaster recovery plans, and occupant emergency plans, although its own scope is limited to restoring information systems and leaves business-process continuity outside \cite{nist2010contingency}. From an optimization viewpoint, Sahebjamnia et al. argue that the distinction matters in practice: continuity planning and recovery planning draw on the same scarce resources, and treating them as independent conceals that competition. They present the integration of the two as a route toward organizational resilience \cite{sahebjamnia2015integrated}.
+
+In this thesis, business continuity refers to the capability of an organization to keep delivering its prioritized services at an acceptable level during and after a disruption. Business continuity management (BCM) denotes the management activity through which that capability is established and maintained, and a business continuity management system (BCMS) is the management system through which an organization carries out that activity, which is the object of ISO 22301 \cite{iso22301catalogue}. Resilience is the broader term, and the literature often presents continuity as one of its components. Disaster recovery and emergency response are treated here as parts of, or inputs to, continuity management. Risk management is related but not identical. The National Framework of the Saudi National Risk Council places BCM inside a resilience cycle that runs from anticipation and assessment through prevention, continuity, preparedness, response, and recovery \cite{nrcnationalframework}, and NIST guidance on using business impact analysis (BIA) to inform risk prioritization states that the BIA does not directly address identified risks, although the criticality it determines feeds their prioritization \cite{quinn2025bia}.
+
+The remainder of this section reviews the documents that define the field in practice. Section~\ref{sec:lr_standards} compares international standards and guidance, and Section~\ref{sec:lr_saudi} examines the Saudi national documents that form the applied setting of the project.
 
 \subsection{Standards and Frameworks}
 \label{sec:lr_standards}
-% CONTENT: ISO 22301 and ISO 22313, ISO/TS 22317 on BIA, NIST SP 800-34,
-%   and the BCI Good Practice Guidelines: BCM lifecycle, treatment of BIA
-%   and recovery objectives, and how each addresses the conversion of
-%   impacts into recovery targets. Verify current editions and applicability
-%   in Task 2; distinguish requirements, recommendations, and examples.
-%   Treat the listed documents as candidates, not an obligatory catalogue.
-% TABLE: tables/lr_standards_comparison.tex.
 
-This subsection will compare relevant continuity and BIA guidance, establishing the conceptual and normative basis for the review. It will distinguish prescribed requirements from recommendations, examples, and matters left to organizational judgement.
+This subsection compares four documents that together cover a requirements standard, guidance on its implementation, guidance on impact analysis, and a government guide for information systems (Table~\ref{tab:lr_standards}). The treatment of the three ISO documents rests on their published scope descriptions and not on a clause-level reading, since the full texts are commercial publications.
+
+\input{tables/lr_standards_comparison}
+
+ISO 22301:2019 is the requirements standard for a BCMS, and ISO 22313:2020 offers guidance on applying it across organizations of different types, with the aim of sustaining delivery at a predefined acceptable capacity \cite{iso22301catalogue,iso22313catalogue}. The business impact analysis has its own technical specification, ISO/TS 22317:2021, which describes a documented analysis adapted to the needs, objectives, resources, and constraints of the organization and which does not impose one uniform process \cite{iso22317catalogue}. This indicates that the form of the analysis, and therefore the way assessments are turned into recovery targets, is left for each organization to settle.
+
+The NIST guide is more concrete, although its subject is narrower. It organizes contingency planning into seven steps, one of which is the BIA, and it divides the analysis into three tasks: identifying business processes and their recovery criticality, identifying the resources they depend on, and setting recovery priorities for those resources \cite{nist2010contingency}. It defines maximum tolerable downtime (MTD) as the total outage a process can accept, and the recovery time objective (RTO) as the unavailability permitted for a system resource supporting that process. The RTO should normally be shorter than the MTD, because work that follows restoration, such as reprocessing, consumes part of the tolerable period. The recovery point objective (RPO) concerns the tolerated loss of data and is not added to the MTD as a duration \cite{nist2010contingency}. The guide also notes that restoration has technical prerequisites, for example that an operating system be restored and verified before the applications and data that run on it. Section~\ref{sec:lr_sequencing} returns to this point, because it shows that a ranking of importance does not by itself amount to a recovery schedule. The times and cost figures in the guide are illustrative, and it states no threshold that organizations are expected to adopt. The Saudi documents discussed in Section~\ref{sec:lr_saudi} use the term maximum tolerable period of disruption (MTPD) for what corresponds, in practice, to the MTD of the NIST guide.
+
+Two recent studies examine how such frameworks fit together. Russo et al. compare ISO 22301:2019, CMMI v2.0, COBIT 2019, ITIL 4, and NFPA 1600 against common BCM components and find that these frameworks describe how, when, and by whom measurement takes place but leave the organization to decide what to measure \cite{russo2023maturity}. Arias-Aranda et al. matched processes across ISO 22301, ISO 22313, ISO/TS 22317, and ISO 22300 to build a reference model of 22 BCMS processes, and 39 German practitioners (14 continuity managers and 25 consultants) took part in verifying the list \cite{bcms2026reference}. All 39 recognized BIA and criticality analysis as a process of the system, as they did incident handling, recovery, exercises, and resource management, whereas agreement on some other processes was lower. The same study positions the BIA as the source of approved continuity requirements with their rationale, not as a means of producing an executable restoration schedule \cite{bcms2026reference}. Its evidence is better read as support for the face validity of the process list than as proof of its adequacy, since the panel came from one country, consultants made up most of the respondents, and respondents classified a predefined list.
+
+Taken together, these documents agree that the BIA is a central step, that it should yield time-based recovery parameters, and that it must be adapted to the organization. In the material reviewed here, they do not prescribe how impact assessments made at several points in time are converted into an MTPD or an RTO, nor how the priority of a service is carried over to the resources that support it. NIST supplies definitions, relationships between parameters, and templates, and the ISO documents state scope and adaptability, but neither supplies a rule for the conversion. The Saudi documents reviewed next go further by fixing impact tiers and time targets, although they too leave the conversion itself open.
 
 \subsection{National Guidance in Saudi Arabia}
 \label{sec:lr_saudi}
-% CONTENT: In-depth analysis of the National Framework for Risk, Emergency
-%   and Business Continuity Management and the DGA guideline (both in
-%   docs/sources): impact classification, time intervals, recovery
-%   requirements, and the scope left for organizational configuration.
-%   Verify claims against the actual supplied documents and editions.
-% WHY: Applied setting of the project; the Introduction cites these
-%   documents for the problem, this subsection analyzes their content.
 
-This subsection will examine the national documents relevant to the project, with emphasis on impact classification, assessment periods, and recovery requirements. The analysis will clarify their implications for organizational configuration without presuming that they mandate a particular computational procedure.
+Two national documents are most relevant to the setting of the project. The first is the National Framework for Risk, Emergency and Business Continuity Management issued by the General Secretariat of the National Risk Council, of which the business continuity chapter was examined (the extract carries no publication year). The second is the Guideline for Risk and Business Continuity Management for Digital Government of the Digital Government Authority (DGA), reviewed in its Arabic version (3.0) and its English issue (1.0), both dated January 2025 \cite{dga2025bcm,dga2025guidelineen}.
+
+The National Framework treats BCM as an integrated management capability for essential services, necessary products, and the resources that enable them, and it describes a planning phase that covers policy, scope, governance, roles, and performance indicators \cite{nrcnationalframework}. Its treatment of the BIA is the part most relevant here. The organization may choose a suitable approach and collect data through interviews, workshops, and questionnaires, following a sequence that runs from identifying services and products, through the processes that enable them, to impact criteria, impacts over time, resumption timeframes, priorities, resources, and dependencies, and ends with an approved consolidated report. The suggested impact criteria include financial, legal and regulatory, reputational, beneficiary, operational, health and safety, and contractual consequences, and the time points follow the scale chosen by the entity. The outputs are the MTPD, the RTO, the minimum business continuity objective (MBCO), and, for data-dependent activities, the RPO. The framework offers an illustrative classification of recovery times, ranging from the most critical class of zero to eight hours to a lowest class of two weeks, and it presents these values as examples and not as compulsory thresholds \cite{nrcnationalframework}. It also distinguishes one-way from mutual dependency and upstream, internal, and downstream relationships, and it groups dependencies as physical, cyber or digital, geographic, and logical. These dependencies are inputs to the BIA and to the assessment of resources.
+
+The DGA guideline presents itself as general guidance that does not replace the requirements of standards, and it organizes the system as a Plan--Do--Check--Act cycle \cite{dga2025guidelineen}. Its BIA section asks the entity to inventory its operations and procedures together with their dependencies, to evaluate the consequences of disruption over time using an impact matrix approved by the entity, and to record recovery requirements. The outputs include the RTO, the RPO, the MTPD, the MBCO, and the required people, equipment, systems, and facilities. The point at which the impact timeline starts depends on the sensitivity of the service, and the guideline gives a half-hour interval and a starting point measured in days as examples of this variation. Its element of most direct interest here is a matrix that classifies each platform or application into five levels, using stakeholder, financial, legal and regulatory, and reputational impact. Where the factors point to different levels, the highest one is adopted, and the five levels are associated with targeted recovery times of 4, 8, 12, 24, and 48 hours, which remain subject to continuous review \cite{dga2025guidelineen}. Among the planning mistakes the guideline lists are missing system priorities and missing dependency maps.
+
+Read together, the two documents are explicit about the elements of the analysis and about the parameters it should yield, but they leave a good deal to the entity. Both ask the entity to define its own impact criteria and time scale. The DGA matrix does document a rule that precedes the work of this thesis, namely selection of the highest impact level and a mapping from tier to recovery time. It assigns one level and one recovery time to each platform, however, and it does not describe how assessments made at successive points in time are converted into an MTPD or an RTO. In the passages examined, neither document specifies how dependencies should inherit the criticality of the services they support, only that dependencies should be mapped and considered. These are the gaps that make a configurable and traceable rule set a reasonable object of study, and Section~\ref{sec:lr_bia} turns to the way the research literature treats the analysis that precedes it.
 
 \section{Business Impact Analysis}
 \label{sec:lr_bia}
-% PURPOSE: Review the analysis that produces the inputs of TDRP.
-% WHY: MTPD and RTO are the outputs the project derives; the section shows
-%   how they are defined and how research obtains them.
-% LENGTH: about 5 pages.
+
+The business impact analysis (BIA) supplies the service-level information on which the rest of a continuity program depends, and it is the stage whose outputs the proposed methodology takes as its input. Section~\ref{sec:lr_bia_process} considers the unit of assessment, the collection of impact data, and the impact categories used. Section~\ref{sec:lr_time_impact} looks at how studies represent the growth of impact with the duration of an interruption, Section~\ref{sec:lr_parameters} discusses the recovery parameters that such assessments are meant to yield, and Section~\ref{sec:lr_bia_approaches} compares the analytical approaches proposed in the literature. The definitions of the main parameters were given in Section~\ref{sec:lr_standards}, and the use of impact assessments for ranking services is left to Section~\ref{sec:lr_prioritization}.
 
 \subsection{BIA Process and Impact Categories}
 \label{sec:lr_bia_process}
-% CONTENT: Aims of BIA, activity- versus service-oriented analysis, impact
-%   categories (financial, operational, legal and regulatory,
-%   reputational), data collection practice, usual outputs.
-% SOURCES: ISO/TS 22317, BCI guidance, torabi2014framework.
 
-This subsection will review how studies define the unit of assessment, collect interruption-impact data, and establish impact criteria. Its purpose is to identify the basis and limitations of the service-level assessments used in subsequent decision methods.
+The documents reviewed in Section~\ref{sec:lr_standards} describe the BIA as a structured assessment of what an interruption would cost an organization and how quickly those costs become unacceptable. The studies that apply it differ first in the unit of assessment. The NIST guide works from business processes and the system resources that support them \cite{nist2010contingency}, whereas the Saudi documents assess services or platforms \cite{nrcnationalframework,dga2025guidelineen}. Applied studies choose units that are finer or coarser still. Horalek assessed seven dataset groups and eleven system and asset entries of an automated meter management environment \cite{amm2023bia}, while Budiyanto et al.\ assessed the operations of one container terminal as a whole \cite{container2021bia}. NIST IR 8286D starts from the essential products and processes of the enterprise, identifies the assets that enable them, and records the resulting impact values and their rationale in a BIA register \cite{quinn2025bia}. The unit matters because every later quantity, whether a tolerable period or a priority, is attached to it.
+
+Impact data are in most cases elicited rather than measured. Horalek combined public technical material with repeated guided interviews with dataset sponsors and owners, and the paper reports neither the number of respondents nor any measure of agreement between them \cite{amm2023bia}. Budiyanto et al.\ questioned thirty commissioners, directors, and managers, retained the impacts that respondents affirmed, and reconciled them with management; a focus group then fixed the impact scales in light of the terminal's objectives, business position, and risk preferences \cite{container2021bia}. That study is distinctive in supplementing judgement with operational records. Productivity, throughput, and working hours before and after a disruption were converted into remaining-capacity ratios, which were then mapped to a five-level scale running from insignificant to catastrophic \cite{container2021bia}.
+
+The impact categories are correspondingly dependent on context. The terminal study retained six categories, namely loading and unloading productivity, economic loss, employee productivity, customer decline, reputation, and wasted energy \cite{container2021bia}. The metering study assessed legal and contractual obligations, organizational operation, essential service provision, confidence and reputation, and financial loss, alongside a classification of the data by confidentiality, integrity, and availability \cite{amm2023bia}. NIST IR 8286D presents mission, financial, and reputational consequences as illustrative domains to be adapted, and it separates criticality (the consequence of losing availability) from sensitivity (the consequence of losing confidentiality or integrity) \cite{quinn2025bia}. The common pattern is that categories and scales are set by the organization, which is also the latitude the National Framework leaves in presenting its own classes as illustrative (Section~\ref{sec:lr_saudi}).
+
+Documenting a scale does not guarantee that classifications follow it. In the terminal study the economic impact of the eighteen-hour outage is reported as catastrophic, yet the scale presented in the paper assigns remaining income of 94 to 96 percent to the moderate level and values below 92 percent to the catastrophic level, so the calculated figure of 93.78 percent of remaining throughput does not map unambiguously to the reported class \cite{container2021bia}. The metering study uses a four-grade scale in one table and a five-point scale in the text that introduces its main matrix \cite{amm2023bia}. These discrepancies show why a method intended for repeated use needs explicit and checkable mappings between measurements, scale levels, and outputs.
 
 \subsection{Time-Dependent Impact Assessment}
 \label{sec:lr_time_impact}
-% CONTENT: Review impact-over-time functions and interval-based assessment
-% before examining the recovery parameters derived from those assessments.
-% Compare assessment periods, impact scales, unacceptable-impact thresholds,
-% and the treatment of multiple impact dimensions, missing periods,
-% boundary values, and no threshold crossing within the assessed horizon.
-% Examine assumptions about impact trajectories; do not assume that every
-% dimension grows smoothly, continuously, or at the same rate.
-% WHY: Time dependence is central to TDRP and warrants a distinct subsection.
 
-This subsection will examine how studies represent disruption impacts over time and interpret unacceptable-impact thresholds. It will compare temporal granularity and the treatment of incomplete or boundary cases, providing the temporal foundation for the recovery-parameter discussion that follows.
+Time enters the BIA through the question of how the impact of an interruption changes as it continues. The national documents treat the time scale as a matter for the entity, in the sense described in Section~\ref{sec:lr_saudi}, and the research literature offers a wider range of treatments.
+
+The most explicit time-indexed assessment among the studies reviewed is the metering case. Horalek assessed availability at seven durations (30 minutes, 2 hours, 12 hours, 24 hours, 2 days, 1 week, and more than a week) against the same impact criteria, so that every asset received a row of ratings that either worsened with duration or did not \cite{amm2023bia}. The maximum tolerable period of disruption was then read as the time band in which high impacts arise, and a separate medium-impact period was defined for the point at which medium impacts begin \cite{amm2023bia}. The reported values range from twelve hours for the accounting system to more than one week for the customer system \cite{amm2023bia}. The paper also records that the same outage can have different consequences depending on its position relative to billing or reporting deadlines, so that duration alone does not describe timing \cite{amm2023bia}. One reported pair, a twelve-hour period for high impact together with a two-day period for medium impact in the accounting row, appears difficult to reconcile with the stated meaning of the two periods \cite{amm2023bia}. It illustrates how easily the ordering between thresholds can be violated when a matrix is completed by hand.
+
+Other studies treat time differently. The terminal study examines one disruption of eighteen hours and compares operating records before and after it, and it describes the deterioration of reputation as greatest around the second day, which indicates that dimensions of impact need not follow the same time profile \cite{container2021bia}. Von der Assen et al.\ model persistent impact as a daily loss reduced by a recovery level over stated time frames, for example a total outage lasting four days, and treat the maximum tolerable period as an input and not a result \cite{vonderassen2024quanttm}. Optimization studies represent time through trajectories of operating level. Sahebjamnia et al.\ define the loss of resilience through the depth and duration of degraded operation, require operations to reach a minimum acceptable level after the tolerability deadline, and impose non-decreasing recovery trajectories \cite{sahebjamnia2015integrated}. Aghabegloo et al.\ likewise compute loss and recovery time from an illustrative degradation and recovery geometry \cite{assetcriticality2023}. In both cases the temporal profile is a modeling device inside an optimization or criticality calculation, not an assessment of impact thresholds for a service.
+
+Guidance from NIST points to the same concern in qualitative terms. NIST IR 8179 asks how long an adverse operating state must persist before it becomes severe \cite{nist2018criticality}, and NIST IR 8286D recommends considering the timing and duration of an event and the possibility of partial loss of function \cite{quinn2025bia}. Commercial documentation describes comparable tables in which impact ratings are assigned to successive durations, and at least one platform applies a configured maximum when no rating reaches the intolerable level \cite{servicenow2025rto}; these tools are examined in Section~\ref{sec:lr_tools}.
+
+Taken together, the studies show that time-indexed impact matrices, and the reading of a tolerable period from them, are established practice. They differ in granularity, from a handful of durations to continuous trajectories, and in whether the dimensions of impact are read separately or combined. Among the sources examined, few say how a threshold time is determined when impacts are observed only at discrete points, how a missing assessment at one period is handled, or what happens when a rating equals the threshold. The case in which no assessed period reaches the unacceptable level is addressed only in the documentation of a commercial platform \cite{servicenow2025rto}. These are the points at which an explicit interpretation rule is needed, and they are taken up again in Section~\ref{sec:lr_gap}.
 
 \subsection{Recovery Parameters}
 \label{sec:lr_parameters}
-% CONTENT: Focus on MTPD and RTO, their definitions, derivation, and the
-% relationship supported by the applicable sources. Distinguish tolerable
-% disruption, recovery targets, and demonstrated recovery capability.
-% Explain MTD terminology, RPO, MBCO, or work recovery time only where
-% needed to distinguish concepts; they are not additional project outputs.
-% FIGURE (optional): An original, explicitly illustrative temporal-impact
-% diagram marking MTPD/RTO under stated assumptions. Do not imply a
-% universal trajectory or derive exact threshold times from discrete
-% observations without an explicit interpretation rule. Decide whether
-% a stepwise or schematic presentation best matches the reviewed model.
-% Keep the source in figures/ and add TikZ to packages.tex in Task 3 only
-% if it is actually needed for the approved figure.
 
-This subsection will examine the definitions and derivation of MTPD and RTO, distinguishing tolerability limits from recovery targets and demonstrated capability. Related parameters will be introduced only where they clarify those distinctions.
+Three notions are easily conflated: the limit of what the organization can tolerate, the target it sets for recovery, and what it has demonstrated it can achieve. The maximum tolerable period of disruption belongs to the first, the recovery time objective to the second, and the results of exercises and incidents to the third. Section~\ref{sec:lr_standards} gave the definitions of the NIST guide, and Section~\ref{sec:lr_saudi} showed that the Saudi documents place the RTO inside the tolerable period.
+
+The relationship between them is stated most explicitly in the metering study, which requires the RTO not to exceed the medium-impact period or the MTPD and the recovery point objective not to exceed the maximum tolerable data loss \cite{amm2023bia}. In that study the tolerability limits are read from the temporal matrix and the RTO is then chosen subject to these constraints, so that the limit is derived from the assessment while the target remains a decision \cite{amm2023bia}. The DGA guideline instead assigns the RTO from the tier of the highest-rated impact factor (Section~\ref{sec:lr_saudi}), and one commercial platform computes it as the minimum of the downtimes found for the individual impact categories \cite{servicenow2025rto}. Sahebjamnia et al.\ take the MTPD and a minimum business continuity objective from the BIA as inputs, and the model then determines recovery trajectories and times; the recovery times reported in their case sometimes exceed individual MTPD values and are discussed as exceptions \cite{sahebjamnia2015integrated}. This is a reminder that a tolerability limit and the recovery that a plan can actually deliver are different quantities.
+
+The third notion, demonstrated capability, is the least developed. The National Framework lists the comparison of actual with target recovery times among its indicative performance indicators, but as a management measure and not as an observed result \cite{nrcnationalframework}, and the metering study does not quantify whether its proposed controls would achieve the stated recovery times in real incidents \cite{amm2023bia}. The separation is clear in definition but rarely reflected in reported evidence.
+
+Terminology also varies. Sahebjamnia et al.\ use the recovery point objective for the operating level at which operations resume, which differs from its usual meaning as a limit on data loss \cite{sahebjamnia2015integrated}; this thesis keeps the usual meaning.
+
+Figure~\ref{fig:lr_temporal_parameters} illustrates, with invented values, how the three notions relate when impact is assessed at discrete points. Because the assessment gives ratings only at the marked points, the time at which the unacceptable level is first reached lies somewhere between the last acceptable point and the first unacceptable one. The metering study reads this as a band, which avoids a spurious precision but does not settle which single value should be adopted as the tolerable period \cite{amm2023bia}. None of the sources reviewed states a rule for choosing within the band.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{0.95\textwidth}{!}{\input{figures/lr_temporal_parameters}}
+\caption{Schematic relation between assessed impact, the maximum tolerable period of disruption (MTPD), the recovery time objective (RTO), and the result of a recovery exercise. All positions and ratings are invented for illustration. The shaded interval is where the MTPD lies when impact is assessed only at the marked points, and choosing a single value inside it requires an explicit rule.}
+\label{fig:lr_temporal_parameters}
+\end{figure}
 
 \subsection{Analytical Approaches to BIA}
 \label{sec:lr_bia_approaches}
-% CONTENT: Quantitative and semi-quantitative frameworks, fuzzy and
-%   multi-criteria techniques used to estimate impact, and BIA embedded in
-%   integrated continuity and recovery planning.
-% SOURCES: torabi2014framework, sahebjamnia2015integrated, and further
-%   studies from Task 2.
-% TABLE: tables/lr_bia_studies.tex (sidewaystable): objective, input data,
-%   technique, output, treatment of time.
 
-This subsection will compare analytical methods used to estimate impacts and establish recovery requirements. It will concentrate on their assumptions, inputs, temporal treatment, outputs, and validation; their use in service ranking will be considered separately in Section~\ref{sec:lr_prioritization}.
+The analytical literature on the BIA can be grouped by what a method is meant to estimate. Matrix-based approaches rate impacts on ordinal scales and read recovery requirements from them, as in the metering study \cite{amm2023bia}. Data-assisted approaches calibrate the scales against operating records \cite{container2021bia}. Financial approaches convert scenarios into expected loss, as the preprint of von der Assen et al.\ does by multiplying the probabilities of initiation and success by the loss estimated over the recovery stages \cite{vonderassen2024quanttm}. Optimization approaches take tolerability limits from the BIA and decide how scarce resources are allocated to operating levels over time \cite{sahebjamnia2015integrated}. Criticality-index approaches rank assets by combining weighted sustainability and resilience factors in a fuzzy and probabilistic model \cite{assetcriticality2023}. Process-mining approaches infer dependencies between activities from event logs and propagate the relative impact of an incident through them \cite{raptaki2025propagation}. Table~\ref{tab:lr_bia_studies} compares these studies by objective, input data, technique, output, treatment of time, and evaluation.
+
+\input{tables/lr_bia_studies}
+
+The data demands of the quantitative approaches are considerable. The model of Sahebjamnia et al.\ needs importance weights, resource requirements at each operating level, disruption likelihoods, and budgets for a case with four products, ten operating levels, and five disruption types \cite{sahebjamnia2015integrated}. The criticality framework of Aghabegloo et al.\ builds a Bayesian network from expert elicitation, with a structure that depends on thresholds chosen by the authors \cite{assetcriticality2023}, and the process-mining approach needs event logs, here more than half a million events from one procurement process \cite{raptaki2025propagation}. The matrix-based and data-assisted approaches ask less of the organization but depend on judgement and on the quality of the scales, as the inconsistencies noted in Section~\ref{sec:lr_bia_process} show.
+
+The outputs are not interchangeable. Only the matrix-based studies yield tolerable periods and recovery targets directly \cite{amm2023bia}; the optimization study consumes the MTPD as an input \cite{sahebjamnia2015integrated}, and the other approaches produce a loss, a score, or a ranking that must still be associated with the underlying assets \cite{vonderassen2024quanttm,assetcriticality2023,raptaki2025propagation}.
+
+The evidence of effectiveness is of one kind. The studies rely on single cases with expert review or hypothetical disruptions: the metering study is a worked assessment without a comparison of recovery outcomes, the model of Sahebjamnia et al.\ is evaluated under an additional hypothetical disruption, the framework of Aghabegloo et al.\ on face validity and sensitivity analysis, and the process-mining and financial approaches on interviews with five employees and a focus group of five participants, respectively \cite{amm2023bia,sahebjamnia2015integrated,assetcriticality2023,raptaki2025propagation,vonderassen2024quanttm}. No study reports a measured improvement in recovery during real incidents, so the evidence supports plausibility and feasibility more than effectiveness. Replication materials are generally not published: two studies offer data on request \cite{container2021bia,assetcriticality2023}, and a third states that no datasets were generated or analyzed although it reports a case analysis \cite{raptaki2025propagation}.
+
+Methods therefore exist that estimate impact, tolerability, and criticality from judgement, operating data, or probabilistic models, and some derive tolerable periods from time-indexed assessments. The reviewed studies, however, are tied to one organization, depend on case-specific scales or data, and do not publish the interpretation rules, checks, and configurable parameters that would let another organization reproduce a service-level assessment. The use of such assessments to rank services is considered in Section~\ref{sec:lr_prioritization}.
 
 \section{Service Criticality and Recovery Prioritization}
 \label{sec:lr_prioritization}
-% PURPOSE: Review how the literature moves from assessed impact to a
-%   criticality classification and a relative recovery ranking.
-% WHY: These are related but distinct outputs in the project's objectives.
-% BOUNDARY: Section~\ref{sec:lr_bia} covers how impact and time parameters
-%   are obtained; this section covers how they are turned into a ranking.
-% LENGTH: about 3.5 pages.
 
 \subsection{Multi-Criteria Approaches}
 \label{sec:lr_mcdm}
-% CONTENT: AHP, TOPSIS, fuzzy variants, weighted scoring for process or
-%   service criticality, where relevant studies justify their inclusion.
-%   Assess assumptions, weight elicitation, sensitivity, traceability, and
-%   validation study by study. Report strengths and limitations supported
-%   by evidence, without assigning the family a predetermined weakness.
-
-This subsection will assess relevant scoring and multi-criteria approaches to service criticality and recovery priority. Their strengths and limitations will be established from the selected studies rather than assumed from the methodological family to which they belong.
 
 \subsection{Rule-Based Approaches}
 \label{sec:lr_rules}
-% CONTENT: Impact matrices, threshold rules, tiered recovery classes in
-%   guidance and practice. Examine demonstrated reproducibility,
-%   explainability, configurability, tie handling, and incomplete inputs.
-%   Assess whether these properties are supported by implementation and
-%   evaluation; explicit rules alone do not establish correctness.
 
-This subsection will examine explicit classification and prioritization rules, including thresholds and recovery classes. It will assess the evidence for configurability, consistent execution, and traceable outputs, and distinguish these properties from demonstrated correctness.
 
 \subsection{Recovery Sequencing}
 \label{sec:lr_sequencing}
-% CONTENT: Work on recovery scheduling and resource allocation after a
-%   disruption, included to mark the boundary of the project: TDRP ranks
-%   services and does not generate an executable recovery schedule.
-
-This subsection will briefly review relevant scheduling and resource-allocation studies to clarify the boundary between relative service priority and operational recovery planning. It will not extend the proposed contribution to the generation of executable recovery schedules.
 
 \section{Dependency Modeling}
 \label{sec:lr_dependencies}
-% PURPOSE: Review how supporting resources and shared dependencies are
-%   represented and valued.
-% WHY: The project links services to dependencies and assigns them
-%   criticality.
-% LENGTH: about 3.5 pages, with emphasis on service relationships and
-%   criticality assignment. Keep wider infrastructure theory brief.
 
 \subsection{Service Dependencies}
 \label{sec:lr_service_dependency}
-% CONTENT: Service mapping and configuration-management practice,
-%   dependency identification in BIA guidance, and shared supporting
-%   resources. Relate each representation to the service-level scope.
-%   Avoid implying that a dependency association establishes recovery
-%   precedence, resource capacity, or a feasible operational schedule.
-
-This subsection will review representations of services and the resources that support them, including shared dependencies. It will identify the relationships needed for the project while distinguishing association from capacity analysis or operational precedence.
 
 \subsection{Interdependency Models}
 \label{sec:lr_interdependency}
-% CONTENT: Briefly examine relevant interdependency classes, graph models,
-%   or input-output inoperability models only where they clarify the
-%   boundary of the proposed service-to-dependency association. Rinaldi
-%   et al. and Haimes and Jiang are candidate leads, subject to verification.
-%   Distinguish failure propagation from inherited criticality; TDRP does
-%   not model infrastructure-wide cascading failure or perform simulation.
-%   Do not expand this subsection into a separate infrastructure survey.
-
-This subsection will consider wider interdependency models only where they clarify the scope and limitations of the proposed association model. The discussion will distinguish failure propagation from the assignment of supporting-resource criticality.
 
 \subsection{Criticality of Dependencies}
 \label{sec:lr_criticality}
-% CONTENT: Compare documented criticality-assignment approaches for
-%   supporting resources, especially shared dependencies. Use inherited
-%   criticality consistently; it is not an inherited recovery priority.
-%   Examine the assumptions and limitations of aggregation rules actually
-%   found in the sources. The highest-criticality inheritance rule remains
-%   the project's proposed default to evaluate, not a universal requirement.
 
-This subsection will compare documented approaches to assigning criticality to shared supporting resources. It will position highest-criticality inheritance as a proposed rule to evaluate and keep dependency criticality distinct from service recovery priority.
 
 \section{Decision Support Systems for Business Continuity}
 \label{sec:lr_dss}
-% PURPOSE: Move from methods to systems.
-% WHY: Masar is a DSS and must be placed within DSS research and within
-%   the market of continuity software.
-% LENGTH: about 4 pages.
 
 \subsection{Foundations}
 \label{sec:lr_dss_foundations}
-% CONTENT: DSS definitions and types (Power; Arnott and Pervan),
-%   knowledge-driven and rule-based designs, business rules and rule
-%   engines, and the role of explanation and transparency. Focus on
-%   separating assessment data, organizational configuration, and rules,
-%   and tracing displayed outputs to their inputs and applied settings.
-%   Keep theoretical coverage tied to Masar rather than a general DSS survey.
 
-This subsection will establish the decision-support concepts relevant to Masar, focusing on explicit rules, organizational configuration, and explanations. It will examine how outputs can remain connected to their assessment data and calculation settings.
 
 \subsection{Decision Support in Continuity and Disaster Management}
 \label{sec:lr_dss_domain}
-% CONTENT: Published DSS and prototypes supporting BIA, continuity planning,
-%   recovery requirements, prioritization, or dependency interpretation.
-%   Include emergency/disaster systems only where they provide a directly
-%   relevant comparison. Compare supported decisions, inputs, explicit
-%   logic, outputs, explanation, and evaluation. Preserve Masar's stated
-%   dashboard role; do not extend it to incident simulation, autonomous
-%   action recommendations, or execution of recovery decisions.
 
-This subsection will examine published systems and prototypes that support decisions comparable to those addressed by Masar. Broader disaster-management systems will be included only when they offer a directly relevant methodological or evaluation comparison.
+
 
 \subsection{Continuity Management Software}
 \label{sec:lr_tools}
-% CONTENT: Select a small, justified set of comparable BCM platforms with
-%   substantive documentation of BIA, recovery requirements, service
-%   prioritization, dependency mapping, or traceable dashboard outputs.
-%   Distinguish research prototypes from commercial/open systems. Compare
-%   temporal assessment, MTPD/RTO, rules, configuration, dependencies,
-%   explanation, and validation using documented evidence. Record product
-%   versions/access dates and identify grey literature and vendor claims.
-%   An undocumented capability is not established, not necessarily absent;
-%   do not infer Masar's superiority from a feature checklist.
-% TABLE: tables/lr_tools_comparison.tex (sidewaystable).
 
-This subsection will compare a justified selection of documented continuity tools against the project's decision-support requirements. It will separate documented capabilities from vendor claims and distinguish unavailable evidence from evidence that a capability is absent.
+
 
 \section{Research Methods and Evaluation}
 \label{sec:lr_methods}
-% PURPOSE: Cover the ``similar research methods'' element of the chapter.
-% CONTENT: How related studies build and validate their artifacts (design
-%   science applications, case studies, illustrative examples, test-case
-%   and scenario-based verification, expert evaluation) and the criteria
-%   used to judge correctness and usefulness. Hevner et al. and Peffers
-%   et al. are cited in the Introduction, so the emphasis is on
-%   evaluation practice (for example Venable et al.). Describes related
-%   studies only; the project's own method belongs to the methodology
-%   chapter. Compare evidence for correctness, reproducibility,
-%   configuration sensitivity, boundary/missing-data handling, shared
-%   dependency rules, traceability, and usefulness where studies address
-%   them. Distinguish prototype/scenario validation from demonstrated
-%   effectiveness during real disruptions; record evaluation limitations.
-% LENGTH: about 2.5 pages.
-
-This section will compare how related studies develop and evaluate their methods and systems, with particular attention to correctness, consistency, traceability, and usefulness. It will identify methodological lessons and evidence limitations while reserving the project's own research protocol for the methodology chapter.
 
 \section{Synthesis and Research Gap}
 \label{sec:lr_gap}
-% PURPOSE: Consolidate the review and state the gap.
-% CONTENT: Comparison of the closest approaches along fixed dimensions
-%   (service-level focus, time dependence, configurability, explicit
-%   rules, traceability, dependency treatment, implementation status),
-%   then the gap and the positioning of TDRP and Masar. The gap is
-%   stated as a gap in the reviewed sources, not as a claim about all
-%   existing work, and is linked to the objectives in
-%   Section~\ref{sec:objectives_solution}. No previously unreviewed studies
-%   are introduced, but reviewed studies are revisited comparatively.
-%   Distinguish genuine methodological gaps from reporting limitations
-%   and context-specific choices, and include contrary findings. Explain
-%   how the supported gap relates to all five objectives: service
-%   criticality/MTPD/RTO, relative priorities, dependency criticality, the
-%   Masar DSS/dashboard, and evaluation. Separate adopted concepts,
-%   adapted techniques, and proposed rules; detailed algorithms and
-%   architecture belong in later chapters. Do not claim universal novelty
-%   or improved incident outcomes from prototype-level evidence.
-% TABLE: tables/lr_comparison_matrix.tex.
-% LENGTH: about 3 pages.
-
-This section will integrate the reviewed evidence through a focused comparison of the closest approaches, then establish the supported gap and its connection to the five project objectives. It will distinguish adopted concepts, adapted techniques, and proposed rules without assuming universal novelty or incident-level effectiveness.
 
 \section{Chapter Summary}
 \label{sec:lr_summary}
-% CONTENT: Short synthesis of the main findings and a bridge to the
-%   methodology chapter. About half a page.
 
 The chapter will conclude with the main findings supported by the completed review and their implications for TDRP and Masar. The summary will connect the evidence to the next chapter without introducing new claims or repeating the full project motivation.

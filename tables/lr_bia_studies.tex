@@ -1,0 +1,20 @@
+\begin{sidewaystable}[htbp]
+\centering
+\caption{Analytical studies on business impact analysis compared by objective, input data, technique, output, treatment of time, and evaluation.}
+\label{tab:lr_bia_studies}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Study} & \textbf{Objective} & \textbf{Input data} & \textbf{Technique} & \textbf{Output} & \textbf{Treatment of time} & \textbf{Evaluation} \\
+\midrule
+Horalek (2023) \cite{amm2023bia} & Justify the protection of metering datasets and systems. & Technical material and repeated interviews with dataset owners; eleven system and asset entries. & Qualitative impact matrices by confidentiality, integrity, and availability class and business-impact criteria. & Impact ratings, MTPD, a medium-impact period, proposed RTO and RPO. & Availability rated at seven durations, from 30 minutes to more than a week. & One worked case; recovery outcomes not compared; respondents not reported. \\
+Budiyanto et al. (2021) \cite{container2021bia} & Adapt BIA to electricity disruption at a container terminal. & Questionnaires with thirty managers, a focus group, and operating records before and after one disruption. & Management-approved five-level scales applied to remaining-capacity ratios. & Impact class in six categories; no MTPD or RTO. & One disruption of eighteen hours; reputation followed over later days. & One terminal; no independent comparison; one class mapping unclear. \\
+Sahebjamnia et al. (2015) \cite{sahebjamnia2015integrated} & Integrate continuity and recovery planning under scarce resources. & MTPD and minimum objective from the BIA, AHP weights, resource needs, disruption likelihoods, budgets. & Multi-objective mixed-integer programming with an interactive epsilon-constraint method. & Operating-level trajectories, recovery times, resource allocations. & Discrete periods; non-decreasing recovery; minimum level after the tolerability deadline. & One manufacturer; hypothetical additional disruption. \\
+Aghabegloo et al. (2023) \cite{assetcriticality2023} & Rank built physical assets by criticality with sustainability and resilience. & Expert judgements, site history, risk scenarios; product comparisons by four managers. & Fuzzy best--worst method, fuzzy TOPSIS, fuzzy DEMATEL, Bayesian network. & Asset criticality index and ranked contributors. & Recovery and restoration times as resilience factors; illustrative geometry. & One gas plant; face validity and sensitivity analysis; asset count reported inconsistently. \\
+Von der Assen et al. (2024) \cite{vonderassen2024quanttm} & Express cyber-threat scenarios as expected financial loss. & Threat events, probabilities, durations, impact factors, recovery stages. & Probability-weighted loss over recovery stages in a browser prototype. & Expected loss per threat. & Recovery level per time frame; the maximum tolerable period is an input. & Preprint; one small firm; five-person focus group; no ground truth. \\
+Raptaki et al. (2025) \cite{raptaki2025propagation} & Propagate cyber-incident impact across process activities. & Event log of one procurement process (553,763 events, 30 activities). & Process mining; weighted graph; iterative propagation; threshold of 0.5. & Scenario-dependent ranking of activities. & Relative scores; no tolerable period derived. & One company; five interviews; comparison with other propagation methods. \\
+\bottomrule
+\end{tabularx}
+\end{sidewaystable}
