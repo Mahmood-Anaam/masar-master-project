@@ -1,0 +1,25 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{6.0cm}>{\raggedright\arraybackslash}p{6.0cm}}
+\caption{Comparable continuity tools: documented functionality and limits of the reviewed evidence.}\label{tab:lr_tools}\\
+\toprule
+\textbf{System} & \textbf{Documented functions relevant to this thesis} & \textbf{Comparison boundary} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{Table \thetable\ continued}\\
+\toprule
+\textbf{System} & \textbf{Documented functions relevant to this thesis} & \textbf{Comparison boundary} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+ServiceNow \cite{servicenow2025bia,servicenow2025rto} & BIA workflow; configured tolerability and disruption durations; RTO category calculations and minimum aggregation; recovery-tier mappings. & Strong precedent for configured calculation. Reviewed documentation does not validate equivalence to TDRP or comparative recovery effectiveness. \\
+GlobalSuite \cite{globalsuite2025prebia} & Service-level temporal impact table; manual or automatic MTPD; configurable calculation and assessment-consolidation criteria. & Close temporal BIA precedent. Exceptional-input handling, full ranking semantics, and dependency inheritance are not established by the reviewed page. \\
+GRASP GRC \cite{grasp2025bia} & Time-horizon impact assessment; recovery objectives; linked assets, providers, and process chains; recorded rationale. & Documents an assessment workflow. Complete automatic derivation and aggregation algorithms are not disclosed in the reviewed material. \\
+verinice \cite{verinice2025bcm} & BCM domain; business-process assessment, BIA, and dependency evaluation; integration with other management domains. & Relevant alternative tool family. Precise temporal calculations and licensing across product generations are not established here. \\
+Fusion \cite{fusion2026bcm} & Integrated continuity management, BIA, and dependency-related planning capabilities. & Provider-level description; detailed calculation rules and independent comparative results are not established. \\
+Riskonnect \cite{riskonnect2026bcm} & Continuity management, business impact assessment, and dependency-related planning capabilities. & Provider-level description; detailed calculation rules and independent comparative results are not established. \\
+\end{longtable}
+\endgroup
