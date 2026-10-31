@@ -98,3 +98,7 @@ git diff --check
 ```
 
 In the editing environment, missing `algorithm.sty` and `IEEEtran.bst` were supplied from CTAN in an external temporary TeX search path. No template package changes or downloaded build dependencies were committed.
+
+## Concurrent main-branch update
+
+During publication, main advanced to `027bd2c98881b217c401aaa93d5bd942abf62348`, adding overlapping chapter prose and comparison tables. The overlapping themes were reviewed against the completed synthesis. The fully reviewed chapter and its synchronized tool comparison were retained to preserve the exact LaTeX–Word transfer; their narrower claims also avoid treating undocumented product behavior as absence. The independently added `tables/lr_comparison_matrix.tex` was preserved in the repository but is not included in the final chapter, whose research, software, and synthesis tables cover the corresponding comparisons. The merge introduces no change to the validated chapter or Word document.
