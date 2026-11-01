@@ -1,20 +1,25 @@
-\begin{sidewaystable}[htbp]
-\centering
-\caption{Documented capabilities of continuity management software relevant to impact assessment, recovery requirements, and dependencies (public documentation accessed on 29 October 2026; no software was tested).}
-\label{tab:lr_tools_comparison}
-\footnotesize
-\renewcommand{\arraystretch}{1.1}
+\begingroup
+\small
 \setlength{\tabcolsep}{4pt}
-\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{6.0cm}>{\raggedright\arraybackslash}p{6.0cm}}
+\caption{Comparable continuity tools: documented functionality and limits of the reviewed evidence.}\label{tab:lr_tools}\\
 \toprule
-\textbf{Tool} & \textbf{Type} & \textbf{Temporal treatment} & \textbf{MTPD and RTO} & \textbf{Configuration and rules} & \textbf{Dependencies} & \textbf{Evidence basis} \\
+\textbf{System} & \textbf{Documented functions relevant to this thesis} & \textbf{Comparison boundary} \\
 \midrule
-ServiceNow Business Continuity Management \cite{servicenow2025rto,servicenow2025bia,servicenow2025datasheet} & Commercial & Impact tolerability and disruption durations for each impact category. & RTO is the minimum category downtime, with a configured maximum when no rating is intolerable; MTPD is not stated. & Configurable ratings, tolerability, and durations; approval workflow. & Linked to a configuration-management database. & Product documentation and a datasheet. \\
-Fusion Risk Management \cite{fusion2026bcm} & Commercial & Not documented on the page reviewed. & Not documented. & Not documented. & Relationship mapping with upstream and downstream dependencies. & Product page. \\
-Riskonnect BCM \cite{riskonnect2026bcm} & Commercial & Not documented on the page reviewed. & Not documented; a FAQ definition of downtime blurs RTO and tolerance. & Workflows and dashboards. & Dependency mapping. & Product page and FAQ. \\
-GlobalSuite Business Continuity \cite{globalsuite2025prebia} & Commercial & Impact table over a configurable time scale. & MTPD entered manually or derived by three criteria; consolidation by average, weighted average, maximum, or minimum; minimum operating level. & Impact types and time scale configured. & Not documented on the page reviewed. & Help page, last modified December 2025. \\
-GRASP GRC, BCM module \cite{grasp2025bia} & Commercial & Impact over configurable time horizons for each damage scenario. & RTO, MTPD, and an optional emergency operating level set by the analyst; no rule shown. & Scenarios, horizons, and damage potentials configured; rationale recorded. & Linked assets, providers, and process chains with single-point-of-failure checks. & Documentation page. \\
-verinice \cite{verinice2025bcm} & Open source (classic product stated as GPLv3) & Not documented in the sources reviewed. & Not documented. & Described as customizable. & Dependency view of processes and resources; business-impact values inherited in an asset tree (classic product). & BCM page read in full; licence and inheritance statements from page excerpts. \\
+\endfirsthead
+\multicolumn{3}{l}{Table \thetable\ continued}\\
+\toprule
+\textbf{System} & \textbf{Documented functions relevant to this thesis} & \textbf{Comparison boundary} \\
+\midrule
+\endhead
 \bottomrule
-\end{tabularx}
-\end{sidewaystable}
+\endfoot
+ServiceNow \cite{servicenow2025bia,servicenow2025rto} & BIA workflow; configured tolerability and disruption durations; RTO category calculations and minimum aggregation; recovery-tier mappings. & Strong precedent for configured calculation. Reviewed documentation does not validate equivalence to TDRP or comparative recovery effectiveness. \\
+GlobalSuite \cite{globalsuite2025prebia} & Service-level temporal impact table; manual or automatic MTPD; configurable calculation and assessment-consolidation criteria. & Close temporal BIA precedent. Exceptional-input handling, full ranking semantics, and dependency inheritance are not established by the reviewed page. \\
+GRASP GRC \cite{grasp2025bia} & Time-horizon impact assessment; recovery objectives; linked assets, providers, and process chains; recorded rationale. & Documents an assessment workflow. Complete automatic derivation and aggregation algorithms are not disclosed in the reviewed material. \\
+verinice \cite{verinice2025bcm} & BCM domain; business-process assessment, BIA, and dependency evaluation; integration with other management domains. & Relevant alternative tool family. Precise temporal calculations and licensing across product generations are not established here. \\
+Fusion \cite{fusion2026bcm} & Integrated continuity management, BIA, and dependency-related planning capabilities. & Provider-level description; detailed calculation rules and independent comparative results are not established. \\
+Riskonnect \cite{riskonnect2026bcm} & Continuity management, business impact assessment, and dependency-related planning capabilities. & Provider-level description; detailed calculation rules and independent comparative results are not established. \\
+\end{longtable}
+\endgroup
