@@ -1,25 +1,30 @@
 \begingroup
+\begin{landscape}
 \small
-\setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{6.0cm}>{\raggedright\arraybackslash}p{5.7cm}}
-\caption{Related analytical studies: decision object, approach, and evaluation limits.}\label{tab:lr_bia_studies}\\
+\singlespacing
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.18}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{6.4cm}>{\raggedright\arraybackslash}p{4.3cm}>{\raggedright\arraybackslash}p{8.0cm}}
+\caption{Comparison of analytical studies by decision object, method, output, and evaluation.}\label{tab:lr_bia_studies}\\
 \toprule
-\textbf{Study} & \textbf{Inputs, method, and outputs} & \textbf{Temporal treatment and evidence} \\
+\textbf{Study and decision object} & \textbf{Method and required evidence} & \textbf{Principal output} & \textbf{Evaluation and relevance to service prioritization} \\
 \midrule
 \endfirsthead
-\multicolumn{3}{l}{Table \thetable\ continued}\\
+\multicolumn{4}{l}{Table \thetable\ continued}\\
 \toprule
-\textbf{Study} & \textbf{Inputs, method, and outputs} & \textbf{Temporal treatment and evidence} \\
+\textbf{Study and decision object} & \textbf{Method and required evidence} & \textbf{Principal output} & \textbf{Evaluation and relevance to service prioritization} \\
 \midrule
 \endhead
 \bottomrule
 \endfoot
-Horalek \cite{amm2023bia} & AMM datasets and systems; technical analysis and guided interviews; impact matrices inform tolerable periods and recovery objectives. & Availability assessed at seven durations. One domain-specific worked case; no controlled comparison of incident recovery outcomes. \\
-Budiyanto et al. \cite{container2021bia} & Container-terminal electricity disruption; management judgments and operating records inform five-level impact classifications. & Observed disruption and subsequent consequences. Supports contextual impact assessment rather than a general MTPD or RTO derivation rule. \\
-Sahebjamnia et al. \cite{sahebjamnia2015integrated} & BIA requirements, importance weights, resources, and budgets enter a multi-objective planning model; outputs include operating trajectories and allocations. & Discrete recovery periods. Manufacturing case and hypothetical disruption evaluation; tolerability requirements are inputs to planning. \\
-Aghabegloo et al. \cite{assetcriticality2023} & Expert judgments, historical data, and risk scenarios; fuzzy decision methods and a Bayesian network produce asset criticality and contributor rankings. & Recovery-related quantities enter resilience assessment. Gas-plant case, expert face validation, and sensitivity analysis; no generic temporal service-threshold rule. \\
-Von der Assen et al. \cite{vonderassen2024quanttm} & Threat probabilities and business-loss assumptions enter QuantTM; a browser prototype estimates expected financial loss. & Loss represented through recovery stages and time frames. Preprint and case-based evaluation; expected loss is not service recovery priority. \\
-Raptaki et al. \cite{raptaki2025propagation} & Procurement event logs generate a weighted process graph; incident impact is propagated to rank activities. & Scenario-sensitive relative impact rather than tolerable-duration derivation. One organizational case with comparisons and interviews; coverage depends on logged activities. \\
+Horalek \cite{amm2023bia}; AMM data and systems & Technical analysis, interviews, and impact matrices across seven durations. & Contextual impact classes and recovery requirements. & AMM case; temporal BIA precedent with domain-specific scales. \\
+Budiyanto et al. \cite{container2021bia}; container-terminal disruption & Management judgments, focus group, and operating records. & Electricity-disruption consequences. & One terminal; observed impacts support contextual assessment, rather than a general derivation rule. \\
+Sahebjamnia et al. \cite{sahebjamnia2015integrated}; continuity and recovery planning & Multi-objective programming; BIA requirements, weights, capacities, and budgets. & Operating trajectories and resource allocations. & Manufacturing case and modeled disruptions; tolerability is a planning input. \\
+Aghabegloo et al. \cite{assetcriticality2023}; physical assets & Fuzzy methods, DEMATEL, and a Bayesian network; expert input and scenarios. & Asset criticality and influential contributors. & Gas-plant case, face validation, and sensitivity analysis; business-derived asset importance. \\
+El-Shekeil et al. \cite{elshekeil2017precesion}; data-center restoration & Dependency, duration, and worker constraints; given weights; heuristic scheduling. & Progressive server-restoration schedules. & Synthetic optimality comparison and data-center case; demonstrates execution constraints beyond ranking. \\
+Von der Assen et al. \cite{vonderassen2024quanttm}; cyber threats & Threat probabilities, loss estimates, and recovery stages in QuantTM. & Expected loss and recovery visualization. & Preprint; case and exploratory user evaluation. Monetary risk is distinct from recovery urgency. \\
+Raptaki et al. \cite{raptaki2025propagation}; business-process activities & Process mining, weighted graph, and incident-impact propagation. & Scenario-sensitive activity rankings. & Procurement case and feedback; relationship coverage depends on event logs. \\
+Russo et al. \cite{selfassessment2025}; organizational preparedness & Questionnaires, scoring, guidance, and visual feedback. & Continuity self-assessment results. & Practitioner and organizational engagement; useful evaluation precedent with a different decision target. \\
 \end{longtable}
+\end{landscape}
 \endgroup

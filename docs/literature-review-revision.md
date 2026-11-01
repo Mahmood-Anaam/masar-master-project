@@ -1,104 +1,80 @@
 # Literature review revision and Word synchronization
 
-Revision date: 31 October 2026. Base commit: `6d76db5c8bae3979186e22a16fa8138f705b36d0`.
+Revision date: 1 November 2026. Repository baseline: `8747ac3` on `main`. Working branch: `chapter/literaturereview`.
 
-## Scope and alignment
+## Scope and academic alignment
 
-The revision addresses the thesis **A Decision Support System for Business Continuity and Critical Service Recovery Prioritization**. The introduction, title page, existing bibliography, chapter structure, source material, and Word template informed the work. TDRP is treated as the proposed configurable decision procedure and Masar as its software realization. The review does not attribute incident simulation, autonomous recovery decisions, or resource-constrained scheduling to the proposed system.
+The revision addresses **A Decision Support System for Business Continuity and Critical Service Recovery Prioritization**, a master's project in Information Systems. The repository structure, title page, introduction, bibliography, existing review, evidence records, and actual Word document were inspected before editing. The introduction identifies TDRP as the proposed configurable methodology and Masar as its web-based DSS. The revised review preserves that distinction and the project's service-first scope.
 
-The repository contains `masar-master-project.docx`, not the `Egypt-master-project.docx` named in the request. The existing repository document was therefore updated in place.
+The baseline already contained a developed English review and an introductory overview in LaTeX. The current Word file, however, still contained the earlier Chapter 2 material, eight original Zotero citations, and a different citation in one introductory paragraph. The historical revision notes described a different Word filename and could not be used as evidence that the current file had been synchronized. This revision updates the actual `masar-master-project-report.docx`.
 
-## Problems addressed
+## Academic appraisal and complete rewrite
 
-The previous chapter contained developed opening sections followed by incomplete sections and prospective descriptions of material still to be written. It did not provide a completed progression from foundational BCM literature to methods, dependency analysis, comparable systems, evaluation, and a defensible research gap. The replacement develops critical comparisons rather than presenting a sequence of source summaries.
+The previous review had a defensible broad-to-specific structure and appropriate caution about novelty. Its weaknesses were repetition of the project's limitations across several sections, uneven separation of assessment objects and decision outputs, and limited comparative coverage in the research table. The replacement rewrites the chapter throughout, retaining useful section labels and the established evidence base.
 
-The review avoids claiming that temporal impact assessment, configured recovery calculations, or business-derived dependency criticality are absent from existing work. GlobalSuite, ServiceNow, and NIST provide particularly relevant prior art. The resulting gap is an artifact-specific specification and evaluation problem, not a claim that no comparable software exists.
-
-## Chapter structure and substantive changes
-
-| Section | Purpose and contribution |
+| Section | Revised contribution |
 | --- | --- |
-| 2.1 Business continuity management | Establishes continuity objectives, governance, and the roles and limits of standards and government guidance. |
-| 2.2 Business impact analysis and recovery requirements | Distinguishes impact, risk, tolerability, MTPD, and RTO; evaluates temporal assessment and supporting BIA studies. |
-| 2.3 Service criticality and recovery prioritization | Compares classification, aggregation, ranking, and scheduling; examines assumptions and exceptional inputs. |
-| 2.4 Dependency modeling and supporting-resource criticality | Distinguishes recorded relationships, inherited significance, causal propagation, and restoration constraints. |
-| 2.5 Decision support systems and comparable applications | Connects DSS foundations and research prototypes to six documented continuity products. |
-| 2.6 Research methods and evaluation evidence | Discusses design science, correctness, consistency, sensitivity, practitioner usefulness, transferability, and operational effectiveness. |
-| 2.7 Comparative synthesis and research gap | Synthesizes established contributions and defines the bounded contribution proposed for TDRP and Masar. |
-| 2.8 Chapter summary | Consolidates implications for subsequent design and evaluation without reporting unperformed experiments. |
+| 2.1 Business Continuity Management | Establishes organizational outcomes, governance, international guidance, and the Saudi service-oriented context. |
+| 2.2 Business Impact Analysis and Recovery Requirements | Compares assessment objects, elicitation evidence, temporal resolution, incomplete observations, tolerability, and recovery targets. |
+| 2.3 Service Criticality and Recovery Prioritization | Distinguishes classes and relative urgency; compares compensatory, fuzzy, probabilistic, and explicit temporal rules; separates ranking from scheduling. |
+| 2.4 Dependencies and Supporting Resource Criticality | Separates recorded support, common exposure, propagation, inherited classes, and resource recovery deadlines. |
+| 2.5 Decision Support Systems and Comparable Applications | Connects practitioner explanations to research prototypes and six documented continuity platforms. |
+| 2.6 Research Methods and Evaluation Evidence | Relates design science to method specification, implementation correctness, sensitivity, usefulness, and transferability. |
+| 2.7 Comparative Synthesis and Research Gap | Defines a bounded specification and evaluation contribution in light of close existing prior art. |
+| 2.8 Chapter Summary | Consolidates the literature-derived basis for subsequent design and evaluation. |
 
-The chapter distinguishes researcher inference from reported findings, product documentation from independent evaluations, and proposed evaluation requirements from completed thesis results. A preprint is identified as such. Single-case evidence is not generalized into universal effectiveness claims. Missing product detail is treated as unverified, not as proof that a feature is absent.
+The review does not claim that temporal BIA, configurable recovery calculations, or business-derived resource criticality are new. GlobalSuite and ServiceNow are close computational precedents. NIST supports business-derived criticality. The gap concerns the specification and evaluation of TDRP's particular service-level transformation, exceptional states, priorities, and dependency policy. Neither prototype correctness nor a user exercise is represented as evidence of improved performance during real incidents.
 
-## Tables and references
+The editorial pass checked terminology, attribution, transitions, repetition, scope, and the distinction between reported evidence and project implications. The chapter consistently describes a master's project. No experiment, effect size, quotation, or DOI was invented. The QuantTM version is identified as a preprint. A focused narrative review is claimed; an exhaustive systematic search is not.
 
-All four tables are included through `\input{}` and reside in `tables/`:
+## Sources and bibliography
 
-- `lr_standards_comparison.tex`: retained standards and guidance comparison.
-- `lr_bia_studies.tex`: rewritten comparison of six research contributions and their limits.
-- `lr_tools_comparison.tex`: new comparison of six continuity applications.
-- `lr_synthesis.tex`: new synthesis of six decision areas and implications for the project.
+The existing 34-entry bibliography and citation keys are retained. The chapter uses the repository's accessible primary PDFs, relevant source passages, and existing access/appraisal records. The previously documented access limitations remain applicable: notably, the Torabi 2014 paper is retained in the introduction without reconstructing detailed findings from unread full text.
 
-Multi-page tables repeat their headers. Column widths were checked in both formats; no table cell content is intentionally hidden. Explicit LaTeX paragraph-column definitions support faithful conversion.
+Targeted external checks on 1 November 2026 covered the official ISO 22301, ISO 22313, and ISO/TS 22317 catalogue records, the GlobalSuite Pre-BIA help page, ServiceNow's Yokohama RTO/RPO documentation, GRASP assessment documentation, and the verinice BCM description. These checks confirmed the bounded functional comparisons. They do not constitute new full-text reading of every cited work or a controlled product trial. Existing bibliography access dates describe the earlier source collection and are not silently relabeled.
 
-The existing 34-entry bibliography is retained; no fabricated references or DOI values were introduced. Citation keys remain stable. Internal research-workflow notes were replaced with bibliographic or access information. The PRECESION key `elshekeil2017precesion` remains unchanged for compatibility, but its publication data now identify the final 2018 article, volume 4, issue 1, pages 39–47, rather than the 2017 in-press version. Final publication metadata were checked against Crossref.
+LaTeX retains `IEEEtran` and uses `\cite{}`. Public catalogue records support scope statements rather than clause-level claims about paid standards. Provider pages support disclosed functions rather than independent effectiveness. Unreported functionality remains unverified rather than being labeled absent.
 
-Evidence work used the repository's primary-source PDFs and research notes, targeted primary-source retrieval, and Paperguide discovery/metadata checks. The GlobalSuite Pre-BIA documentation was checked directly during this revision and its access date updated to 31 October 2026. Existing 29 October access dates remain associated with the earlier source collection; they do not imply that every page was newly retrieved on the revision date. ISO catalogue records are identified as catalogue records, not represented as access to paid full standards. This is a focused narrative review, not a systematic review with a claimed exhaustive search or PRISMA screening process.
+## Tables and figure
 
-LaTeX retains the project's IEEEtran bibliography configuration and uses `\cite{}` for citations. The rewritten chapter contains no `\emph` commands or drafting placeholders.
+Four chapter tables remain separate `.tex` files under `tables/` and are included through `\input{}`. The research comparison, `lr_bia_studies.tex`, was redesigned as a four-column landscape page comparing eight studies by object, evidence/method, output, and evaluation. It uses `pdflscape` with a `longtable`, repeated headers, flexible row heights, and single spacing. This provides a landscape PDF page rather than requiring readers to rotate a portrait page manually. Other tables retain the existing portrait arrangement.
 
-## Introduction change
+The author-created conceptual diagram is `figures/lr_decision_chain.png`, with an editable SVG and a reproduction script. It connects organizational policy and temporal service assessment to recovery requirements, relative service priority, and dependency criticality. Its caption explicitly identifies it as a synthesis, not empirical results. The same image and caption are transferred to Word. No decorative or externally copied imagery was added.
 
-An opening overview paragraph was inserted immediately after the chapter label. It introduces the chapter's four sections using `Section~\ref{}` references. The remaining LaTeX introduction text is unchanged.
+## Introduction
 
-## Word transfer and template preservation
+The existing overview was replaced with a clearer opening paragraph referring to the four introduction sections through `Section~\ref{}`. The remainder of the LaTeX introduction was preserved. The Word opening is generated from the same source. A pre-existing Word-only DGA mis-citation was corrected using the original DGA Zotero item; the remaining introductory prose was preserved.
 
-The transfer script reads the LaTeX content and table inputs through Pandoc's structured representation. It creates Word paragraphs, headings, captions, tables, citations, and cross-references without rewriting the chapter prose. A source-derived audit records the transferred paragraph and table-cell sequence; all 209 nonempty units match the generated Word document.
+## Word template and exact transfer
 
-Existing university styles, numbering definitions, themes, headers, footers, and section properties were preserved. Only `word/document.xml` and `word/settings.xml` change inside the DOCX archive. The transfer uses the existing `NormalCoEKSU`, heading, table, caption, contents, and bibliography styles. Pagination controls keep table rows and bibliography entries together; the next chapter and appendices start on new pages. Contents and table-list entries and their cached page references were updated.
+The source-derived transfer uses Pandoc's structured representation of the LaTeX paragraphs, headings, citations, captions, references, and external tables. It does not paraphrase the English text. The audit compares 224 nonempty paragraph/table-cell units with the DOCX. Citation numbers are checked against the compiled LaTeX bibliography.
 
-One pre-existing citation error was corrected: the Word introduction paragraph beginning “Assessing the consequences” cited the National Risk Council although the corresponding LaTeX paragraph cites DGA. Its existing citation field now uses the original DGA library item and displays `[2]`. Apart from this citation correction and the requested opening paragraph, the existing introduction prose is preserved.
+University styles, numbering, font definitions, theme, headers, footer assets, and margins are preserved. The only added layout is an isolated landscape section for the research table, followed by portrait pages. The template's first-page header behavior is retained on the original first section rather than being repeated after each section break. Figure and table captions use the existing university styles. Table rows can expand and repeat their header across pages.
 
-## Zotero fields and citation linking
+The only replaced existing DOCX archive parts are `word/document.xml`, `word/settings.xml`, `word/_rels/document.xml.rels`, and `[Content_Types].xml`; one PNG media part is added. Styles and numbering parts remain byte-for-byte unchanged. Native REF fields carry numeric section/table/figure references, and PAGEREF caches are updated from the rendered document. Contents, figure list, table list, and later chapter page references are updated accordingly.
 
-The Word document retains the IEEE Zotero document preferences. It contains 102 Zotero citation fields: the eight original fields and 94 new fields. Seven original field payloads remain unchanged; the eighth is the DGA correction described above. Six existing Zotero library records are reused. The additional 28 references carry embedded CSL item data and canonical DOI or source-URL identifiers; the script does not invent Zotero user-library item identifiers.
+## Zotero and ZoteroCiteLinker
 
-The [ZoteroCiteLinker repository](https://github.com/sBaydin/ZoteroCiteLinker) was examined. The delivered document implements its visible citation-linking convention: blue citation text linked to the corresponding bibliography bookmarks. There are 109 unique bookmarks and 188 internal hyperlinks, all with valid targets. Citation numbers agree with the 34-entry LaTeX bibliography.
+The document retains IEEE Zotero preferences and contains 92 Zotero citation fields: eight original fields and 84 generated fields. Seven original payloads are unchanged; the DGA correction accounts for the eighth. Six original library items are reused. The other 28 references use embedded CSL item metadata with canonical DOI/source URIs. No personal Zotero library identifiers were fabricated, and no new items were imported into the user's Zotero library.
 
-This is a programmatic construction of Zotero-compatible embedded citation fields and internal links. Zotero's integration source supports embedded item-data fallback when a reference is not resolved to a library record. Nevertheless, neither the desktop Zotero Refresh operation nor the installed ZoteroCiteLinker Word macros could be executed in this environment. The additional references have not been imported into the user's personal Zotero library. These distinctions matter: static field/link validation is not a substitute for testing the user's desktop integration.
+The [ZoteroCiteLinker README](https://github.com/sBaydin/ZoteroCiteLinker) was inspected. The document provides blue citation text and hyperlinks to bibliography bookmarks, alongside Zotero ADDIN citation and bibliography fields. Static checks confirm balanced field delimiters, unique bookmarks, valid hyperlink targets, and matching reference numbers.
 
-Before university submission, open a copy in desktop Word, refresh citations with Zotero using IEEE style, resolve or import additional references if prompted, and verify the bibliography. Then run the installed ZoteroCiteLinker linking and blue-color commands and update the contents and table-list fields. Refresh may rewrite citation field results or links. Recheck pagination after this operation; Word and LibreOffice can paginate differently.
+**Desktop integration remains untested.** This environment cannot execute the installed Word macro or the desktop Zotero Refresh operation. Programmatically embedded citation fields are not proof of successful resolution to the user's live Zotero library. In a copy opened in desktop Word, use Zotero Refresh, resolve/import references if prompted, then run ZoteroCiteLinker Link All Citations and its blue-color command. Recheck bibliography, links, navigation, and pagination after Refresh, which can replace field results and links.
 
-## Validation and academic review
+## Reproduction and checks
 
-- LaTeX compiled successfully through `latexmk`, including BibTeX and repeated cross-reference passes. No undefined citations/references or overfull-box warnings remained. An existing lipsum language warning is unrelated to the rewritten chapter.
-- The LaTeX literature review occupies 29 pages (PDF pages 18–46; printed pages 8–36), within the requested 20–30-page range. The complete current LaTeX build has 50 pages.
-- The Word render has 54 pages. The literature review occupies 28 pages (PDF pages 18–45), with Chapter 3 starting on page 46. Word's existing front matter and later chapter placeholders account for differences from the current LaTeX build.
-- The chapter file has 7,360 whitespace-separated tokens including LaTeX commands, excluding the external table bodies. This is an indicative source count, not an exact prose word count.
-- Automated checks verify content-transfer equality, preserved template parts and section properties, citation numbering, balanced field delimiters, unique bookmarks, valid internal link targets, resolved LaTeX labels and citation keys, and absence of known drafting placeholders.
-- Rendered pages were visually reviewed for headings, table continuation, complete cells, citations, contents, bibliography, and page breaks. Final checks covered the corrected introduction citation and revised bibliography/appendix pagination.
-- Academic review tightened unsupported novelty claims, distinguished ranking from scheduling and inherited class from propagation, and bounded claims about compliance, transferability, and real-incident effectiveness.
-
-The requested chapter has been completed and reviewed. This work does not certify the entire thesis as submission-ready: unrelated front-matter and later-chapter template placeholders remain, and desktop Zotero integration requires the check above.
-
-## Reproduction
-
-The scripts are specific to this repository's template and citation structure, not general-purpose converters. Requirements: Python 3, `lxml`, `PyMuPDF` (navigation updates), Pandoc with citeproc, a TeX distribution providing the project's packages and IEEEtran, and a DOCX renderer such as LibreOffice. Supply the official IEEE CSL style from [citation-style-language/styles](https://github.com/citation-style-language/styles/blob/master/ieee.csl).
-
-Use an unmodified Word file from the base commit as the template; do not pass the generated output back as its own template. Keep intermediate files outside the repository.
+Use the original DOCX from baseline `8747ac3` as input; do not feed the generated document back as its own template. Required dependencies include the packaged Python runtime with `lxml`, `python-docx`, Matplotlib, and PyMuPDF; Pandoc with citeproc; the official IEEE CSL style; TeX packages including IEEEtran and pdflscape; and a DOCX renderer.
 
 ```bash
-git show 6d76db5c8bae3979186e22a16fa8138f705b36d0:masar-master-project.docx > ../original.docx
-latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=../latex-build main.tex
-python scripts/sync_literature_word.py --template ../original.docx --output masar-master-project.docx --csl ../ieee.csl --audit ../word-transfer.json
-# Render the DOCX to ../rendered/masar-master-project.pdf with a DOCX renderer.
-python scripts/update_word_navigation.py masar-master-project.docx ../rendered/masar-master-project.pdf
-# Render again and verify page references and layout after updating their caches.
-python scripts/validate_literature_update.py --template ../original.docx --audit ../word-transfer.json --aux ../latex-build/main.aux
+git show 8747ac3:masar-master-project-report.docx > /tmp/masar-template.docx
+python scripts/draw_literature_figure.py
+latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=/tmp/masar-latex main.tex
+python scripts/sync_literature_word.py --template /tmp/masar-template.docx --output masar-master-project-report.docx --csl /tmp/ieee.csl --audit /tmp/masar-transfer.json
+# Render the document, preserving the DOCX as the editable deliverable.
+python scripts/update_word_navigation.py masar-master-project-report.docx /tmp/rendered/masar-master-project-report.pdf
+# Render again after updating cached page references.
+python scripts/validate_literature_update.py --template /tmp/masar-template.docx --audit /tmp/masar-transfer.json --aux /tmp/masar-latex/main.aux
 git diff --check
 ```
 
-In the editing environment, missing `algorithm.sty` and `IEEEtran.bst` were supplied from CTAN in an external temporary TeX search path. No template package changes or downloaded build dependencies were committed.
-
-## Concurrent main-branch update
-
-During publication, main advanced to `027bd2c98881b217c401aaa93d5bd942abf62348`, adding overlapping chapter prose and comparison tables. The overlapping themes were reviewed against the completed synthesis. The fully reviewed chapter and its synchronized tool comparison were retained to preserve the exact LaTeX–Word transfer; their narrower claims also avoid treating undocumented product behavior as absence. The independently added `tables/lr_comparison_matrix.tex` was preserved in the repository but is not included in the final chapter, whose research, software, and synthesis tables cover the corresponding comparisons. The merge introduces no change to the validated chapter or Word document.
+Final checks passed: the LaTeX review occupies 28 pages (PDF pages 18–45, printed pages 8–35); the Word review occupies 27 pages (rendered pages 15–41). The complete LaTeX and Word renders contain 49 and 50 pages respectively. Each has one landscape comparison page. LaTeX has no undefined citation/reference or overfull-box warnings; an existing lipsum language warning and pre-existing front-matter PDF warnings remain outside this change. The DOCX audit verifies 224 transferred units, 92 citation fields, 34 bibliography entries, 115 unique bookmarks, 181 valid internal hyperlinks, balanced field delimiters, and preserved styles/numbering. Rendering was repeated after page-reference updates; visual review covered layout, tables, figure, bibliography, cross-references, and navigation. An initial rendering failure on the untouched template was diagnosed from the renderer logs as an out-of-memory termination; rendering the completed document succeeded. The overall report still contains pre-existing abstract and later-chapter placeholders outside this task. Completion of the requested chapter does not certify those unrelated sections as submission-ready.

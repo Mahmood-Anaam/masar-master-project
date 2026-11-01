@@ -3,13 +3,16 @@
 
 Requires pandoc and lxml. The IEEE CSL file is supplied as --csl. Work on an
 unmodified template via --template; never use the output as the input template.
-Only document.xml and the updateFields setting are patched. New references use
+Existing styles and numbering are preserved; document content, settings, image
+relationships and media declarations are patched. New references use
 embedded CSL metadata and canonical source URIs, not fabricated Zotero item IDs.
 """
 import argparse, copy, hashlib, json, re, subprocess, tempfile
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 from lxml import etree as E
+from docx import Document
+from docx.shared import Inches
 
 W='http://schemas.openxmlformats.org/wordprocessingml/2006/main'
 NS={'w':W}
@@ -50,6 +53,7 @@ def main():
     intro=(root/'chapters/introduction.tex').read_text();chapter=(root/'chapters/literaturereview.tex').read_text()
     def expand(s):return re.sub(r'\\input\{([^}]+)\}',lambda m:(root/(m[1]+'.tex')).read_text(),s)
     expanded=expand(intro+'\n'+chapter)
+    expanded=expanded.replace(r'\begin{landscape}', '').replace(r'\end{landscape}', '')
     # Continuation headers are layout-only repetitions, not additional data rows.
     expanded=re.sub(r'\\endfirsthead.*?\\endhead', '', expanded, flags=re.S)
     expanded=expanded.replace(r'\bottomrule'+ '\n' +r'\endfoot','')
@@ -86,9 +90,19 @@ def main():
         nonlocal bid
         start=el('bookmarkStart',id=bid,name=name);end=el('bookmarkEnd',id=bid);bid+=1
         p.insert(1 if p.find('w:pPr',NS) is not None else 0,start);p.append(end)
-    labelnums={};labelmarks={};ch=sec=sub=tab=0
+    def number_mark(p,name):
+        nonlocal bid
+        rs=list(p)
+        first=next(i for i,x in enumerate(rs) if x.tag=='{'+W+'}r' and text_of(x).startswith(('Table 2.','Figure 2.')))
+        # Keep the label outside the bookmark; number includes the chapter prefix.
+        prefix=rs[first];prefix.find('w:t',NS).text=prefix.find('w:t',NS).text.replace('2.','')
+        start=el('bookmarkStart',id=bid,name=name);end=el('bookmarkEnd',id=bid);bid+=1
+        at=p.index(prefix)+1;p.insert(at,start);p.insert(at+1,run('2.'))
+        ending=next(x for x in list(p)[at+2:] if x.xpath('.//w:fldChar[@w:fldCharType="end"]',namespaces=NS))
+        p.insert(p.index(ending)+1,end)
+    labelnums={};labelmarks={};ch=sec=sub=tab=fig=0
     def scan(bs):
-        nonlocal ch,sec,sub,tab
+        nonlocal ch,sec,sub,tab,fig
         for b in bs:
             if b['t']=='Header':
                 level,attr,_=b['c'];key=attr[0]
@@ -100,7 +114,31 @@ def main():
                 attr,children=b['c']
                 if any(v['t']=='Table' for v in children):
                     tab+=1;labelnums[attr[0]]=f'{ch}.{tab}';labelmarks[attr[0]]='Masar_table_'+str(tab)
+            elif b['t']=='Figure':
+                fig+=1;key=b['c'][0][0];labelnums[key]=f'{ch}.{fig}';labelmarks[key]='Masar_figure_'+str(fig)
     scan(blocks)
+    # Isolate the wide comparison on a landscape section using the template margins.
+    base_section=copy.deepcopy(body.find('w:sectPr',NS))
+    def section_break(landscape=False):
+        p=para('Normal');sp=copy.deepcopy(base_section)
+        for old in sp.findall('w:type',NS):sp.remove(old)
+        sp.insert(0,el('type',val='nextPage'))
+        for pg in sp.findall('w:pgNumType',NS):sp.remove(pg)
+        if landscape:
+            for title in sp.findall('w:titlePg',NS):sp.remove(title)
+            size=sp.find('w:pgSz',NS);width=size.get('{'+W+'}w');height=size.get('{'+W+'}h')
+            size.set('{'+W+'}w',height);size.set('{'+W+'}h',width);size.set('{'+W+'}orient','landscape')
+        p.find('w:pPr',NS).append(sp);return p
+    # First-page header remains on the document's original first section only.
+    for title in body.find('w:sectPr',NS).findall('w:titlePg',NS):body.find('w:sectPr',NS).remove(title)
+    figure_specs=[]
+    relroot=E.fromstring(parts['word/_rels/document.xml.rels'])
+    REL='http://schemas.openxmlformats.org/package/2006/relationships'
+    CT='http://schemas.openxmlformats.org/package/2006/content-types'
+    ctypes=E.fromstring(parts['[Content_Types].xml'])
+    if not any(x.get('Extension')=='png' for x in ctypes):
+        elem=E.SubElement(ctypes,'{'+CT+'}Default');elem.set('Extension','png');elem.set('ContentType','image/png')
+
     # Correct an existing Word-only mislink: the DGA paragraph cites NRC in the
     # template, while the authoritative LaTeX correctly cites dga2025bcm.
     for ip in body.findall('w:p',NS):
@@ -143,7 +181,7 @@ def main():
             elif t=='Link':
                 attr,content,target=c;label=target[0][1:]
                 if label in labelnums:
-                    link=el('hyperlink',anchor=labelmarks[label],history='1');link.append(run(labelnums[label]));p.append(link)
+                    link=el('hyperlink',anchor=labelmarks[label],history='1');link.append(field_part('begin'));link.append(instruction(' REF '+labelmarks[label]+('_number \\h ' if label.startswith(('tab:','fig:')) else ' \\w \\t \\h ')));link.append(field_part('separate'));link.append(run(labelnums[label]));link.append(field_part('end'));p.append(link)
                 else:inline(p,content,bold)
             elif t=='RawInline':raise ValueError('Unconverted LaTeX inline '+str(c))
             else:raise ValueError('Unhandled inline '+t)
@@ -164,12 +202,14 @@ def main():
                 for child in children:
                     if child['t']!='Table':out.extend(make_blocks([child]));continue
                     _,caption,colspec,head,bodies,foot=child['c']
+                    landscape=attr[0]=='tab:lr_bia_studies'
+                    if landscape:out.append(section_break())
                     p=para('TableCaptionCoEKSU');p.append(run('Table 2.'));p.append(field_part('begin'));p.append(instruction(' SEQ Table \\* ARABIC \\s 1 '));p.append(field_part('separate'));p.append(run(labelnums[attr[0]].split('.')[-1]));p.append(field_part('end'));p.append(run(': '))
                     for cb in caption[1]:inline(p,cb['c'])
-                    bookmark(p,labelmarks[attr[0]]);p.find('w:pPr',NS).append(el('keepNext'));out.append(p);remember(p)
+                    bookmark(p,labelmarks[attr[0]]);number_mark(p,labelmarks[attr[0]]+'_number');p.find('w:pPr',NS).append(el('keepNext'));out.append(p);remember(p)
                     caption_specs.append((labelmarks[attr[0]],text_of(p)))
-                    tbl=el('tbl');pr=el('tblPr');pr.append(el('tblStyle',val='PhDTable'));pr.append(el('tblW',w=8504,type='dxa'));pr.append(el('tblLayout',type='fixed'));pr.append(el('tblLook',val='04A0',firstRow='1',lastRow='1',noHBand='1',noVBand='1'));tbl.append(pr)
-                    widths=[1500,2400,3104,1500] if len(colspec)==4 else [1600,3452,3452]
+                    tbl=el('tbl');pr=el('tblPr');pr.append(el('tblStyle',val='PhDTable'));pr.append(el('tblW',w=13344 if landscape else 8504,type='dxa'));pr.append(el('tblLayout',type='fixed'));pr.append(el('tblLook',val='04A0',firstRow='1',lastRow='1',noHBand='1',noVBand='1'));tbl.append(pr)
+                    widths=[2100,3850,2600,4794] if landscape else ([1500,2400,3104,1500] if len(colspec)==4 else [1600,3452,3452])
                     grid=el('tblGrid')
                     for width in widths:grid.append(el('gridCol',w=width))
                     tbl.append(grid)
@@ -189,6 +229,23 @@ def main():
                             tr.append(tc)
                         tbl.append(tr)
                     out.append(tbl)
+                    if landscape:out.append(section_break(landscape=True))
+            elif t=='Figure':
+                attr,caption,contents=c
+                image_node=next(v for cb in contents for v in cb.get('c',[]) if v['t']=='Image')
+                image_path=root/image_node['c'][2][0]
+                # python-docx supplies a standards-compliant DrawingML picture run.
+                picdoc=Document();pp=picdoc.add_paragraph();pp.add_run().add_picture(str(image_path),width=Inches(5.85))
+                pic=E.fromstring(E.tostring(pp._p));pr=el('pPr');pr.append(el('jc',val='center'));pr.append(el('keepNext'));pic.insert(0,pr)
+                rid='rIdMasarFigure'+str(len(figure_specs)+1)
+                for blip in pic.xpath('.//a:blip',namespaces={'a':'http://schemas.openxmlformats.org/drawingml/2006/main'}):
+                    blip.set('{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed',rid)
+                media='media/masar_review_'+str(len(figure_specs)+1)+'.png';parts['word/'+media]=image_path.read_bytes()
+                rel=E.SubElement(relroot,'{'+REL+'}Relationship');rel.set('Id',rid);rel.set('Type','http://schemas.openxmlformats.org/officeDocument/2006/relationships/image');rel.set('Target',media)
+                out.append(pic)
+                p=para('FigureCaptionCoEKSU');p.append(run('Figure 2.'));p.append(field_part('begin'));p.append(instruction(' SEQ Figure \\* ARABIC \\s 1 '));p.append(field_part('separate'));p.append(run(labelnums[attr[0]].split('.')[-1]));p.append(field_part('end'));p.append(run(': '))
+                for cb in caption[1]:inline(p,cb['c'])
+                bookmark(p,labelmarks[attr[0]]);number_mark(p,labelmarks[attr[0]]+'_number');out.append(p);remember(p);figure_specs.append((labelmarks[attr[0]],text_of(p)))
             else:raise ValueError('Unhandled block '+t)
         return out
     # Identify existing chapter boundaries by their template heading style.
@@ -203,7 +260,11 @@ def main():
         hp=next(p for p in body.findall('w:p',NS) if text_of(p)==title)
         bookmark(hp,labelmarks[b['c'][1][0]])
     bookmark(intro_heading,labelmarks['ch:introduction'])
-    opening=blocks[1];p=make_blocks([opening])[0];intro_heading.addnext(p)
+    opening=blocks[1];p=make_blocks([opening])[0]
+    previous_opening=intro_heading.getnext()
+    if previous_opening is not None and text_of(previous_opening).startswith('This chapter establishes'):
+        body.remove(previous_opening)
+    intro_heading.addnext(p)
     start=next(i for i,b in enumerate(blocks) if b['t']=='Header' and b['c'][1][0]=='ch:literaturereview')
     new=make_blocks(blocks[start+1:])
     bookmark(lr_heading,labelmarks['ch:literaturereview'])
@@ -232,6 +293,14 @@ def main():
             np.insert(1,field_part('begin'));np.insert(2,instruction(' TOC \\h \\z \\c "Table" '));np.insert(3,field_part('separate'))
         if idx==len(caption_specs)-1:np.append(field_part('end'))
         body.insert(pos,np);pos+=1
+    lof=next(p for p in body.findall('w:p',NS) if text_of(p)=='No table of figures entries found.' and p.getprevious() is not None and text_of(p.getprevious())=='List of Figures')
+    pos=body.index(lof);lofpr=copy.deepcopy(lof.find('w:pPr',NS));body.remove(lof)
+    for idx,(anchor,title) in enumerate(figure_specs):
+        np=nav_paragraph(lofpr,anchor,title)
+        if idx==0:
+            np.insert(1,field_part('begin'));np.insert(2,instruction(' TOC \\h \\z \\c "Figure" '));np.insert(3,field_part('separate'))
+        if idx==len(figure_specs)-1:np.append(field_part('end'))
+        body.insert(pos,np);pos+=1
     # Generate cached IEEE references from the same BibTeX source.
     with tempfile.TemporaryDirectory() as td:
         inp=Path(td)/'in.md';inp.write_text('\n\n'.join('[@'+k+']' for k in order))
@@ -259,6 +328,8 @@ def main():
     settings=E.fromstring(parts['word/settings.xml']);up=settings.find('w:updateFields',NS)
     if up is None:up=el('updateFields');settings.append(up)
     up.set('{'+W+'}val','true')
+    parts['word/_rels/document.xml.rels']=E.tostring(relroot,xml_declaration=True,encoding='UTF-8',standalone=True)
+    parts['[Content_Types].xml']=E.tostring(ctypes,xml_declaration=True,encoding='UTF-8',standalone=True)
     parts['word/document.xml']=E.tostring(doc,xml_declaration=True,encoding='UTF-8',standalone=True)
     parts['word/settings.xml']=E.tostring(settings,xml_declaration=True,encoding='UTF-8',standalone=True)
     with ZipFile(a.output,'w',ZIP_DEFLATED) as z:

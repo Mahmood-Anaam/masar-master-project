@@ -16,7 +16,7 @@ def main():
   if p.tag!='{'+W+'}p':continue
   title=norm(''.join(p.xpath('.//w:t/text()',namespaces=NS)));anchor=bm.get('{'+W+'}name')
   hits=[pg for _,t,pg in outlines if norm(t)==title or norm(t).endswith(' '+title)]
-  if title.startswith('table 2.'):
+  if title.startswith(('table 2.','figure 2.')):
    prefix=title.split(':')[0]+':'
    hits=[i+1 for i,p in enumerate(pages) if prefix in p]
   if hits:mapping[anchor]=hits[-1]
